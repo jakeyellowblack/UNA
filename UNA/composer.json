@@ -16,6 +16,13 @@
         "laravel/tinker": "^2.0",
         "laravel/ui": "^2.1"
     },
+	"repositories": [
+    {
+        "type": "composer",
+        "url": "https://packagist.org"
+    },
+    { "packagist": false }
+],
     "require-dev": {
         "facade/ignition": "^2.0",
         "fzaninotto/faker": "^1.9.1",
