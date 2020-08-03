@@ -1,111 +1,355 @@
-@extends('layouts.app')
+@extends('layouts.other')
   
 @section('content')
 
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en" class="no-js">
+	<!-- Head -->
 <head>
-
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
     <title>Sistema UNA</title>
 
-    <!-- Bootstrap core CSS -->
+		<!-- Meta -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
 
-    <!-- Custom fonts for this template -->
-    
-   <link href="{{ asset('vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
-   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-   <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+		<!-- Favicon -->
+		<link rel="shortcut icon" href="logouna.png" type="image/x-icon">
 
-    <!-- Plugin CSS -->
-    <link href="{{ asset('vendor/magnific-popup/magnific-popup.css') }}" rel="stylesheet" type="text/css">
+		<!-- Web Fonts -->
+		<link href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
 
-    <!-- Custom styles for this template -->
-    <link href="{{ asset('css/freelancer.css') }}" rel="stylesheet">
-    <style type="text/css">
-    #page-top #about .container .row .col-lg-4.ml-auto .lead {
-	text-align: justify;
+		<!-- Components Vendor Styles -->
+		<link rel="stylesheet" href="assets/vendor/themify-icons/themify-icons.css">
+		<link rel="stylesheet" href="assets/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css">
+
+		<!-- Theme Styles -->
+		<link rel="stylesheet" href="assets/css/theme.css">
+		<style type="text/css">
+		.no-js body .u-header .u-header-left .u-header-logo {
+	font-size: 25px;
 }
-    #page-top #about .container .row .col-lg-4.mr-auto .lead {
-	text-align: justify;
-}
+        </style>
+</head>
+	<!-- End Head -->
 
 
-    #mainNav {
-	display: none;
-	position: absolute;
-	top: 0;
-	left: 0;
-	background: #fff;
-}
-    #page-top .portfolio-modal-dialog.bg-white .container.text-center .row .col-lg-8.mx-auto .btn.btn-primary.btn-lg.rounded-pill.portfolio-modal-dismiss {
-	font-style: normal;
-	  font-size: 13px;
-	  text-align: center;
-	  width: 80px;
-	  height: 40px;
-}
-    
-    #page-top #portfolio .container .row {
-	color: #2c3e50;
-}
-    
-    #page-top  .portfolio-modal-dialog.bg-white .container.text-center .row .col-lg-8.mx-auto .mb-5 {
-	text-align: justify;
-	font-size: 36px;
-}
-    </style>
-  </head>
-
-<body id="page-top">
-
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg bg-secondary fixed-top text-uppercase" id="mainNav">
-      
-    </nav>
-
-<!-- Header -->
-    <header class="masthead bg-primary text-white text-center">
-      <div class="container">
-        <h1 class="text-uppercase mb-0">¡Bienvenido al </h1>
-        <h1 class="text-uppercase mb-0">Sistema UNA!</h1>
-        <hr class="star-light">
-        <h2 class="font-weight-light mb-0">Autores:</h2>
-        <h2 class="font-weight-light mb-0">Víctor Lara - Rafael Rodríguez - José Camarinha - Jhorman Centeno</h2>
-      </div>
-    </header>
 
 
-    
-    
-    
 
-<!-- Bootstrap core JavaScript -->
-    <script src="{{ asset('vendor/jquery/jquery.min.js') }}"></script>
-    <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+	<!-- Body -->
+<body>
+		<!-- Header (Topbar) -->
+		<header class="u-header">
+			<!-- Header Left Section -->
+			<div class="u-header-left">
+				<!-- Header Logo -->
+				<a class="u-header-logo" href="home">
+					<img class="u-header-logo__icon" src="logomini.png" alt="Awesome Icon">
+        			Sistema UNA
+				</a>
+				<!-- End Header Logo -->
+			</div>
+			<!-- End Header Left Section -->
 
-    <!-- Plugin JavaScript -->
-    <script src="{{ asset('vendor/jquery-easing/jquery.easing.min.js') }}"></script>
-    <script src="{{ asset('vendor/magnific-popup/jquery.magnific-popup.min.js') }}"></script>
 
-    <!-- Contact Form JavaScript -->
-    <script src="{{ asset('js/jqBootstrapValidation.js') }}"></script>
-    <script src="{{ asset('js/contact_me.js') }}"></script>
 
-    <!-- Custom scripts for this template -->
-    <script src="{{ asset('js/freelancer.min.js') }}"></script>
-    
-    
 
-      <!-- Scripts -->
-<script src="{{ asset('js/app.js') }}"></script>
-            @yield('scripts')
 
+
+			<!-- Header Middle Section -->
+			<div class="u-header-middle">
+				<!-- Sidebar Invoker -->
+				<div class="u-header-section">
+					<a class="js-sidebar-invoker u-header-invoker u-sidebar-invoker" href="#"
+					   data-is-close-all-except-this="true"
+					   data-target="#sidebar">
+						<span class="ti-align-left u-header-invoker__icon u-sidebar-invoker__icon--open"></span>
+						<span class="ti-align-justify u-header-invoker__icon u-sidebar-invoker__icon--close"></span>
+					</a>
+				</div>
+				<!-- End Sidebar Invoker -->
+
+
+
+
+
+				<!-- Header Search -->
+				<div class="u-header-section justify-content-sm-start flex-grow-1 py-0">
+					<div class="u-header-search"
+					     data-search-mobile-invoker="#headerSearchMobileInvoker"
+					     data-search-target="#headerSearch">
+						<!-- Header Search Invoker (Mobile Mode) -->
+						<a id="headerSearchMobileInvoker" class="u-header-search__mobile-invoker align-items-center" href="#">
+							<span class="ti-search"></span>
+						</a>
+						<!-- End Header Search Invoker (Mobile Mode) -->
+
+
+
+
+
+						<!-- Header Search Form -->
+<!--						<div id="headerSearch" class="u-header-search-form">
+							<form action="/" class="w-100">
+								<div class="input-group h-100">
+									<button class="btn-link input-group-prepend u-header-search__btn" type="submit">
+										<span class="ti-search"></span>
+									</button>
+									<input class="form-control u-header-search__field" type="search" placeholder="Type to search…">
+								</div>
+							</form>
+						</div>-->
+						<!-- End Header Search Form -->
+					</div>
+				</div>
+				<!-- End Header Search -->
+
+
+
+
+				
+
+
+				<!-- User Profile -->
+				<div class="u-header-section u-header-section--profile">
+					<div class="u-header-dropdown dropdown">
+						<a class="link-muted d-flex align-items-center" href="#" role="button" id="userProfileInvoker" aria-haspopup="true" aria-expanded="false"
+						   data-toggle="dropdown"
+						   data-offset="0">
+							<span class="text-dark d-none d-md-inline-flex align-items-center">
+                            {{ Auth::user()->name }}
+								<span class="ti-angle-down text-muted ml-4"></span>
+							</span>
+						</a>
+
+
+						<div class="u-header-dropdown__menu dropdown-menu dropdown-menu-right" aria-labelledby="userProfileInvoker" style="width: 260px;">
+							<div class="card p-3">
+
+
+								<div class="card-body p-0">
+
+										<li>
+		                          <a class="dropdown-item" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                            {{ __('Cerrar Sesión') }}
+                          </a>
+                                
+                          <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            @csrf
+                          </form>
+                        </div>
+                    </li>
+									</ul>
+						  </div>
+					  </div>
+				  </div>
+			  </div>
+		  </div>
+				<!-- End User Profile -->
+			</div>
+			<!-- End Header Middle Section -->
+		</header>
+		<!-- End Header (Topbar) -->
+
+
+
+
+
+
+
+		<!-- Main -->
+		<main class="u-main">
+			<!-- Sidebar -->
+			<aside id="sidebar" class="u-sidebar">
+				<div class="u-sidebar-inner">
+					<!-- Sidebar Header -->
+					<header class="u-sidebar-header">
+						<!-- Sidebar Logo -->
+						<a class="u-sidebar-logo" href="index.html">
+							<img class="u-sidebar-logo__icon" src="assets/svg/logo-mini.svg" alt="Awesome Icon">
+							<img class="u-sidebar-logo__text" src="assets/svg/logo-text-light.svg" alt="Awesome">
+						</a>
+						<!-- End Sidebar Logo -->
+					</header>
+					<!-- End Sidebar Header -->
+                    
+                    
+                    
+                    
+
+					<!-- Sidebar Nav -->
+					<nav class="u-sidebar-nav">
+						<!-- Sidebar Nav Menu -->
+						<ul class="u-sidebar-nav-menu u-sidebar-nav-menu--top-level">
+							<!-- Dashboard -->
+							<li class="u-sidebar-nav-menu__item">
+								<a class="u-sidebar-nav-menu__link active" href="home">
+									<span class="ti-dashboard u-sidebar-nav-menu__item-icon"></span>
+									<span class="u-sidebar-nav-menu__item-title">Inicio</span>
+								</a>
+							</li>
+							<!-- End Dashboard -->
+                            
+
+
+							<!-- Forms -->
+							<li class="u-sidebar-nav-menu__item">
+								<a class="u-sidebar-nav-menu__link" href="forms.html">
+									<span class="ti-pencil-alt u-sidebar-nav-menu__item-icon"></span>
+									<span class="u-sidebar-nav-menu__item-title">Añadir usuario</span>
+								</a>
+							</li>
+							<!-- End Forms -->
+
+							<!-- Tables -->
+							<li class="u-sidebar-nav-menu__item">
+								<a class="u-sidebar-nav-menu__link" href="tables.html">
+									<span class="ti-layout u-sidebar-nav-menu__item-icon"></span>
+									<span class="u-sidebar-nav-menu__item-title">Subir presupuesto</span>
+								</a>
+							</li>
+							<!-- End Tables -->
+					</nav>
+					<!-- End Sidebar Nav -->
+				</div>
+			</aside>
+			<!-- End Sidebar -->
+
+
+
+
+						<!-- Content -->
+			<div class="u-content">
+				<!-- Content Body -->
+				<div class="u-body">
+					<!-- Doughnut Chart -->
+					<div class="row">
+
+							<!-- Performance Chart -->
+							<div class="card h-100">
+								<!-- Card Header -->
+								<header class="card-header d-flex align-items-center justify-content-between">
+									<h2 class="h4 card-header-title">Performance</h2>
+
+									<!-- Card Icons -->
+									<ul class="list-inline mb-0">
+										<li class="list-inline-item dropdown">
+											<a id="performanceMenuInvoker" class="u-icon-sm link-muted" href="#" role="button" aria-haspopup="true" aria-expanded="false"
+											   data-toggle="dropdown"
+											   data-offset="8">
+												<span class="ti-more"></span>
+											</a>
+
+											<!-- Card Menu -->
+											<div class="dropdown-menu dropdown-menu-right" aria-labelledby="performanceMenuInvoker" style="width: 150px;">
+												<div class="card border-0 p-3">
+													<ul class="list-unstyled mb-0">
+														<li class="mb-3">
+															<a class="d-block link-dark" href="#">Add</a>
+														</li>
+														<li>
+															<a class="d-block link-dark" href="#">Remove</a>
+														</li>
+													</ul>
+												</div>
+											</div>
+											<!-- Card Menu -->
+										</li>
+									</ul>
+									<!-- End Card Icons -->
+								</header>
+								<!-- End Card Header -->
+
+								<!-- Card Body -->
+								<div class="card-body">
+									<!-- Chart -->
+									<div class="mx-auto mb-6" style="max-width: 240px; max-height: 240px;">
+										<canvas class="js-doughnut-chart"
+										        width="240"
+										        height="240"></canvas>
+									</div>
+									<!-- End Chart -->
+
+									<!-- Chart Legends -->
+									<ul class="list-inline d-flex align-items-center justify-content-center text-center mb-0">
+										<li class="list-inline-item px-5 mr-0">
+											<div class="h2 font-weight-normal text-primary mb-1">45%</div>
+											<div class="text-muted">Total Sales</div>
+										</li>
+										<li class="list-inline-item px-5 mr-0">
+											<div class="h2 font-weight-normal text-info mb-1">15%</div>
+											<div class="text-muted">New Customers</div>
+										</li>
+										<li class="list-inline-item px-5 mr-0">
+											<div class="h2 font-weight-normal text-success mb-1">15%</div>
+											<div class="text-muted">Conversion</div>
+										</li>
+									</ul>
+									<!-- End Chart Legends -->
+							  </div>
+								<!-- End Card Body -->
+							</div>
+							<!-- End Performance Chart -->
+						</div>
+
+
+
+							
+							</div>
+							<!-- End Recent Activity -->
+</div>
+					</div>
+				</div>
+				<!-- End Content Body -->
+
+				<!-- Footer -->
+				<footer class="u-footer d-md-flex align-items-md-center text-center text-md-left text-muted">
+					<!-- Footer Menu -->
+                    					<ul class="list-inline mb-3 mb-md-4">
+						<li class="list-inline-item">
+
+                    					<span class="text-muted ml-auto">&copy; 2020 <a class="text-muted"  target="_blank">Sistema UNA</a>.</span>
+						</li>
+
+						
+						<li class="list-inline-item">
+						  <a class="text-muted" target="_blank">------------------</a>
+						</li>
+					</ul>
+					<!-- End Footer Menu -->
+
+					<!-- Copyright -->
+					<!-- End Copyright -->
+				</footer>
+				<!-- End Footer -->
+			</div>
+			<!-- End Content -->
+		</main>
+		<!-- End Main -->
+
+		<!-- Global Vendor -->
+		<script src="assets/vendor/jquery/dist/jquery.min.js"></script>
+		<script src="assets/vendor/jquery-migrate/jquery-migrate.min.js"></script>
+		<script src="assets/vendor/popper.js/dist/umd/popper.min.js"></script>
+		<script src="assets/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+
+		<!-- Plugins -->
+		<script src="assets/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+		<script src="assets/vendor/chart.js/dist/Chart.min.js"></script>
+		<script src="assets/vendor/chartjs-plugin-style/dist/chartjs-plugin-style.min.js"></script>
+
+		<!-- Initialization  -->
+		<script src="assets/js/sidebar-nav.js"></script>
+		<script src="assets/js/main.js"></script>
+
+		<script src="assets/js/charts/area-chart.js"></script>
+		<script src="assets/js/charts/area-chart-small.js"></script>
+		<script src="assets/js/charts/doughnut-chart.js"></script>
+</body>
+	<!-- End Body -->
 </html>
 
 
