@@ -29,6 +29,17 @@
 		.no-js body .u-header .u-header-left .u-header-logo {
 	font-size: 25px;
 }
+
+
+h6 {
+	font-weight: bold;
+}
+h6 {
+	font-size: 70px;
+}
+h6 {
+	text-align: center;
+}
         </style>
 </head>
 	<!-- End Head -->
@@ -225,99 +236,24 @@
 			<div class="u-content">
 				<!-- Content Body -->
 				<div class="u-body">
+                					<h1 class="h2 mb-2">Inicio</h1>
+
 					<!-- Doughnut Chart -->
 					<div class="row">
 
 							<!-- Performance Chart -->
 							<div class="card h-100">
 								<!-- Card Header -->
-								<header class="card-header d-flex align-items-center justify-content-between">
-									<h2 class="h4 card-header-title">Performance</h2>
-
-									<!-- Card Icons -->
-									<ul class="list-inline mb-0">
-										<li class="list-inline-item dropdown">
-											<a id="performanceMenuInvoker" class="u-icon-sm link-muted" href="#" role="button" aria-haspopup="true" aria-expanded="false"
-											   data-toggle="dropdown"
-											   data-offset="8">
-												<span class="ti-more"></span>
-											</a>
-
-											<!-- Card Menu -->
-											<div class="dropdown-menu dropdown-menu-right" aria-labelledby="performanceMenuInvoker" style="width: 150px;">
-												<div class="card border-0 p-3">
-													<ul class="list-unstyled mb-0">
-														<li class="mb-3">
-															<a class="d-block link-dark" href="#">Add</a>
-														</li>
-														<li>
-															<a class="d-block link-dark" href="#">Remove</a>
-														</li>
-													</ul>
-												</div>
-											</div>
-											<!-- Card Menu -->
-										</li>
-									</ul>
-									<!-- End Card Icons -->
-								</header>
-								<!-- End Card Header -->
-
-								<!-- Card Body -->
-								<div class="card-body">
-									<!-- Chart -->
-									<div class="mx-auto mb-6" style="max-width: 240px; max-height: 240px;">
-										<canvas class="js-doughnut-chart"
-										        width="240"
-										        height="240"></canvas>
-									</div>
-									<!-- End Chart -->
-
-									<!-- Chart Legends -->
-									<ul class="list-inline d-flex align-items-center justify-content-center text-center mb-0">
-										<li class="list-inline-item px-5 mr-0">
-											<div class="h2 font-weight-normal text-primary mb-1">45%</div>
-											<div class="text-muted">Total Sales</div>
-										</li>
-										<li class="list-inline-item px-5 mr-0">
-											<div class="h2 font-weight-normal text-info mb-1">15%</div>
-											<div class="text-muted">New Customers</div>
-										</li>
-										<li class="list-inline-item px-5 mr-0">
-											<div class="h2 font-weight-normal text-success mb-1">15%</div>
-											<div class="text-muted">Conversion</div>
-										</li>
-									</ul>
-									<!-- End Chart Legends -->
-							  </div>
-								<!-- End Card Body -->
-							</div>
-							<!-- End Performance Chart -->
-						</div>
-
-
-
 							
-							</div>
-							<!-- End Recent Activity -->
-</div>
-					</div>
-				</div>
-				<!-- End Content Body -->
 
-				<!-- Footer -->
-				<footer class="u-footer d-md-flex align-items-md-center text-center text-md-left text-muted">
-					<!-- Footer Menu -->
-                    					<ul class="list-inline mb-3 mb-md-4">
-						<li class="list-inline-item">
 
-                    					<span class="text-muted ml-auto">&copy; 2020 <a class="text-muted"  target="_blank">Sistema UNA</a>.</span>
-						</li>
+									<ul class="list-inline mb-0">
+										<div class="container-fluid">
 
-						
-						<li class="list-inline-item">
-						  <a class="text-muted" target="_blank">------------------</a>
-						</li>
+
+
+<h6>¡Bienvenid@ al Sistema de gestión financiero para el Departamento de Control Presupuestario de la Universidad Nacional Abierta (UNA)!</h6>
+
 					</ul>
 					<!-- End Footer Menu -->
 
