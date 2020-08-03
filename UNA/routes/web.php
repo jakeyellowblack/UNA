@@ -30,6 +30,6 @@ Route::get('tpresupuesto','PresupuestoController@index')->name('tpresupuesto');
 Route::get('tpresupuesto','PresupuestoController@show')->name('tpresupuesto');
 
 
-
+Route::resource('/user', 'UserController')->names('user');
 
 Route::resource('presupuesto', 'PresupuestoController');
