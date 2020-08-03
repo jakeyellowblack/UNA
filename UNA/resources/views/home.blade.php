@@ -208,7 +208,7 @@ h6 {
 
 							<!-- Forms -->
 							<li class="u-sidebar-nav-menu__item">
-								<a class="u-sidebar-nav-menu__link" href="forms.html">
+								<a class="u-sidebar-nav-menu__link" href="/user/create">
 									<span class="ti-pencil-alt u-sidebar-nav-menu__item-icon"></span>
 									<span class="u-sidebar-nav-menu__item-title">Añadir usuario</span>
 								</a>

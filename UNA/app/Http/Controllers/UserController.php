@@ -15,7 +15,7 @@ class UserController extends Controller
     public function index()
     {
 
-        return view('index');
+        return view('user.index');
     }
 
     /**
@@ -36,6 +36,9 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
+
+        $user = User::create($request->all());
+        $user->save();
         return view('user.index');
     }
 
