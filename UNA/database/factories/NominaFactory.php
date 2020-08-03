@@ -2,12 +2,18 @@
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 
+
 use App\Nomina;
 use Faker\Generator as Faker;
 
-$factory->define(App\Nomina::class, function (Faker $faker) {
+$autoIncrement = autoIncrement();
+
+$factory->define(App\Nomina::class, function (Faker $faker) use ($autoIncrement) {
+    $autoIncrement->next();
+
     return [
-       
+	
+	   'trabajador_id' => $autoIncrement->current(),
 	   'salarioSemanal' => $faker->randomFloat(2, 1, 100),
 	   'salarioDiario' => $faker->randomFloat(2, 1, 100),
 	   'salarioHora' => $faker->randomFloat(2, 1, 100),
@@ -19,3 +25,10 @@ $factory->define(App\Nomina::class, function (Faker $faker) {
 	   'montoTotal' => $faker->randomFloat(2, 1, 100),
     ];
 });
+
+function autoIncrement()
+{
+    for ($i = 0; $i < 1000; $i++) {
+        yield $i;
+    }
+}

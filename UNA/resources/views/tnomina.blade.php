@@ -104,7 +104,7 @@
 					          <td class="font-weight-semi-bold">{{ $no->salarioDiario }}</td>
 					          <td class="font-weight-semi-bold">{{ $no->salarioHora }}</td>
 					          <td class="font-weight-semi-bold">{{ $no->salarioHoraExtraDiurno }}</td>
-                              <td class="font-weight-semi-bold">{{ $no->salarioIntegral }}}</td>
+                              <td class="font-weight-semi-bold">{{ $no->salarioIntegral }}</td>
 					          <td class="font-weight-semi-bold">{{ $no->feriado }}</td>
 					          <td class="font-weight-semi-bold">{{ $no->diasLaborados }}</td>
 					          <td class="font-weight-semi-bold">{{ $no->utilidades }}</td>
