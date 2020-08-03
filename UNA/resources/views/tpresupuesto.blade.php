@@ -58,7 +58,7 @@
 			        <h2 class="h4 card-header-title">Tabla de Presupuestos</h2>
                     
                     
-                  <form action="{{ route('presupuesto.import') }}" method="post" enctype="multipart/form-data">
+                  <form action="{{ route('presupuesto.presupuesto') }}" method="post" enctype="multipart/form-data">
             @csrf
             
             @if(Session::has('message'))

@@ -34,7 +34,7 @@
                 <!-- Header Logo -->
                 <a class="u-header-logo" href="home">
                     <img class="u-header-logo__icon" src="logomini.png" alt="Awesome Icon">
-                    Sistema UNA
+                    <img class="u-header-logo__text" src="logo-light-text.png" alt="Awesome">
                 </a>
                 <!-- End Header Logo -->
             </div>
@@ -202,7 +202,7 @@
                             </li>
                             
                               <li class="u-sidebar-nav-menu__item">
-                                <a class="u-sidebar-nav-menu__link" href="#">
+                                <a class="u-sidebar-nav-menu__link" href="gesingre">
                                     <span class="ti-stats-up u-sidebar-nav-menu__item-icon"></span>
                                     <span class="u-sidebar-nav-menu__item-title">Gestión de ingresos</span>
                                 </a>
@@ -210,7 +210,7 @@
                             
                             
                               <li class="u-sidebar-nav-menu__item">
-                                <a class="u-sidebar-nav-menu__link" href="#">
+                                <a class="u-sidebar-nav-menu__link" href="gesegre">
                                     <span class="ti-stats-down u-sidebar-nav-menu__item-icon"></span>
                                     <span class="u-sidebar-nav-menu__item-title">Gestión de egresos</span>
                                 </a>
@@ -254,7 +254,7 @@
                             
                             
                        <li class="u-sidebar-nav-menu__item">
-                                <a class="u-sidebar-nav-menu__link" href="#">
+                                <a class="u-sidebar-nav-menu__link" href="cierres">
                                     <span class="ti-lock u-sidebar-nav-menu__item-icon"></span>
                                     <span class="u-sidebar-nav-menu__item-title">Cierres</span>
                                 </a>
