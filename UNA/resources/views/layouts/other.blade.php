@@ -184,22 +184,84 @@
 
 
                             <!-- Forms -->
-                            <li class="u-sidebar-nav-menu__item">
+						<li class="u-sidebar-nav-menu__item">
+								<a class="u-sidebar-nav-menu__link" href="#"
+								   data-target="#menuItemGestiones">
+									<span class="ti-panel u-sidebar-nav-menu__item-icon"></span>
+									<span class="u-sidebar-nav-menu__item-title">Gestiones</span>
+									<span class="ti-angle-down u-sidebar-nav-menu__item-arrow"></span>
+								</a>
+                                
+                  <ul id="menuItemGestiones" class="u-sidebar-nav-menu u-sidebar-nav-menu--second-level" style="display: none;">
+                                
+                           <li class="u-sidebar-nav-menu__item">
                                 <a class="u-sidebar-nav-menu__link" href="/user/create">
-                                    <span class="ti-pencil-alt u-sidebar-nav-menu__item-icon"></span>
-                                    <span class="u-sidebar-nav-menu__item-title">Añadir usuario</span>
+                                    <span class="ti-user u-sidebar-nav-menu__item-icon"></span>
+                                    <span class="u-sidebar-nav-menu__item-title">Gestión de usuarios</span>
                                 </a>
                             </li>
+                            
+                              <li class="u-sidebar-nav-menu__item">
+                                <a class="u-sidebar-nav-menu__link" href="#">
+                                    <span class="ti-stats-up u-sidebar-nav-menu__item-icon"></span>
+                                    <span class="u-sidebar-nav-menu__item-title">Gestión de ingresos</span>
+                                </a>
+                            </li>
+                            
+                            
+                              <li class="u-sidebar-nav-menu__item">
+                                <a class="u-sidebar-nav-menu__link" href="#">
+                                    <span class="ti-stats-down u-sidebar-nav-menu__item-icon"></span>
+                                    <span class="u-sidebar-nav-menu__item-title">Gestión de egresos</span>
+                                </a>
+                            </li>
+                            
+                       </ul> 
+                       
+                     
+                    </li>
+
                             <!-- End Forms -->
 
+
+
                             <!-- Tables -->
+                   <li class="u-sidebar-nav-menu__item">
+								<a class="u-sidebar-nav-menu__link" href="#"
+								   data-target="#menuItemImportaciones">
+									<span class="ti-import u-sidebar-nav-menu__item-icon"></span>
+									<span class="u-sidebar-nav-menu__item-title">Importación de archivos</span>
+									<span class="ti-angle-down u-sidebar-nav-menu__item-arrow"></span>
+								</a>
+                                
+                  <ul id="menuItemImportaciones" class="u-sidebar-nav-menu u-sidebar-nav-menu--second-level" style="display: none;">
                             <li class="u-sidebar-nav-menu__item">
                                 <a class="u-sidebar-nav-menu__link" href="tpresupuesto">
-                                    <span class="ti-layout u-sidebar-nav-menu__item-icon"></span>
-                                    <span class="u-sidebar-nav-menu__item-title">Subir presupuesto</span>
+                                    <span class="ti-layout-tab u-sidebar-nav-menu__item-icon"></span>
+                                    <span class="u-sidebar-nav-menu__item-title">Importar presupuesto</span>
                                 </a>
                             </li>
-                            <!-- End Tables -->
+                            
+                               <li class="u-sidebar-nav-menu__item">
+                                <a class="u-sidebar-nav-menu__link" href="tnomina">
+                                    <span class="ti-write u-sidebar-nav-menu__item-icon"></span>
+                                    <span class="u-sidebar-nav-menu__item-title">Importar nómina</span>
+                                </a>
+                            </li>
+                       </ul>
+                    </li>
+                           <!-- End Tables -->
+                            
+                            
+                       <li class="u-sidebar-nav-menu__item">
+                                <a class="u-sidebar-nav-menu__link" href="#">
+                                    <span class="ti-lock u-sidebar-nav-menu__item-icon"></span>
+                                    <span class="u-sidebar-nav-menu__item-title">Cierres</span>
+                                </a>
+                         </li>      
+                         
+                            
+                            
                     </nav>
                     <!-- End Sidebar Nav -->
                 </div>

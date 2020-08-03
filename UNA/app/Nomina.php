@@ -10,7 +10,7 @@ class Nomina extends Model
 		'salarioSemanal',
 		'salarioDiario',
 		'salarioHora',
-		'salarioHoraExtraDiurna',
+		'salarioHoraExtraDiurno',
 		'salarioIntegral',
 		'feriado',
 		'diasLaborados',

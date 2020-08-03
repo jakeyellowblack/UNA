@@ -11,11 +11,17 @@
 
         <p>
             Clic <a href="{{ route('presupuesto.presupuesto') }}">aquí</a>
-            para descargar en EXCEL a los usuarios
+            para descargar en EXCEL de Presupestos
         </p>
         
         
-        <form action="{{ route('presupuesto.import') }}" method="post" enctype="multipart/form-data">
+         <p>
+            Clic <a href="{{ route('nomina.nomina') }}">aquí</a>
+            para descargar en EXCEL de Nóminas
+        </p>
+        
+        
+        <form action="{{ route('presupuesto.presupuesto') }}" method="post" enctype="multipart/form-data">
             @csrf
             
             @if(Session::has('message'))
@@ -25,6 +31,19 @@
             <input type="file" name="file">
 
             <button class='btn-btn-primary'>Importar Presupuesto</button>
+        </form>
+        
+        
+        <form action="{{ route('nomina.import') }}" method="post" enctype="multipart/form-data">
+            @csrf
+            
+            @if(Session::has('message'))
+            <p>{{ Session::get('message') }}</p>
+            @endif
+
+            <input type="file" name="file">
+
+            <button class='btn-btn-primary'>Importar Nómina</button>
         </form>
 
     </body>

@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class PresupuestosTableSeeder extends Seeder
+class NominasTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,6 +11,6 @@ class PresupuestosTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\Presupuesto::class, 50)->create();
+        factory(App\Nomina::class, 50)->create();
     }
 }
