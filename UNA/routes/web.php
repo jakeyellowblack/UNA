@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('auth/login');
+    return view('welcome');
 });
 
 Auth::routes();
@@ -22,3 +22,14 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::post('login', 'Auth\LoginController@login')->name('login');
+
+Route::get('presu-list-excel',    'PresupuestoController@exportExcel')->name('presupuesto.presupuesto');
+Route::post('import-list-excel', 'PresupuestoController@importExcel')->name('presupuesto.import');
+
+Route::get('tpresupuesto','PresupuestoController@index')->name('tpresupuesto');
+Route::get('tpresupuesto','PresupuestoController@show')->name('tpresupuesto');
+
+
+
+
+Route::resource('presupuesto', 'PresupuestoController');

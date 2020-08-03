@@ -29,6 +29,9 @@
 		.no-js body .u-header .u-header-left .u-header-logo {
 	font-size: 25px;
 }
+        .btn.btn-primary {
+	text-align: right;
+}
         </style>
 </head>
 	<!-- End Head -->
@@ -44,10 +47,10 @@
 			<!-- Header Left Section -->
 			<div class="u-header-left">
 				<!-- Header Logo -->
-				<a class="u-header-logo" href="home">
+			  <a class="u-header-logo" href="home">
 					<img class="u-header-logo__icon" src="logomini.png" alt="Awesome Icon">
         			Sistema UNA
-				</a>
+			  </a>
 				<!-- End Header Logo -->
 			</div>
 			<!-- End Header Left Section -->
@@ -221,88 +224,112 @@
 
 
 
-						<!-- Content -->
+			<!-- Content -->
 			<div class="u-content">
 				<!-- Content Body -->
 				<div class="u-body">
-					<!-- Doughnut Chart -->
-					<div class="row">
-
-							<!-- Performance Chart -->
-							<div class="card h-100">
-								<!-- Card Header -->
-								<header class="card-header d-flex align-items-center justify-content-between">
-									<h2 class="h4 card-header-title">Performance</h2>
-
-									<!-- Card Icons -->
-									<ul class="list-inline mb-0">
-										<li class="list-inline-item dropdown">
-											<a id="performanceMenuInvoker" class="u-icon-sm link-muted" href="#" role="button" aria-haspopup="true" aria-expanded="false"
-											   data-toggle="dropdown"
-											   data-offset="8">
-												<span class="ti-more"></span>
-											</a>
-
-											<!-- Card Menu -->
-											<div class="dropdown-menu dropdown-menu-right" aria-labelledby="performanceMenuInvoker" style="width: 150px;">
-												<div class="card border-0 p-3">
-													<ul class="list-unstyled mb-0">
-														<li class="mb-3">
-															<a class="d-block link-dark" href="#">Add</a>
-														</li>
-														<li>
-															<a class="d-block link-dark" href="#">Remove</a>
-														</li>
-													</ul>
-												</div>
-											</div>
-											<!-- Card Menu -->
-										</li>
-									</ul>
-									<!-- End Card Icons -->
-								</header>
-								<!-- End Card Header -->
-
-								<!-- Card Body -->
-								<div class="card-body">
-									<!-- Chart -->
-									<div class="mx-auto mb-6" style="max-width: 240px; max-height: 240px;">
-										<canvas class="js-doughnut-chart"
-										        width="240"
-										        height="240"></canvas>
-									</div>
-									<!-- End Chart -->
-
-									<!-- Chart Legends -->
-									<ul class="list-inline d-flex align-items-center justify-content-center text-center mb-0">
-										<li class="list-inline-item px-5 mr-0">
-											<div class="h2 font-weight-normal text-primary mb-1">45%</div>
-											<div class="text-muted">Total Sales</div>
-										</li>
-										<li class="list-inline-item px-5 mr-0">
-											<div class="h2 font-weight-normal text-info mb-1">15%</div>
-											<div class="text-muted">New Customers</div>
-										</li>
-										<li class="list-inline-item px-5 mr-0">
-											<div class="h2 font-weight-normal text-success mb-1">15%</div>
-											<div class="text-muted">Conversion</div>
-										</li>
-									</ul>
-									<!-- End Chart Legends -->
-							  </div>
-								<!-- End Card Body -->
-							</div>
-							<!-- End Performance Chart -->
-						</div>
+					<h1 class="h2 mb-2">Presupuesto</h1>
 
 
 
-							
-							</div>
-							<!-- End Recent Activity -->
+					<!-- Card -->
+	        <div class="card mb-5">
+		        <!-- Card Header -->
+		        <header class="card-header">
+			        <h2 class="h4 card-header-title">Tabla de Presupuestos</h2>
+                    
+                    
+                  <form action="{{ route('presupuesto.import') }}" method="post" enctype="multipart/form-data">
+            @csrf
+            
+            @if(Session::has('message'))
+            <p>{{ Session::get('message') }}</p>
+            @endif
+
+            <input type="file" name="file">
+
+            <button class='btn btn-primary float-right'>Importar Presupuesto</button>
+        </form>
+		        </header>
+		        <!-- End Card Header -->
+
+		        <!-- Crad Body -->
+	          <div class="card-body pt-0">
+		          <!-- Table -->
+		          <div class="table-responsive">
+			          <table class="table table-hover mb-0">
+				          <thead>
+				          <tr>
+					          <th>ID</th>
+					          <th>Concepto</th>
+					          <th>Nombre</th>
+					          <th>Fecha</th>
+					          <th>Monto Total</th>
+<!--					          <th class="text-center">Actions</th>
+-->				          </tr>
+				          </thead>
+
+
+
+@foreach($presupuesto as $pre)
+
+			            <tbody>
+				          <tr>
+					          <td class="font-weight-semi-bold">{{ $pre->id }}</td>
+					          <td class="font-weight-semi-bold">{{ $pre->concepto }}</td>
+					          <td class="font-weight-semi-bold">{{ $pre->nombre }}</td>
+					          <td class="font-weight-semi-bold">{{ $pre->fecha }}</td>
+					          <td class="font-weight-semi-bold">{{ $pre->montoT }}</td>
+					          <td class="text-center">
+                              
+						          <!-- Actions -->
+<!--						          <div class="dropdown">
+							          <a id="basicTable1MenuInvoker" class="u-icon-sm link-muted" href="#" role="button" aria-haspopup="true" aria-expanded="false"
+							             data-toggle="dropdown"
+							             data-offset="8">
+								          <span class="ti-more"></span>
+							          </a>-->
+							          <!-- End Actions Invoker -->
+                                      
+                                      
+
+							          <!-- Actions Menu -->
+<!--							          <div class="dropdown-menu dropdown-menu-right" style="width: 150px;">
+								          <div class="card border-0 p-3">
+									          <ul class="list-unstyled mb-0">
+										          <li class="mb-3">
+											          <a class="d-block link-dark" href="#">Add</a>
+										          </li>
+										          <li>
+											          <a class="d-block link-dark" href="#">Remove</a>
+										          </li>
+									          </ul>
+								          </div>
+							          </div>-->
+							          <!-- End Actions Menu -->
+                                      
+                                      
+<!--						          </div>
+-->						          <!-- End Actions -->
+					          </td>
+				          </tr>
+				         
+					      										@endforeach
+
+				          </tbody>
+			          </table>
+		          </div>
+		          <!-- End Table -->
+	          </div>
+		        <!-- Crad Body -->
+	        </div>
+					<!-- End Card -->
+
+					
+						<!-- Crad Body -->
+			  </div>
+					<!-- End Card -->
 </div>
-					</div>
-				</div>
 				<!-- End Content Body -->
 
 				<!-- Footer -->
@@ -331,23 +358,23 @@
 		<!-- End Main -->
 
 		<!-- Global Vendor -->
-		<script src="assets/vendor/jquery/dist/jquery.min.js"></script>
-		<script src="assets/vendor/jquery-migrate/jquery-migrate.min.js"></script>
-		<script src="assets/vendor/popper.js/dist/umd/popper.min.js"></script>
-		<script src="assets/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="assets/vendor/jquery/dist/jquery.min.js"></script>
+<script src="assets/vendor/jquery-migrate/jquery-migrate.min.js"></script>
+<script src="assets/vendor/popper.js/dist/umd/popper.min.js"></script>
+<script src="assets/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
 
 		<!-- Plugins -->
-		<script src="assets/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
-		<script src="assets/vendor/chart.js/dist/Chart.min.js"></script>
-		<script src="assets/vendor/chartjs-plugin-style/dist/chartjs-plugin-style.min.js"></script>
+<script src="assets/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="assets/vendor/chart.js/dist/Chart.min.js"></script>
+<script src="assets/vendor/chartjs-plugin-style/dist/chartjs-plugin-style.min.js"></script>
 
 		<!-- Initialization  -->
-		<script src="assets/js/sidebar-nav.js"></script>
-		<script src="assets/js/main.js"></script>
+<script src="assets/js/sidebar-nav.js"></script>
+<script src="assets/js/main.js"></script>
 
-		<script src="assets/js/charts/area-chart.js"></script>
-		<script src="assets/js/charts/area-chart-small.js"></script>
-		<script src="assets/js/charts/doughnut-chart.js"></script>
+<script src="assets/js/charts/area-chart.js"></script>
+<script src="assets/js/charts/area-chart-small.js"></script>
+<script src="assets/js/charts/doughnut-chart.js"></script>
 </body>
 	<!-- End Body -->
 </html>
