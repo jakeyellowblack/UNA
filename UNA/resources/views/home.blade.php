@@ -206,7 +206,7 @@
 
 							<!-- Tables -->
 							<li class="u-sidebar-nav-menu__item">
-								<a class="u-sidebar-nav-menu__link" href="presupuesto/tpresupuesto">
+								<a class="u-sidebar-nav-menu__link" href="tpresupuesto">
 									<span class="ti-layout u-sidebar-nav-menu__item-icon"></span>
 									<span class="u-sidebar-nav-menu__item-title">Subir presupuesto</span>
 								</a>
