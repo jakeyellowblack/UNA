@@ -14,7 +14,7 @@ class CreatePresupuestosTable extends Migration
     public function up()
     {
         Schema::create('presupuestos', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
 			$table->string('concepto');
 			$table->string('nombre');
 			$table->date('fecha');

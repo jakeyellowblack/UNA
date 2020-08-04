@@ -14,7 +14,7 @@ class CreateNominasTable extends Migration
     public function up()
     {
         Schema::create('nominas', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
 			$table->float('salarioSemanal');
 			$table->float('salarioDiario');
 			$table->float('salarioHora');

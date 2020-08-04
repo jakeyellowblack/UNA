@@ -15,7 +15,7 @@ class AddDepartamentoIdToTrabajadorsTable extends Migration
     {
         Schema::table('trabajadors', function (Blueprint $table) {
             $table->unsignedInteger('departamento_id')->nullable()->after('id');
-            $table->foreign('departamento_id')->references('id')->on('trabajadors')->onDelete('cascade');
+            $table->foreign('departamento_id')->references('id')->on('departamentos')->onDelete('cascade');
         });
     }
 
