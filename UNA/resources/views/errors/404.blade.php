@@ -6,7 +6,7 @@
 <html lang="en" class="no-js">
 	<!-- Head -->
 	<head>
-		<title>Error 404 | Awesome Dashboard UI Kit</title>
+		<title>Error 404 | Sistema UNA</title>
 
 		<!-- Meta -->
 		<meta charset="utf-8">

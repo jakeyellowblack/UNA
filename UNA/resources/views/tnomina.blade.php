@@ -161,49 +161,17 @@
 </div>
 				<!-- End Content Body -->
 
-				<!-- Footer -->
-				<footer class="u-footer d-md-flex align-items-md-center text-center text-md-left text-muted">
-					<!-- Footer Menu -->
-                    					<ul class="list-inline mb-3 mb-md-4">
-						<li class="list-inline-item">
 
-                    					<span class="text-muted ml-auto">&copy; 2020 <a class="text-muted"  target="_blank">Sistema UNA</a>.</span>
-						</li>
+@include('layouts.footer')
 
-						
-						<li class="list-inline-item">
-						  <a class="text-muted" target="_blank">------------------</a>
-						</li>
-					</ul>
-					<!-- End Footer Menu -->
 
-					<!-- Copyright -->
-					<!-- End Copyright -->
-				</footer>
-				<!-- End Footer -->
 			</div>
 			<!-- End Content -->
 		</main>
 		<!-- End Main -->
 
-		<!-- Global Vendor -->
-<script src="assets/vendor/jquery/dist/jquery.min.js"></script>
-<script src="assets/vendor/jquery-migrate/jquery-migrate.min.js"></script>
-<script src="assets/vendor/popper.js/dist/umd/popper.min.js"></script>
-<script src="assets/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+@include('scripts')
 
-		<!-- Plugins -->
-<script src="assets/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
-<script src="assets/vendor/chart.js/dist/Chart.min.js"></script>
-<script src="assets/vendor/chartjs-plugin-style/dist/chartjs-plugin-style.min.js"></script>
-
-		<!-- Initialization  -->
-<script src="assets/js/sidebar-nav.js"></script>
-<script src="assets/js/main.js"></script>
-
-<script src="assets/js/charts/area-chart.js"></script>
-<script src="assets/js/charts/area-chart-small.js"></script>
-<script src="assets/js/charts/doughnut-chart.js"></script>
 </body>
 	<!-- End Body -->
 </html>

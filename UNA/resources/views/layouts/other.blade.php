@@ -156,7 +156,7 @@
                     <!-- Sidebar Header -->
                     <header class="u-sidebar-header">
                         <!-- Sidebar Logo -->
-                        <a class="u-sidebar-logo" href="index.html">
+                        <a class="u-sidebar-logo" href="home">
                             <img class="u-sidebar-logo__icon" src="assets/svg/logo-mini.svg" alt="Awesome Icon">
                             <img class="u-sidebar-logo__text" src="assets/svg/logo-text-light.svg" alt="Awesome">
                         </a>
