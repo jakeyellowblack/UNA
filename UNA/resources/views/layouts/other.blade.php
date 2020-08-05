@@ -195,7 +195,7 @@
                   <ul id="menuItemGestiones" class="u-sidebar-nav-menu u-sidebar-nav-menu--second-level" style="display: none;">
                                 
                            <li class="u-sidebar-nav-menu__item">
-                                <a class="u-sidebar-nav-menu__link" href="/user/create">
+                                <a class="u-sidebar-nav-menu__link" href="user/create">
                                     <span class="ti-user u-sidebar-nav-menu__item-icon"></span>
                                     <span class="u-sidebar-nav-menu__item-title">Gestión de usuarios</span>
                                 </a>
