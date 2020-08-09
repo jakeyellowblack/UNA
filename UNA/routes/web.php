@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('auth/login');
+    return view('welcome');
 });
 
 Auth::routes();
@@ -25,7 +25,7 @@ Route::post('/login', 'Auth\LoginController@login')->name('login');
 
 ///Importaciones y exportaciones de archivos
 Route::get('presu-list-excel',    'PresupuestoController@exportExcel')->name('presupuesto.presupuesto');
-Route::post('import-list-excel', 'PresupuestoController@importExcel')->name('presupuesto.import');
+Route::post('presu-import-list-excel', 'PresupuestoController@importExcel')->name('presupuesto.import');
 
 Route::get('nomi-list-excel',    'NominaController@exportExcel')->name('nomina.nomina');
 Route::post('import-list-excel', 'NominaController@importExcel')->name('nomina.import');
@@ -43,7 +43,7 @@ Route::get('tnomina','NominaController@show')->name('tnomina');
 Route::resource('/user', 'UserController')->names('user');
 
 ///PRESUPUESTO
-Route::resource('presupuesto', 'PresupuestoController');
+Route::resource('/presupuesto', 'PresupuestoController')->names('presupuesto');
 
-
-
+//Route::resource('/presupuesto', 'PresupuestoController');
+//Route::put('presupuesto/{id}','PresupuestoController@update')->name('presupuesto.update');

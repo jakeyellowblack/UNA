@@ -32,8 +32,9 @@ class PresupuestoController extends Controller
     {
         $file = $request->file('file');
         Excel::import(new PresupuetosImport, $file);
+		
 
-        return back()->with('message', 'Importanción de presupuesto completada');
+      return back()->with('message', 'Importanción de presupuesto completada');
     }
 	
 	 public function show(Presupuesto $presupuesto)
@@ -45,6 +46,23 @@ class PresupuestoController extends Controller
 		return view('tpresupuesto', compact('presupuesto'));
 
     }
+    public function edit($id)
+    {
+		return view('tpresupuesto', compact('presupuesto'));
+    }	
+	
+	
+    public function update(Request $request, Presupuesto $presupuesto)
+    {
+		$presupuesto->fill($request->all());
+		$presupuesto->save();		
+		
+//        $presupuesto = Presupuesto::findOrFail($id);
+//        $presupuesto->update($request->all());
+
+//	 dd($presupuesto);
+//      return back()->with('message', 'Actualización de presupuesto completada');
+    }	
 
 	
 	
