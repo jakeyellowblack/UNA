@@ -38,6 +38,7 @@ class UserController extends Controller
     {
 
         $user = User::create($request->all());
+        $user->password=bcrypt($request->input('password'));
         $user->save();
         return view('user.index');
     }
