@@ -141,7 +141,7 @@
 					          <th>Nombre</th>
 					          <th>Fecha</th>
 					          <th>Monto Total</th>
-					          <th class="text-center">Acciones</th>
+					          <!-- <th class="text-center">Acciones</th> -->
 			          </tr>
 				          </thead>
 
@@ -157,16 +157,16 @@
 					          <td class="font-weight-semi-bold">{{ $pre->fecha }}</td>
 					          <td class="font-weight-semi-bold">{{ $pre->montoT }}</td>
 					          <td class="text-center">
-                              
-						          <!-- Actions -->
+                               <!-- Actions 
+						          
 						          <div class="dropdown">
 							          <a id="basicTable1MenuInvoker" class="u-icon-sm link-muted" href="#" role="button" aria-haspopup="true" aria-expanded="false"
 							             data-toggle="dropdown"
 							             data-offset="8">
 								          <span class="ti-more"></span>
 							          </a>
-							          <!-- End Actions Invoker -->
-                                      
+                                 
+                                  -->    
                                       
 
 							          <!-- Actions Menu -->

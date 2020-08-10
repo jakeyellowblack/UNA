@@ -40,6 +40,9 @@ Route::get('tnomina','NominaController@show')->name('tnomina');
 ///Rutas de controladores creados
 
 ///USER
+Route::get('/usercreate', 'UserController@create')->name('user.create');
+Route::get('/useredit/{user_id}/edit', 'UserController@edit')->name('users.edit');
+Route::get('/users/{user_id}/destroy', 'UserController@destroy')->name('users.destroy');
 Route::resource('/user', 'UserController')->names('user');
 
 ///PRESUPUESTO

@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\UserStoreRequest;
+use App\Http\Requests\UserUpdateRequest;
 use App\User;
+use DB;
 
 class UserController extends Controller
 {
@@ -14,8 +17,8 @@ class UserController extends Controller
      */
     public function index()
     {
-
-        return view('user.index');
+        $user = User::all();
+        return view('user.index', compact('user'));
     }
 
     /**
@@ -62,7 +65,8 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        //
+        $user = User::findOrFail($id);
+        return view('user.edit', compact('user'));
     }
 
     /**
@@ -74,7 +78,8 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $user = User::create($request->all());
+        $user->update();
     }
 
     /**
@@ -85,6 +90,8 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $user = User::findOrFail($id);
+        $user->delete();
+        return redirect()->route('user.index');
     }
 }

@@ -33,7 +33,76 @@
 
 
 						<!-- Content -->
+<div class="u-content">
+	<!-- Content Body -->
+	<div class="u-body">
+	<h1 class="h2 mb-2">Usuarios</h1>
+	<a href="{{ route('user.create') }}" type="button" class="btn btn-primary">Crear Usuario</a>
 
+
+					<!-- Card -->
+	        <div class="card mb-5">
+		        <!-- Card Header -->
+		        <header class="card-header">
+			        <h2 class="h4 card-header-title">Lista de Usuarios</h2>  
+	        	</header>
+
+		        <!-- Crad Body -->
+	          <div class="card-body pt-0">
+		          <!-- Table -->
+		          <div class="table-responsive">
+			          <table class="table table-hover mb-0">
+				          <thead>
+				          <tr>
+                            <th>Nombre</th>
+                            <th>Codigo</th>
+                            <th>Estado</th>
+                            <th>Cargo</th>
+                            <th>Acciones</th>
+				          </tr>
+				          </thead>
+
+
+
+				@foreach($user as $us)
+
+			            <tbody>
+				          <tr>
+					          <td class="font-weight-semi-bold">{{ $us->name }}</td>
+					          <td class="font-weight-semi-bold">{{ $us->code }}</td>
+					          <td class="font-weight-semi-bold">{{ $us->status }}</td>
+					          <td class="font-weight-semi-bold">{{ $us->jobtitle }}</td>
+
+					          <td class="text-center">
+
+					          <a href="{{ route('users.edit', [$us->id]) }}" type="button" class="btn btn-primary">Editar</a>
+
+					          <form method="DELETE" action="{{ route('users.destroy', [$us->id]) }}">
+		                                    		@csrf
+					  								<button type="submit" class="btn btn-danger" >Delete</button>
+		                      </form>
+
+					         	
+					          
+
+					          </td>
+				          </tr>
+				          </tbody>
+				          
+				@endforeach
+			          </table>
+		          </div>
+		          <!-- End Table -->
+	          </div>
+		        <!-- Crad Body -->
+	        </div>
+					<!-- End Card -->
+
+					
+						<!-- Crad Body -->
+			  </div>
+					<!-- End Card -->
+</div>
 
 				<!-- End Content Body -->
 
