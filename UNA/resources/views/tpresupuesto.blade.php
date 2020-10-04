@@ -44,62 +44,6 @@
 <body>
 
 
-                         
-  		<!-- Basic Modals -->
-		<div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
-			<div class="modal-dialog" role="document">
-            
-				<div class="modal-content">
-                
-					<div class="modal-header">
-						<h5 class="modal-title" id="editModal">Editar contenido de nómina</h5>
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-							<span aria-hidden="true">&times;</span>
-						</button>
-					</div>
-                   
-                   
-                      <form action="{{route('presupuesto.update', 'test')}}" method="post">
-                      		@method('PUT')
-      						@csrf
-					<div class="modal-body">
-
-                    	      		<input type="hidden" name="preid" id="preid" value="">
-
-										<div class="form-group">
-											<label for="concepto">Concepto</label>
-											<textarea id="concepto" name="concepto" class="form-control form-pill" type="text" placeholder="Placeholder"></textarea>
-										</div>
-                                        
-                                        <div class="form-group">
-											<label for="nombre">Nombre</label>
-											<input id="nombre" name="nombre" class="form-control form-pill" type="text" placeholder="Placeholder">
-										</div>
-                                        
-                                        <div class="form-group">
-											<label for="fecha">Fecha</label>
-											<input id="fecha" name="fecha" class="form-control form-pill" type="text" placeholder="Placeholder">
-										</div>
-                                        
-                                        <div class="form-group">
-											<label for="montoT">Monto total</label>
-											<input id="montoT" name="montoT" class="form-control form-pill" type="text" placeholder="Placeholder">
-										</div>
-           					</div>
-                    
-					<div class="modal-footer">
-						<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-						<button type="submit" class="btn btn-primary">Guardar cambios</button>
-					</div>
-                </form>
-				</div>
-			</div>
-		</div>
-		<!-- End Basic Modals -->                              
-                                
-                                
-                          
-                                
 			<!-- Content -->
 			<div class="u-content">
 				<!-- Content Body -->
@@ -156,32 +100,27 @@
 					          <td class="font-weight-semi-bold">{{ $pre->nombre }}</td>
 					          <td class="font-weight-semi-bold">{{ $pre->fecha }}</td>
 					          <td class="font-weight-semi-bold">{{ $pre->montoT }}</td>
-					          <td class="text-center">
+					          <td class="text-center"> 
+                              
+                              
                                <!-- Actions --> 
 						          
 						          <div class="dropdown">
-							          <a id="basicTable1MenuInvoker" class="u-icon-sm link-muted" href="#" role="button" aria-haspopup="true" aria-expanded="false"
-							             data-toggle="dropdown"
-							             data-offset="8">
+							          <a id="basicTable1MenuInvoker" class="u-icon-sm link-muted" href="#" role="button" aria-haspopup="true" aria-expanded="false" data-toggle="dropdown" data-offset="8">
 								          <span class="ti-more"></span>
 							          </a>
                                  
                                      
-                                      
-
 							          <!-- Actions Menu -->
 						          <div class="dropdown-menu dropdown-menu-right" style="width: 150px;">
 								          <div class="card border-0 p-3">
                                           
-									          <ul class="list-unstyled mb-0">
-                                              
-                                              
-                                              
+									          
+                                              <ul class="list-unstyled mb-0">
+                                            
 										          <li class="mb-3">
 											          <a class="d-block link-dark" href="#editModal" data-myconcepto="{{$pre->concepto}}" data-mynombre="{{$pre->nombre}}" data-myfecha="{{$pre->fecha}}" data-mymontot="{{$pre->montoT}}" data-preid="{{$pre->id}}" data-toggle="modal">Editar</a>
 										          </li>
-                                                  
-                                                  
                                                   
                                                   
 										          <li>
@@ -194,14 +133,16 @@
 							          <!-- End Actions Menu -->
                                       
                                       
-<!--						          </div>
--->						          <!-- End Actions -->
+						          </div>
+						          <!-- End Actions -->
+                                  
+                                  
+                                 
 					          </td>
 				          </tr>
-				         
-					      										@endforeach
-
 				          </tbody>
+                         @endforeach
+
 			          </table>
 		          </div>
 		          <!-- End Table -->
@@ -216,6 +157,65 @@
 					<!-- End Card -->
 </div>
 				<!-- End Content Body -->
+
+
+                         
+  		<!-- Basic Modals -->
+		<div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
+			<div class="modal-dialog" role="document">
+            
+				<div class="modal-content">
+                
+					<div class="modal-header">
+						<h5 class="modal-title" id="editModal">Editar contenido de nómina</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+                   
+                   
+                      <form action="{{route('presupuesto.update', 'test')}}" method="post">
+                      		@method('PUT')
+      						@csrf
+					<div class="modal-body">
+
+                    	      		<input type="hidden" name="preid" id="preid" value="">
+
+										<div class="form-group">
+											<label for="concepto">Concepto</label>
+											<textarea id="concepto" name="concepto" class="form-control form-pill" type="text" placeholder="Placeholder"></textarea>
+										</div>
+                                        
+                                        <div class="form-group">
+											<label for="nombre">Nombre</label>
+											<input id="nombre" name="nombre" class="form-control form-pill" type="text" placeholder="Placeholder">
+										</div>
+                                        
+                                        <div class="form-group">
+											<label for="fecha">Fecha</label>
+											<input id="fecha" name="fecha" class="form-control form-pill" type="text" placeholder="Placeholder">
+										</div>
+                                        
+                                        <div class="form-group">
+											<label for="montoT">Monto total</label>
+											<input id="montoT" name="montoT" class="form-control form-pill" type="text" placeholder="Placeholder">
+										</div>
+           					</div>
+                    
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+						<button type="submit" class="btn btn-primary">Guardar cambios</button>
+					</div>
+                </form>
+				</div>
+			</div>
+		</div>
+		<!-- End Basic Modals -->                              
+                                
+                                
+                          
+                                
+
 
 @include('layouts.footer')
 

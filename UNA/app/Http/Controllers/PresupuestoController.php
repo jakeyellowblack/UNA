@@ -19,6 +19,7 @@ class PresupuestoController extends Controller
 	
 	 public function index(Presupuesto $presupuesto)
     {
+		
 
 		return view('tpresupuesto', compact('presupuesto'));
     }
@@ -40,7 +41,7 @@ class PresupuestoController extends Controller
 	 public function show(Presupuesto $presupuesto)
     {
 		
-		$presupuesto=DB::table('presupuestos')->get();
+		$presupuesto = Presupuesto::orderBy('id', 'ASC')->get();
 	
 		
 		return view('tpresupuesto', compact('presupuesto'));
