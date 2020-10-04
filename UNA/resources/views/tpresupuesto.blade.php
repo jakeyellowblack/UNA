@@ -124,7 +124,7 @@
                                                   
                                                   
 										          <li>
-											          <a class="d-block link-dark" href="#">Eliminar</a>
+											          <a class="d-block link-dark" href="#deleteModal" data-preid="{{$pre->id}}" data-toggle="modal">Eliminar</a>
 										          </li>
 									          </ul>
                                               
@@ -160,7 +160,7 @@
 
 
                          
-  		<!-- Basic Modals -->
+  		<!-- EDIT Modals -->
 		<div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
 			<div class="modal-dialog" role="document">
             
@@ -210,7 +210,46 @@
 				</div>
 			</div>
 		</div>
-		<!-- End Basic Modals -->                              
+		<!-- End EDIT Modals -->    
+        
+        
+<!-- DELETE Modals -->
+		<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+			<div class="modal-dialog" role="document">
+            
+				<div class="modal-content">
+                
+					<div class="modal-header">
+						<h5 class="modal-title" id="editModal">Eliminar contenido de presupuesto</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+                   
+                   
+                      <form action="{{route('presupuesto.destroy', 'test')}}" method="post">
+                      		@method('DELETE')
+      						@csrf
+					<div class="modal-body">
+                    
+                    				<p class="text-center">
+					¿Estás segur@ de que quieres eliminar este campo?
+				</p>
+
+                    	      		<input type="hidden" name="preid" id="preid" value="">
+
+           					</div>
+                    
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">No, cancelar</button>
+						<button type="submit" class="btn btn-danger">Sí, eliminar</button>
+					</div>
+                </form>
+				</div>
+			</div>
+		</div>
+		<!-- End DELETE Modals -->        
+                                  
                                 
                                 
                           
@@ -245,6 +284,19 @@
       modal.find('.modal-body #nombre').val(nombre);
 	  modal.find('.modal-body #fecha').val(fecha);
       modal.find('.modal-body #montoT').val(montoT);
+})
+
+
+  $('#deleteModal').on('show.bs.modal', function (event) {
+      var button = $(event.relatedTarget) 
+	  
+	  var id = button.data('preid') 
+     
+	  
+      var modal = $(this)
+	  
+      modal.find('.modal-body #preid').val(id);
+ 
 })
 
 </script>

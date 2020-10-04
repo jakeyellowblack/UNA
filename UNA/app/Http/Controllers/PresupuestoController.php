@@ -63,6 +63,14 @@ class PresupuestoController extends Controller
 		
     }	
 
-	
+	  public function destroy(Request $request)
+    {
+        
+        $presupuesto = Presupuesto::findOrFail($request->preid);
+        $presupuesto->delete();
+
+		return redirect()->back();
+
+    }
 	
 }
