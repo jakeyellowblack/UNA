@@ -59,7 +59,7 @@ class PresupuestoController extends Controller
     $presupuesto->update($request->all());
 
 		
-		return redirect()->back();
+		return redirect()->back()->with('status','DATOS ACTUALIZADOS');
 		
     }	
 

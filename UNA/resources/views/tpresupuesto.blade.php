@@ -2,6 +2,12 @@
   
 @section('content')
 
+@if(session('status'))
+ <div class="alert alert-success">
+{{ session('status') }}
+</div>
+@endif
+
 <!DOCTYPE html>
 <html lang="en" class="no-js">
 	<!-- Head -->
@@ -25,6 +31,8 @@
 
 		<!-- Theme Styles -->
 		<link rel="stylesheet" href="assets/css/theme.css">
+        
+
 		<style type="text/css">
 		.no-js body .u-header .u-header-left .u-header-logo {
 	font-size: 25px;
@@ -266,7 +274,9 @@
 
 @include('scripts')
 
+
 <script>
+
   
   $('#editModal').on('show.bs.modal', function (event) {
       var button = $(event.relatedTarget) 
