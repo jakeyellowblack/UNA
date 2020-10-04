@@ -69,7 +69,7 @@ class PresupuestoController extends Controller
         $presupuesto = Presupuesto::findOrFail($request->preid);
         $presupuesto->delete();
 
-		return redirect()->back();
+		return redirect()->back()->with('message','DATOS ELIMINADOS');
 
     }
 	
