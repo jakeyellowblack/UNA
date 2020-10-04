@@ -59,7 +59,7 @@
 					</div>
                    
                    
-                      <form action="{{route('presupuesto.update', 2)}}" method="post">
+                      <form action="{{route('presupuesto.update', 'test')}}" method="post">
                       		@method('PUT')
       						@csrf
 					<div class="modal-body">
@@ -68,22 +68,22 @@
 
 										<div class="form-group">
 											<label for="concepto">Concepto</label>
-											<textarea id="concepto" class="form-control form-pill" type="text" placeholder="Placeholder"></textarea>
+											<textarea id="concepto" name="concepto" class="form-control form-pill" type="text" placeholder="Placeholder"></textarea>
 										</div>
                                         
                                         <div class="form-group">
 											<label for="nombre">Nombre</label>
-											<input id="nombre" class="form-control form-pill" type="text" placeholder="Placeholder">
+											<input id="nombre" name="nombre" class="form-control form-pill" type="text" placeholder="Placeholder">
 										</div>
                                         
                                         <div class="form-group">
 											<label for="fecha">Fecha</label>
-											<input id="fecha" class="form-control form-pill" type="text" placeholder="Placeholder">
+											<input id="fecha" name="fecha" class="form-control form-pill" type="text" placeholder="Placeholder">
 										</div>
                                         
                                         <div class="form-group">
 											<label for="montoT">Monto total</label>
-											<input id="montoT" class="form-control form-pill" type="text" placeholder="Placeholder">
+											<input id="montoT" name="montoT" class="form-control form-pill" type="text" placeholder="Placeholder">
 										</div>
            					</div>
                     
@@ -141,7 +141,7 @@
 					          <th>Nombre</th>
 					          <th>Fecha</th>
 					          <th>Monto Total</th>
-					          <!-- <th class="text-center">Acciones</th> -->
+					          <th class="text-center">Acciones</th> 
 			          </tr>
 				          </thead>
 
@@ -157,7 +157,7 @@
 					          <td class="font-weight-semi-bold">{{ $pre->fecha }}</td>
 					          <td class="font-weight-semi-bold">{{ $pre->montoT }}</td>
 					          <td class="text-center">
-                               <!-- Actions 
+                               <!-- Actions --> 
 						          
 						          <div class="dropdown">
 							          <a id="basicTable1MenuInvoker" class="u-icon-sm link-muted" href="#" role="button" aria-haspopup="true" aria-expanded="false"
@@ -166,7 +166,7 @@
 								          <span class="ti-more"></span>
 							          </a>
                                  
-                                  -->    
+                                     
                                       
 
 							          <!-- Actions Menu -->
@@ -174,9 +174,16 @@
 								          <div class="card border-0 p-3">
                                           
 									          <ul class="list-unstyled mb-0">
+                                              
+                                              
+                                              
 										          <li class="mb-3">
 											          <a class="d-block link-dark" href="#editModal" data-myconcepto="{{$pre->concepto}}" data-mynombre="{{$pre->nombre}}" data-myfecha="{{$pre->fecha}}" data-mymontot="{{$pre->montoT}}" data-preid="{{$pre->id}}" data-toggle="modal">Editar</a>
 										          </li>
+                                                  
+                                                  
+                                                  
+                                                  
 										          <li>
 											          <a class="d-block link-dark" href="#">Eliminar</a>
 										          </li>

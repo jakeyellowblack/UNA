@@ -52,16 +52,14 @@ class PresupuestoController extends Controller
     }	
 	
 	
-    public function update(Request $request, Presupuesto $presupuesto)
+    public function update(Request $request, $id)
     {
-		$presupuesto->fill($request->all());
-		$presupuesto->save();		
-		
-//        $presupuesto = Presupuesto::findOrFail($id);
-//        $presupuesto->update($request->all());
+	$presupuesto = Presupuesto::findOrFail($request->preid);
+    $presupuesto->update($request->all());
 
-//	 dd($presupuesto);
-//      return back()->with('message', 'Actualización de presupuesto completada');
+		
+		return redirect()->back();
+		
     }	
 
 	
