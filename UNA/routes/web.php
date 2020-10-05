@@ -19,6 +19,9 @@ Route::get('/login', function () {
 
 Auth::routes();
 
+Route::get('/', function () {
+    return redirect('login');
+});
 ///Rutas regulares hacia Home y Login
 Route::get('/home', 'HomeController@index')->name('home');
 Route::post('/login', 'Auth\LoginController@login')->name('login');
@@ -40,10 +43,11 @@ Route::get('tnomina','NominaController@show')->name('tnomina');
 ///Rutas de controladores creados
 
 ///USER
-Route::get('/usercreate', 'UserController@create')->name('user.create');
-Route::get('/useredit/{user_id}/edit', 'UserController@edit')->name('users.edit');
-Route::get('/users/{user_id}/destroy', 'UserController@destroy')->name('users.destroy');
-Route::resource('/user', 'UserController')->names('user');
+Route::get('user', 'UserController@index')->name('user');
+Route::get('create', 'UserController@create')->name('user.create');
+//Route::get('useredit/{user_id}/edit', 'UserController@edit')->name('users.edit');
+//Route::get('users/{user_id}/destroy', 'UserController@destroy')->name('users.destroy');
+Route::resource('user', 'UserController')->names('user');
 
 ///PRESUPUESTO
 Route::resource('/presupuesto', 'PresupuestoController')->names('presupuesto');

@@ -6,11 +6,6 @@
 <html lang="en" class="no-js">
     <!-- Head -->
 <head>
-    <title>Sistema UNA</title>
-
-        <!-- Favicon -->
-        <link rel="shortcut icon" href="logouna.png" type="image/x-icon">
-
         <!-- Web Fonts -->
         <link href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
 
@@ -22,23 +17,22 @@
         <link rel="stylesheet" href="assets/css/theme.css">
         <style type="text/css">
         .no-js body .u-header .u-header-left .u-header-logo {
-    font-size: 25px;
-}
+        font-size: 25px;
+        }
         </style>
 </head>
     <!-- End Head -->
 
     <!-- Body -->
 <body>
-
-
                         <!-- Content -->
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Registro') }}</div>
 
+                <div class="card-header">{{ __('Registro') }}</div>
+                <!--  CardBody -->
                 <div class="card-body">
                     <form method="POST" action="{{ route('user.store') }}">
                         @csrf
@@ -57,8 +51,9 @@
                             </div>
                         </div>
 
+
                         <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('Estado') }}</label>
+                            <label for="status" class="col-md-4 col-form-label text-md-right">{{ __('Estado') }}</label>
 
                             <div class="col-md-6">
                                 <input id="status" class="form-control @error('status') is-invalid @enderror" name="status" value="{{ old('status') }}" required autocomplete="status">
@@ -128,24 +123,19 @@
                                 </button>
                             </div>
                         </div>
+
                     </form>
                 </div>
+                <!-- End CardBody -->
             </div>
         </div>
     </div>
 </div>
 
-
-
 @include('layouts.footer')
 
-
-            </div>
-            <!-- End Content -->
-        </main>
-        <!-- End Main -->
-
 @include('scripts')
+
 </body>
     <!-- End Body -->
 </html>

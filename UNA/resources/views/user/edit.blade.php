@@ -6,10 +6,6 @@
 <html lang="en" class="no-js">
     <!-- Head -->
 <head>
-    <title>Sistema UNA</title>
-
-        <!-- Favicon -->
-        <link rel="shortcut icon" href="logouna.png" type="image/x-icon">
 
         <!-- Web Fonts -->
         <link href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
@@ -22,8 +18,8 @@
         <link rel="stylesheet" href="assets/css/theme.css">
         <style type="text/css">
         .no-js body .u-header .u-header-left .u-header-logo {
-    font-size: 25px;
-}
+        font-size: 25px;
+        }
         </style>
 </head>
     <!-- End Head -->
@@ -31,13 +27,12 @@
     <!-- Body -->
 <body>
 
-
                         <!-- Content -->
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Registro') }}</div>
+                <div class="card-header">{{ __('Editar Usuario') }}</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('user.store') }}">

@@ -3,13 +3,8 @@
 @section('content')
 
 <!DOCTYPE html>
-<html lang="en" class="no-js">
 	<!-- Head -->
 <head>
-    <title>Sistema UNA</title>
-
-		<!-- Favicon -->
-		<link rel="shortcut icon" href="logouna.png" type="image/x-icon">
 
 		<!-- Web Fonts -->
 		<link href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
@@ -37,7 +32,7 @@
 	<!-- Content Body -->
 	<div class="u-body">
 	<h1 class="h2 mb-2">Usuarios</h1>
-	<a href="{{ route('user.create') }}" type="button" class="btn btn-primary">Crear Usuario</a>
+	<a class="btn btn-primary" href="{{ route('user.create') }}" role="button">Crear Usuario</a>
 
 
 					<!-- Card -->
@@ -75,9 +70,9 @@
 
 					          <td class="text-center">
 
-					          <a href="{{ route('users.edit', [$us->id]) }}" type="button" class="btn btn-primary">Editar</a>
+					          <a href="{{ route('user.edit', [$us->id]) }}" type="button" class="btn btn-primary">Editar</a>
 
-					          <form method="DELETE" action="{{ route('users.destroy', [$us->id]) }}">
+					          <form method="DELETE" action="{{ route('user.destroy', [$us->id]) }}">
 		                                    		@csrf
 					  								<button type="submit" class="btn btn-danger" >Delete</button>
 		                      </form>
