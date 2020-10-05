@@ -42,6 +42,13 @@ Route::get('tnomina','NominaController@show')->name('tnomina');
 
 ///Rutas de controladores creados
 
+//Ingreso
+Route::resource('ingreso','IngresoController')->names('ingreso');
+//Egreso
+Route::resource('/egreso','EgresoController')->names('egreso');
+//Cierre
+Route::resource('/cierre','CierreController')->names('cierre');
+
 ///USER
 Route::get('user', 'UserController@index')->name('user');
 Route::get('create', 'UserController@create')->name('user.create');

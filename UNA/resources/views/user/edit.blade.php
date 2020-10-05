@@ -6,7 +6,6 @@
 <html lang="en" class="no-js">
     <!-- Head -->
 <head>
-
         <!-- Web Fonts -->
         <link href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
 

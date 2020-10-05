@@ -171,21 +171,21 @@
                         <ul id="menuItemGestiones" class="u-sidebar-nav-menu u-sidebar-nav-menu--second-level" style="display: none;">
                                     
                             <li class="u-sidebar-nav-menu__item">
-                                <a class="u-sidebar-nav-menu__link" href= "user">
+                                <a class="u-sidebar-nav-menu__link" href="{{ route('user.index') }}">
                                     <span class="ti-user u-sidebar-nav-menu__item-icon"></span>
                                     <span class="u-sidebar-nav-menu__item-title">Gestión de usuarios</span>
                                 </a>
                             </li>
                             
                             <li class="u-sidebar-nav-menu__item">
-                                <a class="u-sidebar-nav-menu__link" href="gesingre">
+                                <a class="u-sidebar-nav-menu__link" href="{{ route('ingreso.index') }}">
                                     <span class="ti-stats-up u-sidebar-nav-menu__item-icon"></span>
                                     <span class="u-sidebar-nav-menu__item-title">Gestión de ingresos</span>
                                 </a>
                             </li>
                             
                             <li class="u-sidebar-nav-menu__item">
-                                <a class="u-sidebar-nav-menu__link" href="gesegre">
+                                <a class="u-sidebar-nav-menu__link" href="{{ route('egreso.index') }}">
                                     <span class="ti-stats-down u-sidebar-nav-menu__item-icon"></span>
                                     <span class="u-sidebar-nav-menu__item-title">Gestión de egresos</span>
                                 </a>
@@ -225,7 +225,7 @@
                     <!-- End Tables -->              
                                     
                     <li class="u-sidebar-nav-menu__item">
-                        <a class="u-sidebar-nav-menu__link" href="cierres">
+                        <a class="u-sidebar-nav-menu__link" href="{{ route('cierre.index') }}">
                             <span class="ti-lock u-sidebar-nav-menu__item-icon"></span>
                             <span class="u-sidebar-nav-menu__item-title">Cierres</span>
                         </a>
