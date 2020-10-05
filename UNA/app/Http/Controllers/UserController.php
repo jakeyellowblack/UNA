@@ -17,7 +17,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $user = User::all();
+		$user = User::orderBy('id', 'ASC')->get();
         return view('user.index', compact('user'));
     }
 
@@ -69,29 +69,27 @@ class UserController extends Controller
         return view('user.edit', compact('user'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function update(Request $request, $id)
     {
-        $user = User::create($request->all());
-        $user->update();
+		
+		
+	$user = User::findOrFail($request->usid);
+    $user->update($request->all());
+
+		
+		return redirect()->back()->with('status','DATOS ACTUALIZADOS');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
+
+    public function destroy(Request $request)
     {
-        $user = User::findOrFail($id);
+		
+		$user = User::findOrFail($request->usid);
         $user->delete();
-        return redirect()->route('user.index');
+
+		return redirect()->back()->with('message','DATOS ELIMINADOS');
+		
+
     }
 }

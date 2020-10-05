@@ -85,7 +85,7 @@
                             <th>Días Laborados</th>
                             <th>Utilidades</th>
                             <th>Monto Total</th>
-					        <th class="text-center">Actions</th>
+					        <th class="text-center">Acciones</th>
 				          </tr>
 				          </thead>
 
