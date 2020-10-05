@@ -54,3 +54,7 @@ Route::resource('/presupuesto', 'PresupuestoController')->names('presupuesto');
 
 //Route::resource('/presupuesto', 'PresupuestoController');
 //Route::put('presupuesto/{id}','PresupuestoController@update')->name('presupuesto.update');
+
+///NOMINA
+Route::resource('/nomina', 'NominaController')->names('nomina');
+

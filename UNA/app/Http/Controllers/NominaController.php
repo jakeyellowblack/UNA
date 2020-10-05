@@ -35,10 +35,31 @@ class NominaController extends Controller
 	 public function show(Nomina $nomina)
     {
 		
-		$nomina=DB::table('nominas')->get();
-	
+		$nomina = Nomina::orderBy('id', 'ASC')->get();	
 		
 		return view('tnomina', compact('nomina'));
+
+    }
+	
+	    public function update(Request $request, $id)
+    {
+		
+		
+	$nomina = Nomina::findOrFail($request->noid);
+    $nomina->update($request->all());
+
+		
+		return redirect()->back()->with('status','DATOS ACTUALIZADOS');
+		
+    }	
+
+	  public function destroy(Request $request)
+    {
+        
+        $nomina = Nomina::findOrFail($request->noid);
+        $nomina->delete();
+
+		return redirect()->back()->with('message','DATOS ELIMINADOS');
 
     }
 
