@@ -8,6 +8,12 @@
 </div>
 @endif
 
+@if(session('message'))
+ <div class="alert alert-danger">
+{{ session('message') }}
+</div>
+@endif
+
 <!DOCTYPE html>
 <html lang="en" class="no-js">
 	<!-- Head -->
@@ -70,9 +76,7 @@
                   <form action="{{ route('presupuesto.import') }}" method="post" enctype="multipart/form-data">
             @csrf
             
-            @if(Session::has('message'))
-            <p>{{ Session::get('message') }}</p>
-            @endif
+
 
             <input type="file" name="file">
 
