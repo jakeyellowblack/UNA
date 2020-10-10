@@ -33,7 +33,7 @@ class PresupuestoController extends Controller
         $file = $request->file('file');
         Excel::import(new PresupuetosImport, $file);
 
-        return back()->with('message', 'Importanción de presupuesto completada');
+        return back()->with('message', 'Importación de presupuesto completada');
     }
 	
 	 public function show(Presupuesto $presupuesto)
