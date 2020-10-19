@@ -23,4 +23,14 @@ class Nomina extends Model
 	{
 		return $this->belongsTo(Trabajador::class);
 	}
+	
+	 public function scopeBuscarpor($query, $tipo, $busqueda)
+    {
+		if (($tipo) && ($busqueda))
+		{
+			return $query->where($tipo, 'LIKE', "%$busqueda%");
+		}
+    }	
+	
+	
 }

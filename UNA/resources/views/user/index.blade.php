@@ -31,16 +31,45 @@
 <div class="u-content">
 	<!-- Content Body -->
 	<div class="u-body">
+    
 	<h1 class="h2 mb-2">Usuarios</h1>
-	<a class="btn btn-primary" href="{{ route('user.create') }}" role="button">Crear Usuario</a>
+    
+    
+	<a class="btn btn-primary" href="/create" role="button">Crear Usuario</a>
 
 
 					<!-- Card -->
 	        <div class="card mb-5">
+            
+                <nav class="navbar navbar-light bg-light">
+                
+  <form action="{{ route('user.index') }}" class="form-inline" method="get" >
+  
+   <select name="tipo" class="form-control mr-sm-2">
+      <option disabled selected>Buscar por...</option>
+      <option value="name">Nombre</option>
+      <option value="code">Código</option>
+      <option value="status">Estado</option>
+      <option value="jobtitle">Cargo</option>
+    </select>
+  
+    <input name="busqueda" class="form-control mr-sm-2" size="85" maxlength="30" type="search" placeholder="Tipea tu búsqueda aquí...">
+    <button class="btn btn-outline-success my-20 my-sm-0" type="submit">Buscar.</button>
+    
+  </form>
+  
+</nav> 
+                
+            
+            
 		        <!-- Card Header -->
 		        <header class="card-header">
 			        <h2 class="h4 card-header-title">Lista de Usuarios</h2>  
 	        	</header>
+                
+                
+                
+                
 
 		        <!-- Crad Body -->
 	          <div class="card-body pt-0">
@@ -112,6 +141,8 @@
 				          
 				@endforeach
 			          </table>
+                                            {{ $user->render() }}
+
 		          </div>
 		          <!-- End Table -->
 	          </div>

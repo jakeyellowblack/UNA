@@ -90,7 +90,7 @@
       <option value="montoT">Monto Total</option>
     </select>
   
-    <input name="busqueda" class="form-control mr-sm-2" size="85" maxlength="30" type="search" placeholder="Tipea tu búsqueda aquí">
+    <input name="busqueda" class="form-control mr-sm-2" size="85" maxlength="30" type="search" placeholder="Tipea tu búsqueda aquí...">
     <button class="btn btn-outline-success my-20 my-sm-0" type="submit">Buscar.</button>
     
   </form>

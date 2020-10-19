@@ -32,10 +32,14 @@ class NominaController extends Controller
         return back()->with('status', 'Importación de nómina completada');
     }
 	
-	 public function show(Nomina $nomina)
+	 public function show(Nomina $nomina, Request $request)
     {
+		$busqueda = $request->get('busqueda');
+		$tipo   = $request->get('tipo');
 		
-		$nomina = Nomina::orderBy('id', 'ASC')->get();	
+		$nomina = Nomina::orderBy('id', 'ASC')
+		->Buscarpor($tipo, $busqueda)
+		->paginate(10);	
 		
 		return view('tnomina', compact('nomina'));
 

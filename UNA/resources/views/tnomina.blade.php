@@ -51,6 +51,33 @@
 
 					<!-- Card -->
 	        <div class="card mb-5">
+            
+            
+                <nav class="navbar navbar-light bg-light">
+                
+  <form action="{{ route('tnomina') }}" class="form-inline" method="get" >
+  
+   <select name="tipo" class="form-control mr-sm-2">
+      <option disabled selected>Buscar por...</option>
+      <option value="salarioSemanal">Salario Semanal</option>
+      <option value="salarioDiario">Salario Diario</option>
+      <option value="salarioHora">Salario por Hora</option>
+      <option value="salarioHoraExtraDiurno">Salario por Hora Extra Diuerna</option>
+      <option value="salarioIntegral">Salario Integral</option>
+      <option value="feriado">Feriado</option>
+      <option value="diasLaborados">Días Laborados</option>
+      <option value="utilidades">Utilidades</option>
+      <option value="montoTotal">Monto Total</option>
+    </select>
+  
+    <input name="busqueda" class="form-control mr-sm-2" size="70" maxlength="30" type="search" placeholder="Tipea tu búsqueda aquí...">
+    <button class="btn btn-outline-success my-20 my-sm-0" type="submit">Buscar.</button>
+    
+  </form>            
+            
+  </nav>           
+            
+            
 		        <!-- Card Header -->
 		        <header class="card-header">
 			        <h2 class="h4 card-header-title">Tabla de Nómina</h2>
@@ -149,6 +176,8 @@
 
 				          </tbody>
 			          </table>
+                                            {{ $nomina->render() }}
+
 		          </div>
 		          <!-- End Table -->
 	          </div>
