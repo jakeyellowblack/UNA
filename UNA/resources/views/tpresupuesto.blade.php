@@ -79,6 +79,7 @@
 		        <!-- Card Header -->
                 
                 <nav class="navbar navbar-light bg-light">
+                
   <form action="{{ route('tpresupuesto') }}" class="form-inline" method="get" >
   
    <select name="tipo" class="form-control mr-sm-2">
@@ -89,10 +90,11 @@
       <option value="montoT">Monto Total</option>
     </select>
   
-    <input name="busqueda" class="form-control mr-sm-2" type="search" placeholder="Tipea tu búsqueda aquí">
+    <input name="busqueda" class="form-control mr-sm-2" size="85" maxlength="30" type="search" placeholder="Tipea tu búsqueda aquí">
     <button class="btn btn-outline-success my-20 my-sm-0" type="submit">Buscar.</button>
     
   </form>
+  
 </nav>
 		        <header class="card-header">
 			        <h2 class="h4 card-header-title">Tabla de Presupuestos</h2>
