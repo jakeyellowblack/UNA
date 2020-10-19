@@ -12,5 +12,16 @@ class Presupuesto extends Model
         'id', 'concepto', 'nombre', 'fecha', 'montoT',
     ];
 	
+ public function scopeBuscarpor($query, $tipo, $busqueda)
+    {
+		if (($tipo) && ($busqueda))
+		{
+			return $query->where($tipo, 'LIKE', "%$busqueda%");
+		}
+    }	
+	
+	
+	
+	
 	}
 

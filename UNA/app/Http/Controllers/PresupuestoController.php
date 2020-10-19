@@ -38,10 +38,14 @@ class PresupuestoController extends Controller
       return back()->with('status', 'Importanción de presupuesto completada');
     }
 	
-	 public function show(Presupuesto $presupuesto)
+	 public function show(Presupuesto $presupuesto, Request $request)
     {
+		$busqueda = $request->get('busqueda');
+		$tipo   = $request->get('tipo');
 		
-		$presupuesto = Presupuesto::orderBy('id', 'ASC')->get();
+		$presupuesto = Presupuesto::orderBy('id', 'ASC')
+		->Buscarpor($tipo, $busqueda)
+		->paginate(10);
 	
 		
 		return view('tpresupuesto', compact('presupuesto'));

@@ -3,10 +3,17 @@
 namespace App\Imports;
 
 use App\Presupuesto;
-use Maatwebsite\Excel\Concerns\ToModel;
+use Illuminate\Validation\Rule;
 
-class PresupuetosImport implements ToModel
+use Maatwebsite\Excel\Concerns\ToModel;
+use Maatwebsite\Excel\Concerns\Importable;
+use Maatwebsite\Excel\Concerns\WithValidation;
+
+class PresupuetosImport implements ToModel, WithValidation
 {
+	
+	    use Importable;
+	
     /**
     * @param array $row
     *
@@ -23,4 +30,22 @@ class PresupuetosImport implements ToModel
 
         ]);
     }
+	
+	 public function rules(): array
+    {
+        return [
+            '0' => Rule::in(['unique:presupuesto']),
+
+                   ];
+    }
+	
+	public function customValidationMessages()
+	{
+		return [
+			'0.in' => 'El campo que intenta guardar ya se encuentra creado',
+		];
+	}
+	
+	
+	
 }

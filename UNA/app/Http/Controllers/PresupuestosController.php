@@ -4,10 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Maatwebsite\Excel\Facades\Excel;
+use Maatwebsite\Excel\Exceptions\NoTypeDetectedException;
+
 
 use App\Exports\PresupuestosExport;
 use App\Imports\PresupuetosImport;
 
+use App\Http\Request\StorePresupuestoRequest;
 
 use App\Presupuesto;
 use DB;
@@ -28,11 +31,13 @@ class PresupuestoController extends Controller
     	return Excel::download(new PresupuestosExport, 'presupuesto-list.xlsx');
     }
 
-    public function importExcel(Request $request)
+    public function importExcel(StorePresupuestoRequest $request)
     {
-        $file = $request->file('file');
-        Excel::import(new PresupuetosImport, $file);
 
+        $file = $request->file('file');
+    	Excel::import(new PresupuetosImport, $file);
+		
+		
         return back()->with('message', 'Importación de presupuesto completada');
     }
 	

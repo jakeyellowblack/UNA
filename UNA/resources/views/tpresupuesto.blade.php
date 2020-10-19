@@ -14,6 +14,12 @@
 </div>
 @endif
 
+@if (session('errors') )
+ <div class="alert alert-danger">
+{{ session('errors') }}
+</div>
+@endif
+
 <!DOCTYPE html>
 <html lang="en" class="no-js">
 	<!-- Head -->
@@ -58,6 +64,8 @@
 <body>
 
 
+
+
 			<!-- Content -->
 			<div class="u-content">
 				<!-- Content Body -->
@@ -69,6 +77,23 @@
 					<!-- Card -->
 	        <div class="card mb-5">
 		        <!-- Card Header -->
+                
+                <nav class="navbar navbar-light bg-light">
+  <form action="{{ route('tpresupuesto') }}" class="form-inline" method="get" >
+  
+   <select name="tipo" class="form-control mr-sm-2">
+      <option disabled selected>Buscar por...</option>
+      <option value="concepto">Concepto</option>
+      <option value="nombre">Nombre</option>
+      <option value="fecha">Fecha</option>
+      <option value="montoT">Monto Total</option>
+    </select>
+  
+    <input name="busqueda" class="form-control mr-sm-2" type="search" placeholder="Tipea tu búsqueda aquí">
+    <button class="btn btn-outline-success my-20 my-sm-0" type="submit">Buscar.</button>
+    
+  </form>
+</nav>
 		        <header class="card-header">
 			        <h2 class="h4 card-header-title">Tabla de Presupuestos</h2>
                     
@@ -154,8 +179,8 @@
 				          </tr>
 				          </tbody>
                          @endforeach
-
 			          </table>
+                      {{ $presupuesto->render() }}
 		          </div>
 		          <!-- End Table -->
 	          </div>
