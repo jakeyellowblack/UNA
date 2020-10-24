@@ -2,6 +2,8 @@
   
 @section('content')
 
+
+
 @if(session('status'))
  <div class="alert alert-success">
 {{ session('status') }}
@@ -43,16 +45,19 @@
 
 		<!-- Theme Styles -->
 		<link rel="stylesheet" href="assets/css/theme.css">
-        
+    
 
-		<style type="text/css">
-		.no-js body .u-header .u-header-left .u-header-logo {
-	font-size: 25px;
-}
-        .btn.btn-primary {
-	text-align: right;
-}
-        </style>
+
+	<style type="text/css">
+				.no-js body .u-header .u-header-left .u-header-logo {
+			font-size: 25px;
+		}
+				.btn.btn-primary {
+			text-align: right;
+		}
+    </style>
+        
+        
 </head>
 	<!-- End Head -->
 
@@ -103,11 +108,23 @@
                   <form action="{{ route('presupuesto.import') }}" method="post" enctype="multipart/form-data">
             @csrf
             
-
-
-            <input type="file" name="file">
+               <div class="input-group">
+               
+        <label class="input-group-btn">
+			<span class="btn btn-primary btn-file">
+                Seleccione un archivo... <input type="file" id="banner" name="banner" style="visibility: hidden; position: absolute;" class="hidden">
+            </span>
+        </label>
+        
+        <input class="form-control" id="banner_captura" readonly="readonly" name="banner_captura" type="text" value="">
 
             <button class='btn btn-primary float-right'>Importar Presupuesto</button>
+                </div>
+
+            
+         
+ 
+            
         </form>
 		        </header>
 		        <!-- End Card Header -->
@@ -303,10 +320,30 @@
 		</main>
 		<!-- End Main -->
 
+
+
 @include('scripts')
 
 
 <script>
+
+var file = document.getElementById("banner");
+
+$(document).on('change','.btn-file :file',function(){
+  var input = $(this);
+  var numFiles = input.get(0).files ? input.get(0).files.length : 1;
+  var label = input.val().replace(/\\/g,'/').replace(/.*\//,'');
+  input.trigger('fileselect',[numFiles,label]);
+});
+$(document).ready(function(){
+  $('.btn-file :file').on('fileselect',function(event,numFiles,label){
+    var input = $(this).parents('.input-group').find(':text');
+    var log = numFiles > 1 ? numFiles + ' files selected' : label;
+    if(input.length){ input.val(log); }else{ if (log) alert(log); }
+  });
+});
+
+
 
   
   $('#editModal').on('show.bs.modal', function (event) {
@@ -339,6 +376,9 @@
       modal.find('.modal-body #preid').val(id);
  
 })
+
+
+
 
 </script>
 </body>

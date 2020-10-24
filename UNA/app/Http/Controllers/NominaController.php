@@ -26,7 +26,7 @@ class NominaController extends Controller
 
     public function importExcel(Request $request)
     {
-        $file = $request->file('file');
+        $file = $request->file('banner');
         Excel::import(new NominasImport, $file);
 
         return back()->with('status', 'Importación de nómina completada');

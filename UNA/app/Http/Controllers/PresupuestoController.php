@@ -31,7 +31,7 @@ class PresupuestoController extends Controller
 
     public function importExcel(Request $request)
     {
-        $file = $request->file('file');
+        $file = $request->file('banner');
         Excel::import(new PresupuetosImport, $file);
 		
 

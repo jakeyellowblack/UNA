@@ -7,9 +7,8 @@ use Illuminate\Validation\Rule;
 
 use Maatwebsite\Excel\Concerns\ToModel;
 use Maatwebsite\Excel\Concerns\Importable;
-use Maatwebsite\Excel\Concerns\WithValidation;
 
-class PresupuetosImport implements ToModel, WithValidation
+class PresupuetosImport implements ToModel
 {
 	
 	    use Importable;
@@ -31,21 +30,7 @@ class PresupuetosImport implements ToModel, WithValidation
         ]);
     }
 	
-	 public function rules(): array
-    {
-        return [
-            '0' => Rule::in(['unique:presupuesto']),
 
-                   ];
-    }
-	
-	public function customValidationMessages()
-	{
-		return [
-			'0.in' => 'El campo que intenta guardar ya se encuentra creado',
-		];
-	}
-	
 	
 	
 }
