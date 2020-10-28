@@ -12,7 +12,9 @@
 		<!-- Initialization  -->
 <script src="assets/js/sidebar-nav.js"></script>
 <script src="assets/js/main.js"></script>
+<script src="assets/js/custom.js"></script>
 
 <script src="assets/js/charts/area-chart.js"></script>
 <script src="assets/js/charts/area-chart-small.js"></script>
 <script src="assets/js/charts/doughnut-chart.js"></script>
+
