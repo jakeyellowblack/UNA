@@ -51,31 +51,31 @@ Route::resource('listnomina', 'NominaController')->names('listnomina');
 //Ingreso
 Route::resource('ingreso','IngresoController')->names('ingreso');
 //Egreso
-Route::resource('/egreso','EgresoController')->names('egreso');
+Route::resource('egreso','EgresoController')->names('egreso');
 //Cierre
-Route::resource('/cierre','CierreController')->names('cierre');
+Route::resource('cierre','CierreController')->names('cierre');
 
 ///USER
 Route::get('user', 'UserController@index')->name('user');
-Route::get('create', 'UserController@create')->name('user.create');
+Route::get('user_create', 'UserController@create')->name('user.create');
 //Route::get('useredit/{user_id}/edit', 'UserController@edit')->name('users.edit');
 //Route::get('users/{user_id}/destroy', 'UserController@destroy')->name('users.destroy');
 Route::resource('user', 'UserController')->names('user');
 
 ///REFORMULACIÓN
-Route::get('reformulacion', 'ReformulacionController@index')->name('reformulacion');
+Route::get('reformulacion', 'ReformulacionController@index')->name('reformulacion.index');
 Route::post('reformulacion_store', 'ReformulacionController@store')->name('reformulacion.store');
 Route::get('reformulacion_create', 'ReformulacionController@create')->name('reformulacion.create');
 
 
 ///PRESUPUESTO
-Route::resource('/presupuesto', 'PresupuestoController')->names('presupuesto');
+Route::resource('presupuesto', 'PresupuestoController')->names('presupuesto');
 
 
 //Route::resource('/presupuesto', 'PresupuestoController');
 //Route::put('presupuesto/{id}','PresupuestoController@update')->name('presupuesto.update');
 
 ///NOMINA
-Route::resource('/nomina', 'NominaController')->names('nomina');
+Route::resource('nomina', 'NominaController')->names('nomina');
 
 

@@ -20,20 +20,24 @@ class ReformulacionController extends Controller
 
     public function store(Request $request)
     {
+        //return $request;
+        //dd($request->file('banner'));
         $reformulacion= new Reformulacion();
-        
+
         $reformulacion->name=$request->input('banner_captura');
 
-        if($request->hasFile('banner_captura')) 
+        //return $reformulacion;
+
+        if($request->hasFile('banner')) 
             {
-              $file = $request->file('banner_captura');
-              $filename = time().$file->getClientOriginalName();
-              $file->move(public_path().'/reformulacion/', $filename);
+              $file = $request->file('banner');
+              $filename = $file->getClientOriginalName();
+              $file->move(public_path().'/reformulaciones/', $filename);
             }
 
         //$file->move(public_path().'/reformulacion/', $name);
 
-    	return $filename;
+    	return $reformulacion;
             
     	//return view('reformulacion.index');
     }
