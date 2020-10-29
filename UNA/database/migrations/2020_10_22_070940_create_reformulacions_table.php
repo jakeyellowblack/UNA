@@ -15,6 +15,8 @@ class CreateReformulacionsTable extends Migration
     {
         Schema::create('reformulacions', function (Blueprint $table) {
             $table->increments('id');
+            $table->date('date');
+            $table->string('name');
             $table->timestamps();
         });
     }
