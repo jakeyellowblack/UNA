@@ -198,7 +198,7 @@
                                         
                                         <div class="form-group">
 											<label for="status">Estado</label>
-                                               <select id="status" name="status" class="form-control mr-sm-2">
+                                               <select id="status" name="status" class="form-control form-pill">
                                                   <option disabled selected>Selecciona...</option>
                                                   <option value="1">Activo</option>
                                                   <option value="0">Inactivo</option>
