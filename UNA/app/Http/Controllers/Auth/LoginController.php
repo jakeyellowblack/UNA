@@ -58,7 +58,7 @@ class LoginController extends Controller
         // Check if user was successfully loaded, that the password matches
         // and active is not 1. If so, override the default error message.
         if ($user && \Hash::check($request->password, $user->password) && $user->status != 1) {
-            $errors = [$this->username() => 'Tu cuenta no está activada.'];
+            $errors = [$this->username() => 'Tu cuenta no está activada'];
         }
 
         if ($request->expectsJson()) {

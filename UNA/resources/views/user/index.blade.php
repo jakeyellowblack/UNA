@@ -194,10 +194,19 @@
 											<input id="code" name="code" class="form-control form-pill" type="text" placeholder="Placeholder">
 										</div>
                                         
+                                        
+                                        
                                         <div class="form-group">
 											<label for="status">Estado</label>
-											<input id="status" name="status" class="form-control form-pill" type="text" placeholder="Placeholder">
+                                               <select id="status" name="status" class="form-control mr-sm-2">
+                                                  <option disabled selected>Selecciona...</option>
+                                                  <option value="1">Activo</option>
+                                                  <option value="0">Inactivo</option>
+                                                </select>
 										</div>
+                                        
+                                        
+                                        
                                         
                                         <div class="form-group">
 											<label for="jobtitle">Cargo</label>
