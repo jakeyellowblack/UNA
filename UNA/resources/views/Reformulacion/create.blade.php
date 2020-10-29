@@ -25,24 +25,35 @@
 
 	<!-- Body -->
 <body>
+	
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
 
-	<form class="form-group" method="POST" action="{{ route('reformulacion.store') }}" enctype="multipart/form-data">
-		@csrf
-	    <div class="input-group">
+            	<div class="card-header">{{ __('Nueva Reformulación') }}</div>
 
-			<label class="input-group-btn">
-				<span class="btn btn-primary btn-file">
-			        Seleccione un archivo... <input type="file" id="banner" name="banner" style="visibility: hidden; position: absolute;" class="hidden">
-			    </span>
-			</label>
+				<form class="form-group" method="POST" action="{{ route('reformulacion.store') }}" enctype="multipart/form-data">
+					@csrf
+				    <div class="input-group">
 
-			<input class="form-control" id="banner_captura" readonly="readonly" name="banner_captura" type="text" value="">
-	        <button class='btn btn-primary float-right' type="submit">Enviar Reformulación</button>
+						<label class="input-group-btn">
+							<span class="btn btn-primary btn-file">
+						        Seleccione un archivo... <input type="file" id="banner" name="banner" style="visibility: hidden; position: absolute;" class="hidden">
+						    </span>
+						</label>
 
-	    </div>
-	</form>
+						<input class="form-control" id="banner_captura" readonly="readonly" name="banner_captura" type="text" value="">
+				        <button class='btn btn-primary float-right' type="submit">Enviar Reformulación</button>
+
+				    </div>
+				</form>
 
 
+			</div>
+		</div>
+	</div>
+</div>
 
 
 
