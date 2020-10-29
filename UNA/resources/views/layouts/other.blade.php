@@ -114,9 +114,14 @@
                             <div class="card-body p-0">
 
                                     <li>
-                              <a class="d-block link-dark" id="openModal" href="#myModal" data-toggle="modal">
-                       Cerrar Sesión
-                      </a>
+                              <a class="dropdown-item" href="{{ route('logout') }}"
+                                   onclick="event.preventDefault();
+                                                 document.getElementById('logout-form').submit();">
+                        {{ __('Cerrar Sesión') }}<a>
+                        
+                                                          <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    @csrf
+                                  </form>
                             
                                   
                             </div>
@@ -129,29 +134,7 @@
         </div>
             <!-- End User Profile -->
             
-<div id="myModal" class="modal fade">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        
-        <h4 class="modal-title" align="left">Cierre de sesión</h4>
-        
-        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-      </div>
       
-                            <form action="{{ route('logout') }}" method="post">
-      						@csrf
-      
-      <div class="modal-body">
-        <p>¿Desea cerrar sesión?</p>
-      </div>
-      <div class="modal-footer">
-						<button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
-						<button type="submit" class="btn btn-primary">Aceptar</button>
-      </div>
-    </div><!-- /.modal-content -->
-  </div><!-- /.modal-dialog -->
-</div>            
             
       
         </div>
@@ -363,33 +346,7 @@
 
     </div>
     
-<script>
 
-function PopUp(title, message, oktext, okfunction, canceltext, cancelfunction) {
-  var $myModal = $('#myModal');
-  $("#myModal .modal-title").html(!title ? "<br />" : title);
-  $("#myModal .modal-body").html(!message ? "" : message);
-  var  $myModalFooter = $("#myModal .modal-footer").empty();
-  if (canceltext) {
-    if (!(typeof (cancelfunction) === 'function')) {
-      cancelfunction = function () { $myModal.modal('hide'); };
-    }
-    $myModalFooter.append('<button id="cancelfunction" type="button" class="btn btn-default">' + canceltext + '</button>');
-    $("#cancelfunction").on("click", function () { cancelfunction(); return false; });
-  }
-  if (oktext) {
-    if (!(typeof (okfunction) === 'function')) {
-      okfunction = function () { $myModal.modal('hide'); };
-    }
-    $myModalFooter.append('<button id="okfunction" type="button" class="btn btn-primary">' + oktext + '</button>');
-    $("#okfunction").on("click", function () { okfunction(); return false; });
-  }
-  $myModal.modal('show');
-}
-
-
-
-</script>  
     
 </body>
 </html>
