@@ -19,6 +19,8 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> 
+    <script src="{{ asset('js/fontawesomeicons.js') }}"></script>
+
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
@@ -30,8 +32,8 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="{{ asset('css/btns.css') }}" />
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    
+        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
 </head>
 
 <body>
@@ -47,6 +49,9 @@
             </a>
             <!-- End Header Logo -->
         </div>
+        
+        
+        
         <!-- End Header Left Section -->
 
         <!-- Header Middle Section -->
@@ -98,9 +103,9 @@
                     <a class="link-muted d-flex align-items-center" href="#" role="button" id="userProfileInvoker" aria-haspopup="true" aria-expanded="false"
                        data-toggle="dropdown"
                        data-offset="0">
-                        <span class="text-dark d-none d-md-inline-flex align-items-center">
-                        ¡Bienvenid@ {{ Auth::user()->name }}!
-                            <span class="ti-angle-down text-muted ml-4"></span>
+                        <span class="text-light d-none d-md-inline-flex align-items-center">
+                        {{ Auth::user()->name }}
+                        <span class="fas fa-sign-out-alt text-muted ml-4 fa-2x"></span>
                         </span>
                     </a>
 
@@ -109,15 +114,11 @@
                             <div class="card-body p-0">
 
                                     <li>
-                              <a class="dropdown-item" href="{{ route('logout') }}"
-                                   onclick="event.preventDefault();
-                                                 document.getElementById('logout-form').submit();">
-                        {{ __('Cerrar Sesión') }}
+                              <a class="d-block link-dark" id="openModal" href="#myModal" data-toggle="modal">
+                       Cerrar Sesión
                       </a>
                             
-                                  <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                    @csrf
-                                  </form>
+                                  
                             </div>
                 </li>
                             </ul>
@@ -127,10 +128,38 @@
             </div>
         </div>
             <!-- End User Profile -->
+            
+<div id="myModal" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        
+        <h4 class="modal-title" align="left">Cierre de sesión</h4>
+        
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+      </div>
+      
+                            <form action="{{ route('logout') }}" method="post">
+      						@csrf
+      
+      <div class="modal-body">
+        <p>¿Desea cerrar sesión?</p>
+      </div>
+      <div class="modal-footer">
+						<button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+						<button type="submit" class="btn btn-primary">Aceptar</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div>            
+            
+      
         </div>
         <!-- End Header Middle Section -->
     </header>
 <!-- End Header (Topbar) -->
+
+
 
 <!-- Main -->
     <main class="u-main">
@@ -334,7 +363,33 @@
 
     </div>
     
-  
+<script>
+
+function PopUp(title, message, oktext, okfunction, canceltext, cancelfunction) {
+  var $myModal = $('#myModal');
+  $("#myModal .modal-title").html(!title ? "<br />" : title);
+  $("#myModal .modal-body").html(!message ? "" : message);
+  var  $myModalFooter = $("#myModal .modal-footer").empty();
+  if (canceltext) {
+    if (!(typeof (cancelfunction) === 'function')) {
+      cancelfunction = function () { $myModal.modal('hide'); };
+    }
+    $myModalFooter.append('<button id="cancelfunction" type="button" class="btn btn-default">' + canceltext + '</button>');
+    $("#cancelfunction").on("click", function () { cancelfunction(); return false; });
+  }
+  if (oktext) {
+    if (!(typeof (okfunction) === 'function')) {
+      okfunction = function () { $myModal.modal('hide'); };
+    }
+    $myModalFooter.append('<button id="okfunction" type="button" class="btn btn-primary">' + oktext + '</button>');
+    $("#okfunction").on("click", function () { okfunction(); return false; });
+  }
+  $myModal.modal('show');
+}
+
+
+
+</script>  
     
 </body>
 </html>

@@ -4502,12 +4502,12 @@ input[type="button"].btn-block {
   padding: 0 0;
   margin: 0.5rem 0 0;
   font-size: 0.9375rem;
-  color: #1b1e24;
+  color: #e8eaf3;
   text-align: left;
   list-style: none;
-  background-color: #fff;
+  background-color: #e8eaf3;
   background-clip: padding-box;
-  border: 1px solid #eaf2f9;
+  border: 1px solid #e8eaf3;
   border-radius: 0.25rem;
 }
 
@@ -14373,7 +14373,7 @@ a.text-linkedin:hover, a.text-linkedin:focus {
 }
 
 .text-muted {
-  color: #999ba8 !important;
+  color: #fff !important;
 }
 
 .text-black-50 {
@@ -15655,7 +15655,7 @@ body.side-nav-on-action .u-content {
   display: -ms-flexbox;
   display: flex;
   font-size: 0.875rem;
-  background-color: #fff;
+  background-color: #252631;
 }
 
 @media (max-width: 767.98px) {
@@ -15690,7 +15690,6 @@ body.side-nav-on-action .u-content {
       -ms-flex-pack: center;
           justify-content: center;
   border-width: 0 1px 0 1px;
-  border-style: solid;
   border-color: #e8eaf3;
   padding: 0.5rem 0.9375rem;
   margin-right: -1px;
@@ -15819,18 +15818,18 @@ body.side-nav-on-action .u-content {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  color: #999ba8;
+  color: #fff;
   -webkit-transition: color .2s ease-in;
   -o-transition: color .2s ease-in;
   transition: color .2s ease-in;
 }
 
 .u-header-invoker:hover {
-  color: #444bf8;
+  color: #fff;
 }
 
 .show .u-header-invoker {
-  color: #444bf8;
+  color: #fff;
 }
 
 .u-header-invoker__icon {

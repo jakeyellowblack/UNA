@@ -4,8 +4,7 @@
 
 <!DOCTYPE html>
 <html lang="en" class="no-js">
-	<!-- Head -->
-<head>
+	<!-- Head --><head>
     <title>Sistema UNA</title>
 
 		<!-- Meta -->
