@@ -71,6 +71,8 @@
                     <a id="headerSearchMobileInvoker" class="u-header-search__mobile-invoker align-items-center" href="#">
                         <span class="ti-search"></span>
                     </a>
+                    
+                    
                     <!-- End Header Search Invoker (Mobile Mode) -->
                     <!-- Header Search Form -->
                     <!--<div id="headerSearch" class="u-header-search-form">
@@ -84,6 +86,8 @@
                         </form>
                     </div>-->
                     <!-- End Header Search Form -->
+                    
+                    
                 </div>
             </div>
             <!-- End Header Search -->
@@ -95,7 +99,7 @@
                        data-toggle="dropdown"
                        data-offset="0">
                         <span class="text-dark d-none d-md-inline-flex align-items-center">
-                        {{ Auth::user()->name }}
+                        ¡Bienvenid@ {{ Auth::user()->name }}!
                             <span class="ti-angle-down text-muted ml-4"></span>
                         </span>
                     </a>
@@ -156,38 +160,38 @@
                             </a>
                         </li>
                         <!-- End Dashboard -->
+                        
                                     
-
+                    <li class="u-sidebar-nav-menu__item">
+                        <a class="u-sidebar-nav-menu__link" href="">
+                            <span class="ti-money u-sidebar-nav-menu__item-icon"></span>
+                            <span class="u-sidebar-nav-menu__item-title">Saldo</span>
+                        </a>
+                    </li>                       
+                        
+              
 
                     <!-- Forms -->
         			<li class="u-sidebar-nav-menu__item">
         							<a class="u-sidebar-nav-menu__link" href="#"
         							   data-target="#menuItemGestiones">
-        								<span class="ti-panel u-sidebar-nav-menu__item-icon"></span>
-        								<span class="u-sidebar-nav-menu__item-title">Gestiones</span>
+        								<span class="ti-bar-chart u-sidebar-nav-menu__item-icon"></span>
+        								<span class="u-sidebar-nav-menu__item-title">Balance</span>
         								<span class="ti-angle-down u-sidebar-nav-menu__item-arrow"></span>
         							</a>
                                     
                         <ul id="menuItemGestiones" class="u-sidebar-nav-menu u-sidebar-nav-menu--second-level" style="display: none;">
-                                    
-                            <li class="u-sidebar-nav-menu__item">
-                                <a class="u-sidebar-nav-menu__link" href="{{ route('user.index') }}">
-                                    <span class="ti-user u-sidebar-nav-menu__item-icon"></span>
-                                    <span class="u-sidebar-nav-menu__item-title">Gestión de usuarios</span>
-                                </a>
-                            </li>
+                                   
                             
                             <li class="u-sidebar-nav-menu__item">
                                 <a class="u-sidebar-nav-menu__link" href="{{ route('ingreso.index') }}">
-                                    <span class="ti-stats-up u-sidebar-nav-menu__item-icon"></span>
-                                    <span class="u-sidebar-nav-menu__item-title">Gestión de ingresos</span>
+                                    <span class="u-sidebar-nav-menu__item-title">Ingresos</span>
                                 </a>
                             </li>
                             
                             <li class="u-sidebar-nav-menu__item">
                                 <a class="u-sidebar-nav-menu__link" href="{{ route('egreso.index') }}">
-                                    <span class="ti-stats-down u-sidebar-nav-menu__item-icon"></span>
-                                    <span class="u-sidebar-nav-menu__item-title">Gestión de egresos</span>
+                                    <span class="u-sidebar-nav-menu__item-title">Egresos</span>
                                 </a>
                             </li>
                                 
@@ -200,36 +204,122 @@
                     <!-- Tables -->
                     <li class="u-sidebar-nav-menu__item">
         				<a class="u-sidebar-nav-menu__link" href="#"
-        				   data-target="#menuItemImportaciones">
-        					<span class="ti-import u-sidebar-nav-menu__item-icon"></span>
-        					<span class="u-sidebar-nav-menu__item-title">Importación de archivos</span>
+        				   data-target="#menuItemMovimientos">
+        					<span class="ti-layout-media-right u-sidebar-nav-menu__item-icon"></span>
+        					<span class="u-sidebar-nav-menu__item-title">Movimientos</span>
         					<span class="ti-angle-down u-sidebar-nav-menu__item-arrow"></span>
         				</a>
                                 
-                        <ul id="menuItemImportaciones" class="u-sidebar-nav-menu u-sidebar-nav-menu--second-level" style="display: none;">
+                        <ul id="menuItemMovimientos" class="u-sidebar-nav-menu u-sidebar-nav-menu--second-level" style="display: none;">
                             <li class="u-sidebar-nav-menu__item">
                                 <a class="u-sidebar-nav-menu__link" href="tpresupuesto">
-                                    <span class="ti-layout-tab u-sidebar-nav-menu__item-icon"></span>
-                                    <span class="u-sidebar-nav-menu__item-title">Importar presupuesto</span>
+                                    <span class="u-sidebar-nav-menu__item-title">Nuevo movimiento</span>
                                 </a>
                             </li>
                             
                             <li class="u-sidebar-nav-menu__item">
-                                <a class="u-sidebar-nav-menu__link" href="tnomina">
-                                    <span class="ti-write u-sidebar-nav-menu__item-icon"></span>
-                                    <span class="u-sidebar-nav-menu__item-title">Importar nómina</span>
+                                <a class="u-sidebar-nav-menu__link" href="listpresupuesto">
+                                    <span class="u-sidebar-nav-menu__item-title">Lista de movimientos</span>
                                 </a>
                             </li>
                         </ul>
                     </li>
-                    <!-- End Tables -->              
-                                    
+                    <!-- End Tables -->    
+                    
+                    
+                    <!-- Tables -->
                     <li class="u-sidebar-nav-menu__item">
+        				<a class="u-sidebar-nav-menu__link" href="#"
+        				   data-target="#menuItemReformulacion">
+        					<span class="ti-layers-alt u-sidebar-nav-menu__item-icon"></span>
+        					<span class="u-sidebar-nav-menu__item-title">Reformulaciones</span>
+        					<span class="ti-angle-down u-sidebar-nav-menu__item-arrow"></span>
+        				</a>
+                                
+                        <ul id="menuItemReformulacion" class="u-sidebar-nav-menu u-sidebar-nav-menu--second-level" style="display: none;">
+                            <li class="u-sidebar-nav-menu__item">
+                                <a class="u-sidebar-nav-menu__link" href="#">
+                                    <span class="u-sidebar-nav-menu__item-title">Nueva reformulación</span>
+                                </a>
+                            </li>
+                            
+                            <li class="u-sidebar-nav-menu__item">
+                                <a class="u-sidebar-nav-menu__link" href="#">
+                                    <span class="u-sidebar-nav-menu__item-title">Lista de reformulaciones</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- End Tables -->                        
+                    
+                    
+                    
+                    
+                    
+                    
+                    <!-- Tables -->
+                    <li class="u-sidebar-nav-menu__item">
+        				<a class="u-sidebar-nav-menu__link" href="#"
+        				   data-target="#menuItemNomina">
+                           <span class="ti-write u-sidebar-nav-menu__item-icon"></span>
+        					<span class="u-sidebar-nav-menu__item-title">Nómina</span>
+        					<span class="ti-angle-down u-sidebar-nav-menu__item-arrow"></span>
+        				</a>
+                                
+                        <ul id="menuItemNomina" class="u-sidebar-nav-menu u-sidebar-nav-menu--second-level" style="display: none;">
+                            
+                            <li class="u-sidebar-nav-menu__item">
+                                <a class="u-sidebar-nav-menu__link" href="tnomina">
+                                    <span class="u-sidebar-nav-menu__item-title">Crear nueva nómina</span>
+                                </a>
+                            </li>
+                            
+                            <li class="u-sidebar-nav-menu__item">
+                                <a class="u-sidebar-nav-menu__link" href="listnomina">
+                                    <span class="u-sidebar-nav-menu__item-title">Lista de nómina</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- End Tables -->                     
+                    
+                    <!-- Forms -->
+        			<li class="u-sidebar-nav-menu__item">
+        							<a class="u-sidebar-nav-menu__link" href="#"
+        							   data-target="#menuItemUsuarios">
+                                    <span class="ti-user u-sidebar-nav-menu__item-icon"></span>
+        								<span class="u-sidebar-nav-menu__item-title">Usuarios</span>
+        								<span class="ti-angle-down u-sidebar-nav-menu__item-arrow"></span>
+        							</a>
+                                    
+                        <ul id="menuItemUsuarios" class="u-sidebar-nav-menu u-sidebar-nav-menu--second-level" style="display: none;">
+                                    
+                            <li class="u-sidebar-nav-menu__item">
+                                <a class="u-sidebar-nav-menu__link" href="/create">
+                                    <span class="u-sidebar-nav-menu__item-title">Crear usuario</span>
+                                </a>
+                            </li>
+                            
+                             <li class="u-sidebar-nav-menu__item">
+                                <a class="u-sidebar-nav-menu__link" href="{{ route('user.index') }}">
+                                    <span class="u-sidebar-nav-menu__item-title">Lista de usuarios</span>
+                                </a>
+                            </li>
+                       
+                                
+                        </ul>
+                    </li>
+                    <!-- End Forms -->                    
+                    
+                    
+                              
+                                    
+                    <!--<li class="u-sidebar-nav-menu__item">
                         <a class="u-sidebar-nav-menu__link" href="{{ route('cierre.index') }}">
                             <span class="ti-lock u-sidebar-nav-menu__item-icon"></span>
                             <span class="u-sidebar-nav-menu__item-title">Cierres</span>
                         </a>
-                    </li>   
+                    </li>  --> 
 
                 </nav>
                 <!-- End Sidebar Nav -->

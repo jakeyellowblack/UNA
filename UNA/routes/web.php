@@ -22,6 +22,9 @@ Auth::routes();
 Route::get('/', function () {
     return redirect('login');
 });
+
+app('view')->addNamespace('views', resource_path('views'));
+
 ///Rutas regulares hacia Home y Login
 Route::get('/home', 'HomeController@index')->name('home');
 Route::post('/login', 'Auth\LoginController@login')->name('login');
@@ -36,9 +39,12 @@ Route::post('import-list-excel', 'NominaController@importExcel')->name('nomina.i
 //Index y Show de Presupuesto
 Route::get('tpresupuesto','PresupuestoController@index')->name('tpresupuesto');
 Route::get('tpresupuesto','PresupuestoController@show')->name('tpresupuesto');
+Route::resource('listpresupuesto', 'PresupuestoController')->names('listpresupuesto');
 
 Route::get('tnomina','NominaController@index')->name('tnomina');
 Route::get('tnomina','NominaController@show')->name('tnomina');
+Route::resource('listnomina', 'NominaController')->names('listnomina');
+
 
 ///Rutas de controladores creados
 
@@ -59,9 +65,11 @@ Route::resource('user', 'UserController')->names('user');
 ///PRESUPUESTO
 Route::resource('/presupuesto', 'PresupuestoController')->names('presupuesto');
 
+
 //Route::resource('/presupuesto', 'PresupuestoController');
 //Route::put('presupuesto/{id}','PresupuestoController@update')->name('presupuesto.update');
 
 ///NOMINA
 Route::resource('/nomina', 'NominaController')->names('nomina');
+
 

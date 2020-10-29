@@ -75,8 +75,9 @@ h6 {
             <div class="info-box-content">
               <span class="info-box-text">Ingresos</span>
               </br>
-              <a href="/summary/create?type=add">Añadir ingreso</a>
-            </div>
+<!--              <a href="/summary/create?type=add">Añadir ingreso</a>--> 
+			 <a href="/tpresupuesto">Añadir ingreso</a>                      
+</div>
             <!-- /.info-box-content -->
           </div>
           <!-- /.info-box -->
@@ -93,7 +94,7 @@ h6 {
             <div class="info-box-content">
               <span class="info-box-text">Egresos</span>
               </br>
-             <a href="/summary/create?type=out">Añadir egresos</a>
+             <a href="/tpresupuesto">Añadir egresos</a>
             </div>
             <!-- /.info-box-content -->
           </div>

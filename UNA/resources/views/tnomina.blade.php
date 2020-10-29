@@ -70,7 +70,7 @@
       <option value="montoTotal">Monto Total</option>
     </select>
   
-    <input name="busqueda" class="form-control mr-sm-2" size="70" maxlength="30" type="search" placeholder="Tipea tu búsqueda aquí...">
+    <input name="busqueda" class="form-control mr-sm-2" size="70" maxlength="30" type="search" placeholder="Escribe tu búsqueda aquí...">
     <button class="btn btn-outline-success my-20 my-sm-0" type="submit">Buscar.</button>
     
   </form>            
@@ -96,7 +96,7 @@
             </span>
         </label>
         
-        <input class="form-control" id="banner_captura" readonly="readonly" name="banner_captura" type="text" value="">
+        <input class="form-control" id="banner_captura" readonly name="banner_captura" type="text" value="">
 
             <button class='btn btn-primary float-right'>Importar Nómina</button>
             </div>   

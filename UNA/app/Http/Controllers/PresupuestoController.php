@@ -21,8 +21,9 @@ class PresupuestoController extends Controller
     {
 		
 
-		return view('tpresupuesto', compact('presupuesto'));
+		return view('listpresupuesto');
     }
+	
 
     public function exportExcel()
     {

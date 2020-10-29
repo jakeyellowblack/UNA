@@ -16,7 +16,7 @@ class NominaController extends Controller
 	 public function index(Nomina $nomina)
     {
 
-		return view('tnomina', compact('nomina'));
+		return view('listnomina');
     }
 
     public function exportExcel()

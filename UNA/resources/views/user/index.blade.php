@@ -32,10 +32,9 @@
 	<!-- Content Body -->
 	<div class="u-body">
     
-	<h1 class="h2 mb-2">Usuarios</h1>
+	<h1 class="h2 mb-2">Lista de Usuarios</h1>
     
     
-	<a class="btn btn-primary" href="/create" role="button">Crear Usuario</a>
 
 
 					<!-- Card -->
@@ -53,7 +52,7 @@
       <option value="jobtitle">Cargo</option>
     </select>
   
-    <input name="busqueda" class="form-control mr-sm-2" size="85" maxlength="30" type="search" placeholder="Tipea tu búsqueda aquí...">
+    <input name="busqueda" class="form-control mr-sm-2" size="85" maxlength="30" type="search" placeholder="Escribe tu búsqueda aquí...">
     <button class="btn btn-outline-success my-20 my-sm-0" type="submit">Buscar.</button>
     
   </form>
