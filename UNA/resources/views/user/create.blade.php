@@ -52,11 +52,21 @@
                         </div>
 
 
+
+
+
                         <div class="form-group row">
                             <label for="status" class="col-md-4 col-form-label text-md-right">{{ __('Estado') }}</label>
 
                             <div class="col-md-6">
-                                <input id="status" class="form-control @error('status') is-invalid @enderror" name="status" value="{{ old('status') }}" required autocomplete="status">
+                            
+                               <select name="status" class="form-control mr-sm-2">
+                                  <option disabled selected>Seleccione...</option>
+                                  <option value="1">Activo</option>
+                                  <option value="0">Inactivo</option>
+                                </select>
+                            
+
 
                                 @error('status')
                                     <span class="invalid-feedback" role="alert">
@@ -65,6 +75,11 @@
                                 @enderror
                             </div>
                         </div>    
+
+
+
+
+
 
                         <div class="form-group row">
                             <label for="jobtitle" class="col-md-4 col-form-label text-md-right">{{ __('Cargo') }}</label>

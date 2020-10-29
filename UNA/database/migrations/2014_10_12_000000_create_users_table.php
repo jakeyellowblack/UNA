@@ -17,7 +17,7 @@ class CreateUsersTable extends Migration
 			$table->increments('id');
             $table->string('name');
 			$table->integer('code')->unique();
-			$table->string('status');
+			$table->enum('status', ['1', '0']);;
 			$table->string('jobtitle');
             $table->string('password');
             $table->rememberToken();

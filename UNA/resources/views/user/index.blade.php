@@ -93,8 +93,14 @@
 				          <tr>
 					          <td class="font-weight-semi-bold">{{ $us->name }}</td>
 					          <td class="font-weight-semi-bold">{{ $us->code }}</td>
-					          <td class="font-weight-semi-bold">{{ $us->status }}</td>
-					          <td class="font-weight-semi-bold">{{ $us->jobtitle }}</td>
+                            <td class="font-weight-semi-bold">
+									@if($us->status==1)
+										Activo  
+									@else
+										Inactivo
+							  </td>
+                                   @endif
+				            <td class="font-weight-semi-bold">{{ $us->jobtitle }}</td>
 
 					          <td class="text-center">
 
@@ -137,9 +143,9 @@
 					          </td>
 				          </tr>
 				          </tbody>
-				          
+				         
 				@endforeach
-			          </table>
+		            </table>
                                             {{ $user->render() }}
 
 		          </div>

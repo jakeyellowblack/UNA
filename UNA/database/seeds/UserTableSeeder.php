@@ -15,7 +15,7 @@ class UserTableSeeder extends Seeder
         $user = new User();
 		$user->name = "Jon";
 		$user->code = 1234;
-		$user->status = "Activo";
+		$user->status = "1";
 		$user->jobtitle = "Programador";
 		$user->password = bcrypt('12345');
 		$user->save();
@@ -23,7 +23,7 @@ class UserTableSeeder extends Seeder
 		$user = new User();
 		$user->name = "Rafa";
 		$user->code = 12345;
-		$user->status = "Activo";
+		$user->status = "1";
 		$user->jobtitle = "Programador";
 		$user->password = bcrypt('12345');
 		$user->save();
