@@ -267,13 +267,13 @@
                                 
                         <ul id="menuItemReformulacion" class="u-sidebar-nav-menu u-sidebar-nav-menu--second-level" style="display: none;">
                             <li class="u-sidebar-nav-menu__item">
-                                <a class="u-sidebar-nav-menu__link" href="{{ route('reformulacion.create') }}">
+                                <a class="u-sidebar-nav-menu__link" href="#">
                                     <span class="u-sidebar-nav-menu__item-title">Nueva reformulación</span>
                                 </a>
                             </li>
                             
                             <li class="u-sidebar-nav-menu__item">
-                                <a class="u-sidebar-nav-menu__link" href="{{ route('reformulacion.index') }}">
+                                <a class="u-sidebar-nav-menu__link" href="#">
                                     <span class="u-sidebar-nav-menu__item-title">Lista de reformulaciones</span>
                                 </a>
                             </li>
