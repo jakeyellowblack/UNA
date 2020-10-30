@@ -2,7 +2,6 @@
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 
-
 use App\Nomina;
 use Faker\Generator as Faker;
 

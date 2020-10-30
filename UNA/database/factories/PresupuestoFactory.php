@@ -2,16 +2,20 @@
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 
+use App\Presupuesto;
 use Faker\Generator as Faker;
-use Illuminate\Support\Str;
 
+$autoIncrement = autoIncrement();
 
-$factory->define(App\Presupuesto::class, function (Faker $faker) {
+$factory->define(App\Presupuesto::class, function (Faker $faker) use ($autoIncrement) {
+    $autoIncrement->next();
+		
     return [
-        'concepto' => $faker->text(20),
-        'nombre' => $faker->name,
-        'fecha' => $faker->date,
+		'cuenta_id' => $autoIncrement->current(),
+        'created_at' => $faker->date,
+		'tipo' => $faker->randomElement(['add', 'out']),
+		'concepto' => $faker->text(20),
 		'montoT' => $faker->randomFloat(2, 1, 100),
-
     ];
 });
+

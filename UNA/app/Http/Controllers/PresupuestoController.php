@@ -19,8 +19,6 @@ class PresupuestoController extends Controller
 	
 	 public function index(Presupuesto $presupuesto)
     {
-		
-
 		return view('listpresupuesto');
     }
 	
@@ -38,6 +36,14 @@ class PresupuestoController extends Controller
 
       return back()->with('status', 'Importanción de presupuesto completada');
     }
+	
+	    public function store(Request $request)
+    {
+        $presupuesto = Presupuesto::create($request->all());
+        $presupuesto>save();
+        return view('tpresupuesto');
+    }
+	
 	
 	 public function show(Presupuesto $presupuesto, Request $request)
     {

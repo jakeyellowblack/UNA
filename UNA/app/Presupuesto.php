@@ -3,14 +3,23 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 
 class Presupuesto extends Model
 {
 	
+    protected $table = 'presupuestos';
+		 const UPDATED_AT = null;
+
 	
     protected $fillable = [
-        'id', 'concepto', 'nombre', 'fecha', 'montoT',
+        'cuenta_id', 'created_at', 'tipo', 'concepto', 'montoT'
     ];
+	
+			 public function cuenta()
+	{
+		return $this->belongsTo(Cuenta::class);
+	}	
 	
  public function scopeBuscarpor($query, $tipo, $busqueda)
     {
@@ -21,7 +30,5 @@ class Presupuesto extends Model
     }	
 	
 	
-	
-	
-	}
+}
 

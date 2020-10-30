@@ -54,6 +54,8 @@ Route::resource('ingreso','IngresoController')->names('ingreso');
 Route::resource('egreso','EgresoController')->names('egreso');
 //Cierre
 Route::resource('cierre','CierreController')->names('cierre');
+//Cuentas
+Route::resource('cuentas','CierreController')->names('cuentas');
 
 ///USER
 Route::get('user', 'UserController@index')->name('user');
