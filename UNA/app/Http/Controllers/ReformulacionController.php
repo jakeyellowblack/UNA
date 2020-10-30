@@ -21,7 +21,6 @@ class ReformulacionController extends Controller
     public function store(Request $request)
     {
         //return $request;
-        //dd($request->file('banner'));
         $reformulacion= new Reformulacion();
 
         $reformulacion->name=$request->input('banner_captura');
@@ -34,6 +33,15 @@ class ReformulacionController extends Controller
               $filename = $file->getClientOriginalName();
               $file->move(public_path().'/reformulaciones/', $filename);
             }
+
+      
+         $file = public_path('/reformulaciones/Ref-04_GASTOS_DE_PERSONAL_2DA.txt');
+         $text = file_get_contents($file);
+		          $text = nl2br($text);
+         echo '<pre>'.$text.'</pre>'; 
+     
+	 
+		dd($text);
 
         //$file->move(public_path().'/reformulacion/', $name);
 
