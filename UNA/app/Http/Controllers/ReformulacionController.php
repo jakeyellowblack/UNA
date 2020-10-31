@@ -35,10 +35,11 @@ class ReformulacionController extends Controller
             }
 
       
-         $file = public_path('/reformulaciones/Ref-04_GASTOS_DE_PERSONAL_2DA.txt');
+         $file = public_path('reformulaciones/'.$filename);
+         //dd($file);
          $text = file_get_contents($file);
 		          $text = nl2br($text);
-         echo '<pre>'.$text.'</pre>'; 
+         //echo '<pre>'.$text.'</pre>'; 
      
 	 
 		dd($text);

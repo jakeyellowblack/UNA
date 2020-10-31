@@ -44,10 +44,13 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
+        
 
         $user = User::create($request->all());
         $user->password=bcrypt($request->input('password'));
         $user->save();
+        //dd($user);
+
         return view('user.index');
     }
 
