@@ -75,7 +75,7 @@
 		                            
 								<div class="form-group">
 									<label for="numero">Cuentas</label>                                        
-		                            <select name="nombre" class="form-control form-pill">
+		                            <select name="cuenta_id" class="form-control form-pill">
 		                              <option disabled selected>Seleccione...</option>
 
 		                              	@foreach ($presupuesto as $pre)		
@@ -91,7 +91,7 @@
 		                            
 								<div class="form-group">
 									<label for="created_at">Fecha</label>
-									<input id="created_at" name="created_at" class="form-control form-pill" type="text" placeholder="Fecha"> 
+									<input id="created_at" name="created_at" class="form-control form-pill" type="date" placeholder="Fecha"> 
 								</div>                                           
 								
 								<button class="btn btn-primary my-20 my-sm-0" type="submit">Guardar</button>

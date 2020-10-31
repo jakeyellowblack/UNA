@@ -137,10 +137,11 @@
 				          <thead>
 				          <tr>
 					          <th>ID</th>
+					          <th>Tipo</th>
 					          <th>Concepto</th>
-					          <th>Nombre</th>
 					          <th>Fecha</th>
-					          <th>Monto Total</th>
+					          <th>Monto</th>
+                              <th>Cuenta</th>
 					          <th class="text-center">Acciones</th> 
 			          </tr>
 				          </thead>
@@ -152,11 +153,17 @@
 			            <tbody>
 				          <tr>
 					          <td class="font-weight-semi-bold">{{ $pre->id }}</td>
-
+                              <td class="font-weight-semi-bold">
+									@if($pre->tipo=="add")
+										Ingreso  
+									@else
+										Egreso
+							  </td>
+                                   @endif
 					          <td class="font-weight-semi-bold">{{ $pre->concepto }}</td>
-					          <td class="font-weight-semi-bold">{{ $pre->nombre }}</td>
-					          <td class="font-weight-semi-bold">{{ $pre->fecha }}</td>
+					          <td class="font-weight-semi-bold">{{ $pre->created_at }}</td>
 					          <td class="font-weight-semi-bold">{{ $pre->montoT }}</td>
+                              <td class="font-weight-semi-bold">{{ $pre->nombre }}</td>
 					          <td class="text-center"> 
                               
                               
@@ -176,7 +183,7 @@
                                               <ul class="list-unstyled mb-0">
                                             
 										          <li class="mb-3">
-											          <a class="d-block link-dark" href="#editModal" data-myconcepto="{{$pre->concepto}}" data-mynombre="{{$pre->nombre}}" data-myfecha="{{$pre->fecha}}" data-mymontot="{{$pre->montoT}}" data-preid="{{$pre->id}}" data-toggle="modal">Editar</a>
+											          <a class="d-block link-dark" href="#editModal" data-myconcepto="{{$pre->concepto}}" data-mynombre="{{$pre->nombre}}" data-myfecha="{{$pre->created_at}}" data-mymontot="{{$pre->montoT}}" data-preid="{{$pre->id}}" data-toggle="modal">Editar</a>
 										          </li>
                                                   
                                                   

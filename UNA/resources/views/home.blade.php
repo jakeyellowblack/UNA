@@ -15,6 +15,30 @@
 		<!-- Web Fonts -->
 		<link href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
 
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Fecha', 'Ingresos', 'Egresos'],
+          ['2013',  1000,      400],
+          ['2014',  1170,      460],
+          ['2015',  660,       1120],
+          ['2016',  1030,      540]
+        ]);
+
+        var options = {
+          title: '',
+          hAxis: {title: 'Fecha',  titleTextStyle: {color: '#333'}},
+          vAxis: {minValue: 0}
+        };
+
+        var chart = new google.visualization.AreaChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+      }
+    </script>
 		<!-- Components Vendor Styles -->
                 <link rel="stylesheet" href="assets/css/all-icons.css">
                 <link rel="stylesheet" href="assets/css/fontawesome.css">
@@ -140,67 +164,85 @@ h6 {
                 					<h1 class="h2 mb-2">Inicio</h1>
 
 					<!-- Doughnut Chart -->
-					<div class="row">
 
-							<!-- Performance Chart -->
-							<div class="card h-100">
-								<!-- Card Header -->
+						
 							
 
 
 									<ul class="list-inline mb-0">
 										<div class="container-fluid">
-                                        
+						<div class="col-md-20 mb-19">
+							<!-- Performance Chart -->
+							<div class="card h-300">
+								<!-- Card Header -->
+								<header class="card-header d-flex align-items-center justify-content-between">
+									<h2 class="h4 card-header-title">Gráfica de movimientos</h2>
+
+									<!-- Card Icons -->
+									<ul class="list-inline mb-0">
+										<li class="list-inline-item dropdown">
+											<a id="performanceMenuInvoker" class="u-icon-sm link-muted" href="#" role="button" aria-haspopup="true" aria-expanded="false"
+											   data-toggle="dropdown"
+											   data-offset="8">
+												<span class="ti-more"></span>
+											</a>
+
+											<!-- Card Menu -->
+											<div class="dropdown-menu dropdown-menu-right" aria-labelledby="performanceMenuInvoker" style="width: 150px;">
+												<div class="card border-0 p-3">
+													<ul class="list-unstyled mb-0">
+														<li class="mb-3">
+															<a class="d-block link-dark" href="#">Add</a>
+														</li>
+														<li>
+															<a class="d-block link-dark" href="#">Remove</a>
+														</li>
+													</ul>
+												</div>
+											</div>
+											<!-- Card Menu -->
+										</li>
+									</ul>
+									<!-- End Card Icons -->
+								</header>
+								<!-- End Card Header -->
+
+								<!-- Card Body -->
+								<div class="card-body">
+									<!-- Chart -->
+									<div class="mx-auto mb-6" style="max-width: 300px; max-height: 300px;">
+										<canvas class="js-doughnut-chart"
+										        width="300"
+										        height="300"></canvas>
+									</div>
+									<!-- End Chart -->
+
+									<!-- Chart Legends -->
+									<ul class="list-inline d-flex align-items-center justify-content-center text-center mb-0">
+										<li class="list-inline-item px-5 mr-0">
+											<div class="h2 font-weight-normal text-primary mb-1">45%</div>
+											<div class="text-muted">Total Sales</div>
+										</li>
+										<li class="list-inline-item px-5 mr-0">
+											<div class="h2 font-weight-normal text-info mb-1">15%</div>
+											<div class="text-muted">New Customers</div>
+										</li>
+										<li class="list-inline-item px-5 mr-0">
+											<div class="h2 font-weight-normal text-success mb-1">15%</div>
+											<div class="text-muted">Conversion</div>
+										</li>
+									</ul>
+									<!-- End Chart Legends -->
+								</div>
+								<!-- End Card Body -->
+							</div>
+							<!-- End Performance Chart -->
+						</div>                                        
                                    
 
 
 
-<h6>¡Bienvenid@ al Sistema de gestión financiero para el Departamento de Control Presupuestario de la Universidad Nacional Abierta (UNA)!</h6>
 
-				<!-- Default box -->
-				<div class="box">
-                
-					<div class="box-header with-border">
-						<i class="fa fa-bar-chart"></i><h3 class="box-title">Grafica de movimientos</h3>
-					</div>
-                    
-					<div class="col-sm-12 add_top_10">
-						<form id="form_filter">
-                        
-							<div class="form-group col-sm-5">
-								<input type="date" name="start" id="start" class="form-control">
-							</div>
-                            
-							<div class="form-group col-sm-5">
-								<input type="date" name="finish" id="finish" class="form-control">
-							</div>
-                            
-							<div class="form-group col-sm-2">
-								<a href="javascript:void(0)" id="filter_btn" class="btn btn-sm btn-default form-control"><i class="fa fa-filter"></i> Filtrar</a>
-							</div>
-                            
-						</form>
-						
-					</div>
-                    
-					<div class="box-body">
-                    
-						<canvas id="myChart" class="col-sm-12"></canvas>
-                        
-						<center><label>Abonos&nbsp; </label><label class="entrada" >&nbsp;&nbsp;&nbsp;&nbsp; </label> &nbsp;&nbsp;  <label>Retiros &nbsp;</label><label class="salida" > &nbsp;&nbsp;&nbsp;&nbsp;</label></center>
-                        
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-
-
-					</ul>
-					<!-- End Footer Menu -->
-
-					<!-- Copyright -->
-					<!-- End Copyright -->
 @include('layouts.footer')
 
 

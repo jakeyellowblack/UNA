@@ -40,6 +40,8 @@ Route::post('import-list-excel', 'NominaController@importExcel')->name('nomina.i
 Route::get('tpresupuesto','PresupuestoController@index')->name('tpresupuesto');
 Route::post('tpresupuesto','PresupuestoController@store')->name('tpresupuesto.store');
 Route::get('listpresupuesto','PresupuestoController@show')->name('listpresupuesto');
+Route::get('home','PresupuestoController@chart')->name('home');
+//Route::resource('tpresupuesto','PresupuestoController')->names('tpresupuesto');
 //Route::resource('listpresupuesto', 'PresupuestoController')->names('listpresupuesto');
 
 Route::get('tnomina','NominaController@index')->name('tnomina');
