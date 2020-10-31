@@ -38,8 +38,9 @@ Route::post('import-list-excel', 'NominaController@importExcel')->name('nomina.i
 
 //Index y Show de Presupuesto
 Route::get('tpresupuesto','PresupuestoController@index')->name('tpresupuesto');
-Route::get('tpresupuesto','PresupuestoController@show')->name('tpresupuesto');
-Route::resource('listpresupuesto', 'PresupuestoController')->names('listpresupuesto');
+Route::post('tpresupuesto','PresupuestoController@store')->name('tpresupuesto.store');
+Route::get('listpresupuesto','PresupuestoController@show')->name('listpresupuesto');
+//Route::resource('listpresupuesto', 'PresupuestoController')->names('listpresupuesto');
 
 Route::get('tnomina','NominaController@index')->name('tnomina');
 Route::get('tnomina','NominaController@show')->name('tnomina');
@@ -55,7 +56,8 @@ Route::resource('egreso','EgresoController')->names('egreso');
 //Cierre
 Route::resource('cierre','CierreController')->names('cierre');
 //Cuentas
-Route::resource('cuentas','CierreController')->names('cuentas');
+Route::get('cuentas','CuentaController@show')->name('cuentas');
+Route::resource('cuentas','CuentaeController')->names('cuentas');
 
 ///USER
 Route::get('user', 'UserController@index')->name('user');

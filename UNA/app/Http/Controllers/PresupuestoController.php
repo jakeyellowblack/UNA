@@ -10,6 +10,7 @@ use App\Imports\PresupuetosImport;
 
 
 use App\Presupuesto;
+use App\Cuenta;
 use DB;
 
 
@@ -17,9 +18,19 @@ use DB;
 class PresupuestoController extends Controller
 {
 	
-	 public function index(Presupuesto $presupuesto)
+	 public function index(Presupuesto $presupuesto, Request $request)
     {
-		return view('listpresupuesto');
+		  if ($request)
+				{
+					$presupuesto=DB::table('presupuestos as p')->join('cuentas as c','p.id','=','c.id')
+					->select('p.id','p.created_at','p.tipo','p.concepto','p.montoT','c.id as idcuenta','c.nombre','c.numero')
+					->orderBy('p.id','asc');
+					
+					$presupuesto = $presupuesto->get();
+
+					return view('tpresupuesto',["presupuesto"=>$presupuesto]);
+				}		
+	
     }
 	
 
@@ -40,8 +51,8 @@ class PresupuestoController extends Controller
 	    public function store(Request $request)
     {
         $presupuesto = Presupuesto::create($request->all());
-        $presupuesto>save();
-        return view('tpresupuesto');
+        $presupuesto->save();
+        return Redirect::to('tpresupuesto');
     }
 	
 	

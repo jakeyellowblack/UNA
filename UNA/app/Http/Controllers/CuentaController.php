@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Cuenta;
+use App\Presupuesto;
+use DB;
+
 class CuentaController extends Controller
 {
     /**
@@ -43,9 +47,11 @@ class CuentaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Cuenta $cuenta, Request $request)
     {
-        //
+        $cuenta = Cuenta::findOrFail($request->id);
+
+        return view('tpresupuesto', compact('cuenta'));
     }
 
     /**
