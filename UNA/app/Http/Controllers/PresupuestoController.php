@@ -50,6 +50,7 @@ class PresupuestoController extends Controller
 	
 	    public function store(Request $request)
     {
+    	
         $presupuesto = Presupuesto::create($request->all());
         $presupuesto->save();
         return Redirect::to('tpresupuesto');

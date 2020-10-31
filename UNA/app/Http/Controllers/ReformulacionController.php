@@ -38,11 +38,13 @@ class ReformulacionController extends Controller
          $file = public_path('reformulaciones/'.$filename);
          //dd($file);
          $text = file_get_contents($file);
+         dd($text);
+         
 		          $text = nl2br($text);
          //echo '<pre>'.$text.'</pre>'; 
      
 	 
-		dd($text);
+		
 
         //$file->move(public_path().'/reformulacion/', $name);
 
