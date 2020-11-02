@@ -7,6 +7,10 @@
 <div class="wrapper fadeInDown">
   <div id="formContent">
     <!-- Tabs Titles -->
+    <br>
+                    <img class="u-header-logo__text" src="logo-text.png" alt="Awesome">
+                    <br>
+
     <h2>Loguéate aquí</h2>
 
     <!-- Login Form -->
