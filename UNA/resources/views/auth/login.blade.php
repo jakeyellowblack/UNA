@@ -11,7 +11,7 @@
                     <img class="u-header-logo__text" src="logo-text.png" alt="Awesome">
                     <br>
 
-    <h2>Loguéate aquí</h2>
+    <h2>Iniciar sesión</h2>
 
     <!-- Login Form -->
                     <form method="POST" action="{{ route('login') }}">
