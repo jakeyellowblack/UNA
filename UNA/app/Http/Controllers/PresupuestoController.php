@@ -77,14 +77,16 @@ class PresupuestoController extends Controller
 				  if ($request)
 				{
 					$busqueda = $request->get('busqueda');
-					$tipo   = $request->get('tipo');
-										$presupuesto = $presupuesto->get();
+					$tipo   = $request->get('tip');
+					
+					$presupuesto = $presupuesto->get();
 
 					
-					$presupuesto=DB::table('presupuestos as p')
+					$presupuesto=Presupuesto::from('presupuestos as p')
 					->join('cuentas as c','p.id','=','c.id')
 					->select('p.id','p.created_at','p.tipo','p.concepto','p.montoT','c.id as idcuenta','c.nombre','c.numero')
 					->orderBy('p.id','asc')
+					->Buscarpor($tipo, $busqueda)
 					->paginate(10);
 
 					

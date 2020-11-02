@@ -13,7 +13,7 @@ $factory->define(App\Presupuesto::class, function (Faker $faker) use ($autoIncre
     return [
 		'cuenta_id' => $autoIncrement->current(),
         'created_at' => $faker->date,
-		'tipo' => $faker->randomElement(['add', 'out']),
+		'tipo' => $faker->randomElement(['ingreso', 'egreso']),
 		'concepto' => $faker->text(20),
 		'montoT' => $faker->randomFloat(2, 1, 100),
     ];

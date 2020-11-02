@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Database\Query\Builder;
 
 class Presupuesto extends Model
 {
@@ -21,13 +22,18 @@ class Presupuesto extends Model
 		return $this->belongsTo(Cuenta::class);
 	}	
 	
+
+
+
  public function scopeBuscarpor($query, $tipo, $busqueda)
     {
 		if (($tipo) && ($busqueda))
 		{
 			return $query->where($tipo, 'LIKE', "%$busqueda%");
 		}
-    }	
+    }
+	
+	
 	
 	
 }

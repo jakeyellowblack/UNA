@@ -13,7 +13,14 @@
 		<!-- Components Vendor Styles -->
 		<link rel="stylesheet" href="assets/vendor/themify-icons/themify-icons.css">
 		<link rel="stylesheet" href="assets/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css">
+        
+        
+    <script src="{{ asset('js/jquerydata.js.js') }}"></script>
+    <script src="{{ asset('js/moment.min.js') }}"></script>
+    <script src="{{ asset('js/bootstrap-datepicker.js') }}"></script>
 
+  
+  
 		<!-- Theme Styles -->
 		<link rel="stylesheet" href="assets/css/theme.css">
 		<style type="text/css">
@@ -48,11 +55,11 @@
 		                            <select name="tipo" class="form-control form-pill">
 		                              	<option disabled selected>Seleccione...</option>
 
-	                                	<option  value="add" >
+	                                	<option  value="ingreso" >
 	                                  	Ingreso
 	                                	</option>
 
-	                                	<option  value="out" >
+	                                	<option  value="egreso" >
 	                                  	Egreso
 	                                	</option>
 
@@ -91,7 +98,7 @@
 		                            
 								<div class="form-group">
 									<label for="created_at">Fecha</label>
-									<input id="created_at" name="created_at" class="form-control form-pill" type="date" placeholder="Fecha"> 
+									<input id="created_at" name="created_at" maxlength="7" class="form-control datetimepicker form-pill" type="date" placeholder="Fecha"> 
 								</div>                                           
 								
 								<button class="btn btn-primary my-20 my-sm-0" type="submit">Guardar</button>
@@ -116,9 +123,11 @@
 
 @include('scripts')
 
-<script>
-
-</script>
+<script type="text/javascript">
+ $(function () {
+    $('.datetimepicker').datetimepicker();
+});
+</script> 
 
 </body>
 	<!-- End Body -->

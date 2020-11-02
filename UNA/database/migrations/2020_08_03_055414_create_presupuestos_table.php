@@ -17,7 +17,7 @@ class CreatePresupuestosTable extends Migration
         Schema::create('presupuestos', function (Blueprint $table) {
             $table->increments('id');
 			$table->timestamp('created_at')->default(\DB::raw('CURRENT_TIMESTAMP'));
-			$table->enum('tipo', ['add', 'out']);
+			$table->enum('tipo', ['ingreso', 'egreso']);
 			$table->string('concepto');
 			$table->float('montoT');
 			

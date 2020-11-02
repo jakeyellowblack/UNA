@@ -85,17 +85,18 @@
                 
                 <nav class="navbar navbar-light bg-light">
                 
-  <form action="{{ route('tpresupuesto') }}" class="form-inline" method="get" >
+  <form action="{{ route('listpresupuesto') }}" class="form-inline" method="get" role="search">
   
-   <select name="tipo" class="form-control mr-sm-2">
+   <select name="tip" class="form-control mr-sm-2">
       <option disabled selected>Buscar por...</option>
+      <option value="tipo">Tipo</option>
       <option value="concepto">Concepto</option>
-      <option value="nombre">Nombre</option>
-      <option value="fecha">Fecha</option>
-      <option value="montoT">Monto Total</option>
+      <option value="created_at">Fecha</option>
+      <option value="montoT">Monto</option>
+      <option value="nombre">Cuenta</option>
     </select>
   
-    <input name="busqueda" class="form-control mr-sm-2" size="85" maxlength="30" type="search" placeholder="Escribe tu búsqueda aquí...">
+    <input name="busqueda" class="form-control mr-sm-2" size="85" maxlength="30" type="text" placeholder="Escribe tu búsqueda aquí...">
     <button class="btn btn-outline-success my-20 my-sm-0" type="submit">Buscar.</button>
     
   </form>
@@ -154,7 +155,7 @@
 				          <tr>
 					          <td class="font-weight-semi-bold">{{ $pre->id }}</td>
                               <td class="font-weight-semi-bold">
-									@if($pre->tipo=="add")
+									@if($pre->tipo=="ingreso")
 										Ingreso  
 									@else
 										Egreso
