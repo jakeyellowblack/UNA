@@ -1,74 +1,42 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Iniciar Sesión') }}</div>
 
-                <div class="card-body">
+        <link href="{{ asset('css/login.css') }}" rel="stylesheet">
+
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <!-- Tabs Titles -->
+    <h2>Loguéate aquí</h2>
+
+    <!-- Login Form -->
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
-
-                        <div class="form-group row">
-                            <label for="code" class="col-md-4 col-form-label text-md-right">{{ __('Código UNA') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="code" class="form-control{{ $errors->has('code') ? ' is-invalid' : '' }}" name="code" value="{{ old('code') }}" required autocomplete="code" autofocus>
-
+                        
+      <input id="code" type="text" class="fadeIn second{{ $errors->has('code') ? ' is-invalid' : '' }}" name="code" value="{{ old('code') }}" required autocomplete="code" autofocus placeholder="Código UNA">
+      
                                 @error('code')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Contraseña') }}</label>
-
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" autocomplete="new-password"  class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
-
-                                @if ($errors->has('password'))
+                                @enderror      
+      
+      
+      <input id="password" type="password" autocomplete="new-password"  class="fadeIn third{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required placeholder="Contraseña">
+      
+     							 @if ($errors->has('password'))
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $errors->first('password') }}</strong>
                                     </span>
                                 @endif
-                            </div>
-                        </div>
+      
+      
+      <input type="submit" class="fadeIn fourth" value="Enviar">
+    </form>
 
-<!--                        <div class="form-group row">
-                            <div class="col-md-6 offset-md-4">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+    <!-- Remind Passowrd -->
+   
 
-                                    <label class="form-check-label" for="remember">
-                                        {{ __('Remember Me') }}
-                                    </label>
-                                </div>
-                            </div>
-                        </div>-->
-
-                        <div class="form-group row mb-0">
-                            <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Enviar') }}
-                                </button>
-
-<!--                                @if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">
-                                        {{ __('Forgot Your Password?') }}
-                                    </a>
-                                @endif-->
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
+  </div>
 </div>
 @endsection
