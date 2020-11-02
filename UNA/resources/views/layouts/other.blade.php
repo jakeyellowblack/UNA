@@ -307,7 +307,7 @@
                         <ul id="menuItemUsuarios" class="u-sidebar-nav-menu u-sidebar-nav-menu--second-level" style="display: none;">
                                     
                             <li class="u-sidebar-nav-menu__item">
-                                <a class="u-sidebar-nav-menu__link" href="/create">
+                                <a class="u-sidebar-nav-menu__link" href="/user_create">
                                     <span class="u-sidebar-nav-menu__item-title">Crear usuario</span>
                                 </a>
                             </li>
