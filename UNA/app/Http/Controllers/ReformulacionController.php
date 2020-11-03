@@ -11,6 +11,8 @@ class ReformulacionController extends Controller
     public function index()
     {
         $reformulacion = Reformulacion::orderBy('id', 'ASC');
+		
+		$reformulacion = $reformulacion->get();
 
         return view('reformulacion.index', compact('reformulacion'));
     }
