@@ -96,7 +96,7 @@
       <option value="nombre">Cuenta</option>
     </select>
   
-    <input name="busqueda" class="form-control mr-sm-2" size="85" maxlength="30" type="text" placeholder="Escribe tu búsqueda aquí...">
+    <input name="busqueda" class="form-control mr-sm-2" size="85"  maxlength="30" type="text" placeholder="Escribe tu búsqueda aquí...">
     <button class="btn btn-outline-success my-20 my-sm-0" type="submit">Buscar.</button>
     
   </form>
@@ -330,7 +330,6 @@
 		<!-- End Main -->
 
 
-
 @include('scripts')
 
 
@@ -390,6 +389,7 @@ $(document).ready(function(){
 
 
 </script>
+
 </body>
 	<!-- End Body -->
 </html>

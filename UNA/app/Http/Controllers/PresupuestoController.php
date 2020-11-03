@@ -36,13 +36,22 @@ class PresupuestoController extends Controller
     {
 		  if ($request)
 				{
+					
+
+
+					
 					$presupuesto=DB::table('presupuestos as p')->join('cuentas as c','p.id','=','c.id')
 					->select('p.id','p.created_at','p.tipo','p.concepto','p.montoT','c.id as idcuenta','c.nombre','c.numero')
 					->orderBy('p.id','asc');
 					
 					$presupuesto = $presupuesto->get();
+					
+					$total = $presupuesto->where('tipo','=','ingreso')->sum('montoT');
+					$total2 = $presupuesto->where('tipo','=','egreso')->sum('montoT');
 
-					return view('home',["presupuesto"=>$presupuesto]);
+
+
+					return view('home',["presupuesto"=>$presupuesto, "total"=>$total, "total2"=>$total2]);
 				}		
 	
     }	
@@ -67,7 +76,7 @@ class PresupuestoController extends Controller
     	
         $presupuesto = Presupuesto::create($request->all());
         $presupuesto->save();
-		return redirect()->back()->with('status','Datos creados');
+		return redirect()->back()->with('status','Datos creados satisfactoriamente');
     }
 	
 	
@@ -80,6 +89,7 @@ class PresupuestoController extends Controller
 					$tipo   = $request->get('tip');
 					
 					$presupuesto = $presupuesto->get();
+					
 
 					
 					$presupuesto=Presupuesto::from('presupuestos as p')
@@ -90,7 +100,6 @@ class PresupuestoController extends Controller
 					->paginate(10);
 
 					
-
 					return view('listpresupuesto',["presupuesto"=>$presupuesto]);
 				}	
 		
@@ -108,7 +117,7 @@ class PresupuestoController extends Controller
     $presupuesto->update($request->all());
 
 		
-		return redirect()->back()->with('status','DATOS ACTUALIZADOS');
+		return redirect()->back()->with('status','Datos actualizados satisfactoriamente');
 		
     }	
 
@@ -118,7 +127,7 @@ class PresupuestoController extends Controller
         $presupuesto = Presupuesto::findOrFail($request->preid);
         $presupuesto->delete();
 
-		return redirect()->back()->with('message','DATOS ELIMINADOS');
+		return redirect()->back()->with('message','Datos eliminados satisfactoriamente');
 
     }
 	

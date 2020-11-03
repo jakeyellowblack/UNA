@@ -2,6 +2,18 @@
   
 @section('content')
 
+@if(session('status'))
+ <div class="alert alert-success">
+{{ session('status') }}
+</div>
+@endif
+
+@if(session('message'))
+ <div class="alert alert-danger">
+{{ session('message') }}
+</div>
+@endif
+
 <!DOCTYPE html>
 	<!-- Head -->
 <head>
@@ -98,7 +110,7 @@
 		                            
 								<div class="form-group">
 									<label for="created_at">Fecha</label>
-									<input id="created_at" name="created_at" maxlength="7" class="form-control datetimepicker form-pill" type="date" placeholder="Fecha"> 
+									<input id="created_at" name="created_at" maxlength="200" class="form-control form-pill" type="text" placeholder="Fecha"> 
 								</div>                                           
 								
 								<button class="btn btn-primary my-20 my-sm-0" type="submit">Guardar</button>

@@ -128,12 +128,17 @@ h6 {
         <div class="col-md-3 col-sm-6 col-xs-12">
           <div class="info-box">
             <span class="info-box-icon bg-green"><i class="ti-thumb-up"></i></span>
+            
 
             <div class="info-box-content">
               <span class="info-box-text">Ingreso</span>
               </br>
-              <span class="info-box-number">Value</span>
+
+              <span class="info-box-number">Total: {{ $total }}</span>
+
             </div>
+            
+          	
             <!-- /.info-box-content -->
           </div>
           <!-- /.info-box -->
@@ -147,7 +152,10 @@ h6 {
             <div class="info-box-content">
               <span class="info-box-text">Egreso</span>
               </br>
-              <span class="info-box-number">Value</span>
+
+              <span class="info-box-number">Total: {{ $total2 }}</span>
+
+
             </div>
             <!-- /.info-box-content -->
           </div>
