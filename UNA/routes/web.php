@@ -58,9 +58,9 @@ Route::resource('egreso','EgresoController')->names('egreso');
 //Cierre
 Route::resource('cierre','CierreController')->names('cierre');
 //Cuentas
-Route::get('cuentas','CuentaController@show')->name('cuentas');
-Route::resource('cuentas','CuentaeController')->names('cuentas');
-
+Route::get('cuenta','CuentaController@index')->name('cuenta.index');
+Route::get('cuenta_create','CuentaController@create')->name('cuenta.create');
+Route::post('cuenta_store', 'CuentaController@store')->name('cuenta.store');
 ///USER
 Route::get('user', 'UserController@index')->name('user');
 Route::get('user_create', 'UserController@create')->name('user.create');

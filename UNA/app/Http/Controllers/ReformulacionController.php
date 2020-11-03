@@ -10,9 +10,9 @@ class ReformulacionController extends Controller
 {
     public function index()
     {
+        $reformulacion = Reformulacion::orderBy('id', 'ASC');
 
-        
-    	return view('reformulacion.index');
+        return view('reformulacion.index', compact('reformulacion'));
     }
 
     public function create()

@@ -17,7 +17,7 @@ class CuentaController extends Controller
      */
     public function index()
     {
-        //
+        return view('cuenta.index');
     }
 
     /**
@@ -27,7 +27,8 @@ class CuentaController extends Controller
      */
     public function create()
     {
-        //
+
+        return view('cuenta.create');
     }
 
     /**

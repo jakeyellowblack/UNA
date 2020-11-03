@@ -25,20 +25,36 @@
 
 	<!-- Body -->
 <body>
+			<!-- Content -->
+			<div class="u-content">
+				<!-- Content Body -->
+				<div class="u-body">
+					<h1 class="h2 mb-2">Cuentas</h1>
 
-	<!-- Content -->
-	<div class="u-content">
-		<!-- Content Body -->
-		<div class="u-body">
-			<h1 class="h2 mb-2">Reformulación</h1>
 
-			<!-- Card -->
+
+					<!-- Card -->
 	        <div class="card mb-5">
-		        
 		        <!-- Card Header -->
-
+                
+                <nav class="navbar navbar-light bg-light">
+                
+  <form action="" class="form-inline" method="get" role="search">
+  
+   <select name="tip" class="form-control mr-sm-2">
+      <option disabled selected>Buscar por...</option>
+      <option value="nombre">Nombre</option>
+      <option value="numero">Numero</option>
+    </select>
+  
+    <input name="busqueda" class="form-control mr-sm-2" size="85" maxlength="30" type="text" placeholder="Escribe tu búsqueda aquí...">
+    <button class="btn btn-outline-success my-20 my-sm-0" type="submit">Buscar.</button>
+    
+  </form>
+  
+</nav>
 		        <header class="card-header">
-			        <h2 class="h4 card-header-title">Tabla de Reformulación</h2>
+			        <h2 class="h4 card-header-title">Tabla de Cuentas</h2>
                     
                     
 		        </header>
@@ -51,10 +67,9 @@
 			          <table class="table table-hover mb-0">
 				          <thead>
 				          <tr>
-				          	  <th>Archivo</th>
-					          <th>Titulo</th>
-					          <th>Fecha</th>
-
+					          <th>Id</th>
+					          <th>Nombre</th>
+					          <th>Numero</th>
 					          <th class="text-center">Acciones</th> 
 			          </tr>
 				          </thead>
@@ -63,16 +78,15 @@
 
 
 
-			            @foreach($reformulacion as $ref)
-
 			            <tbody>
-				            <tr>
-					          <td class="font-weight-semi-bold">{{ $ref->namefile }}</td>
-					          <td class="font-weight-semi-bold">{{ $ref->title }}</td>
-				              <td class="font-weight-semi-bold">{{ $ref->date }}</td>
-
-					          <td class="text-center">
-
+				          <tr>
+					          <td class="font-weight-semi-bold"></td>
+                              <td class="font-weight-semi-bold"></td>
+					          <td class="font-weight-semi-bold"></td>
+	
+					          <td class="text-center"> 
+                              
+                              
                                <!-- Actions --> 
 						          
 						          <div class="dropdown">
@@ -82,33 +96,28 @@
                                  
                                      
 							          <!-- Actions Menu -->
-						            <div class="dropdown-menu dropdown-menu-right" style="width: 150px;">
-								        <div class="card border-0 p-3">
+						          <div class="dropdown-menu dropdown-menu-right" style="width: 150px;">
+								          <div class="card border-0 p-3">
                                           
 									          
                                               <ul class="list-unstyled mb-0">
                                             
-										          <li class="mb-3">
-											          <a class="d-block link-dark" href="#editModal" data-mynamefile="{{$ref->namefile}}" data-mytitle="{{$ref->title}}"  data-mydate="{{$ref->date}}" data-usid="{{$ref->id}}" data-toggle="modal">Editar</a>
-										          </li>
-                                                  
-                                                  
-										          <li>
-											          <a class="d-block link-dark" href="#deleteModal" data-usid="{{$ref->id}}" data-toggle="modal">Eliminar</a>
-										          </li>
+
 									          </ul>
                                               
-								        </div>
-							        </div>
+								          </div>
+							          </div>
 							          <!-- End Actions Menu -->
+                                      
+                                      
 						          </div>
 						          <!-- End Actions -->
-
+                                  
+                                  
+                                 
 					          </td>
 				          </tr>
 				          </tbody>
-				         
-				@endforeach
 			          </table>
                       
 		          </div>
@@ -124,7 +133,6 @@
 					<!-- End Card -->
 </div>
 				<!-- End Content Body -->
-
 
 @include('layouts.footer')
 
