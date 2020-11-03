@@ -2,8 +2,6 @@
   
 @section('content')
 
-
-
 @if(session('status'))
  <div class="alert alert-success">
 {{ session('status') }}
@@ -67,161 +65,149 @@
 
 	<!-- Body -->
 <body>
-
-
-
-
-			<!-- Content -->
-			<div class="u-content">
-				<!-- Content Body -->
-				<div class="u-body">
-					<h1 class="h2 mb-2">Presupuesto</h1>
-
-
-
-					<!-- Card -->
+	<!-- Content -->
+	<div class="u-content">
+		<!-- Content Body -->
+		<div class="u-body">
+			<h1 class="h2 mb-2">Presupuesto</h1>
+			<!-- Card -->
 	        <div class="card mb-5">
 		        <!-- Card Header -->
-                
                 <nav class="navbar navbar-light bg-light">
                 
-  <form action="{{ route('listpresupuesto') }}" class="form-inline" method="get" role="search">
+  					<form action="{{ route('listpresupuesto') }}" class="form-inline" method="get" role="search">
   
-   <select name="tip" class="form-control mr-sm-2">
-      <option disabled selected>Buscar por...</option>
-      <option value="tipo">Tipo</option>
-      <option value="concepto">Concepto</option>
-      <option value="created_at">Fecha</option>
-      <option value="montoT">Monto</option>
-      <option value="nombre">Cuenta</option>
-    </select>
-  
-    <input name="busqueda" class="form-control mr-sm-2" size="85"  maxlength="30" type="text" placeholder="Escribe tu búsqueda aquí...">
-    <button class="btn btn-outline-success my-20 my-sm-0" type="submit">Buscar.</button>
+					    <select name="tip" class="form-control mr-sm-2">
+						    <option disabled selected>Buscar por...</option>
+						    <option value="tipo">Tipo</option>
+						    <option value="concepto">Concepto</option>
+						    <option value="created_at">Fecha</option>
+						    <option value="montoT">Monto</option>
+						    <option value="nombre">Cuenta</option>
+					    </select>
+					  
+					    <input name="busqueda" class="form-control mr-sm-2" size="85"  maxlength="30" type="text" placeholder="Escribe tu búsqueda aquí...">
+					    <button class="btn btn-outline-success my-20 my-sm-0" type="submit">Buscar.</button>
     
-  </form>
+  					</form>
   
-</nav>
+				</nav>
+		        
 		        <header class="card-header">
-			        <h2 class="h4 card-header-title">Tabla de Presupuestos</h2>
+			    
+			    	<h2 class="h4 card-header-title">Tabla de Presupuestos</h2>
                     
                     
-                  <form action="{{ route('presupuesto.import') }}" method="post" enctype="multipart/form-data">
-            @csrf
+            		<form action="{{ route('presupuesto.import') }}" method="post" enctype="multipart/form-data">
+            			@csrf
             
-               <div class="input-group">
-               
-        <label class="input-group-btn">
-			<span class="btn btn-primary btn-file">
-                Seleccione un archivo... <input type="file" id="banner" name="banner" style="visibility: hidden; position: absolute;" class="hidden">
-            </span>
-        </label>
-        
-        <input class="form-control" id="banner_captura" readonly name="banner_captura" type="text" value="">
+		               <div class="input-group">
+		               
+		        			<label class="input-group-btn">
+								<span class="btn btn-primary btn-file">
+		                Seleccione un archivo... <input type="file" id="banner" name="banner" style="visibility: hidden; position: absolute;" class="hidden">
+		            			</span>
+		        			</label>
+		        
+		        			<input class="form-control" id="banner_captura" readonly name="banner_captura" type="text" value="">
 
-            <button class='btn btn-primary float-right'>Importar Presupuesto</button>
-                </div>
-
-            
-         
- 
-            
-        </form>
+		           			<button class='btn btn-primary float-right'>Importar Presupuesto</button>
+		                </div>
+        			</form>
 		        </header>
 		        <!-- End Card Header -->
 
 		        <!-- Crad Body -->
-	          <div class="card-body pt-0">
-		          <!-- Table -->
-		          <div class="table-responsive">
-			          <table class="table table-hover mb-0">
-				          <thead>
-				          <tr>
-					          <th>ID</th>
-					          <th>Tipo</th>
-					          <th>Concepto</th>
-					          <th>Fecha</th>
-					          <th>Monto</th>
-                              <th>Cuenta</th>
-					          <th class="text-center">Acciones</th> 
-			          </tr>
-				          </thead>
+	          	<div class="card-body pt-0">
+		          	<!-- Table -->
+		          	<div class="table-responsive">
+			          	<table class="table table-hover mb-0">
+				          	<thead>
+					          	<tr>
+						          	<th>ID</th>
+						          	<th>Tipo</th>
+						          	<th>Concepto</th>
+						          	<th>Fecha</th>
+						          	<th>Monto</th>
+	                              	<th>Cuenta</th>
+						          	<th class="text-center">Acciones</th> 
+				         		</tr>
+				          	</thead>
 
 
 
-@foreach($presupuesto as $pre)
+							@foreach($presupuesto as $pre)
 
-			            <tbody>
-				          <tr>
-					          <td class="font-weight-semi-bold">{{ $pre->id }}</td>
-                              <td class="font-weight-semi-bold">
-									@if($pre->tipo=="ingreso")
-										Ingreso  
-									@else
-										Egreso
-							  </td>
-                                   @endif
-					          <td class="font-weight-semi-bold">{{ $pre->concepto }}</td>
-					          <td class="font-weight-semi-bold">{{ $pre->created_at }}</td>
-					          <td class="font-weight-semi-bold">{{ $pre->montoT }}</td>
-                              <td class="font-weight-semi-bold">{{ $pre->nombre }}</td>
-					          <td class="text-center"> 
-                              
-                              
-                               <!-- Actions --> 
-						          
-						          <div class="dropdown">
-							          <a id="basicTable1MenuInvoker" class="u-icon-sm link-muted" href="#" role="button" aria-haspopup="true" aria-expanded="false" data-toggle="dropdown" data-offset="8">
-								          <span class="ti-more"></span>
-							          </a>
-                                 
-                                     
-							          <!-- Actions Menu -->
-						          <div class="dropdown-menu dropdown-menu-right" style="width: 150px;">
-								          <div class="card border-0 p-3">
-                                          
-									          
-                                              <ul class="list-unstyled mb-0">
-                                            
-										          <li class="mb-3">
-											          <a class="d-block link-dark" href="#editModal" data-myconcepto="{{$pre->concepto}}" data-mynombre="{{$pre->nombre}}" data-myfecha="{{$pre->created_at}}" data-mymontot="{{$pre->montoT}}" data-preid="{{$pre->id}}" data-toggle="modal">Editar</a>
-										          </li>
-                                                  
-                                                  
-										          <li>
-											          <a class="d-block link-dark" href="#deleteModal" data-preid="{{$pre->id}}" data-toggle="modal">Eliminar</a>
-										          </li>
-									          </ul>
-                                              
-								          </div>
-							          </div>
-							          <!-- End Actions Menu -->
-                                      
-                                      
-						          </div>
-						          <!-- End Actions -->
-                                  
-                                  
-                                 
-					          </td>
-				          </tr>
-				          </tbody>
-                         @endforeach
-			          </table>
+				            <tbody>
+					            <tr>
+						            <td class="font-weight-semi-bold">{{ $pre->id }}</td>
+	                                <td class="font-weight-semi-bold">
+										@if($pre->tipo=="ingreso")
+											Ingreso  
+										@else
+											Egreso
+										@endif
+								    </td>
+	                                    
+
+						            <td class="font-weight-semi-bold">{{ $pre->concepto }}</td>
+						            <td class="font-weight-semi-bold">{{ $pre->created_at }}</td>
+						            <td class="font-weight-semi-bold">{{ $pre->montoT }}</td>
+	                                <td class="font-weight-semi-bold">{{ $pre->nombre }}</td>
+
+						            <td class="text-center"> 
+	                              
+	                              
+	                                <!-- Actions --> 
+						            <div class="dropdown">
+							            <a id="basicTable1MenuInvoker" class="u-icon-sm link-muted" href="#" role="button" aria-haspopup="true" aria-expanded="false" data-toggle="dropdown" data-offset="8">
+								           <span class="ti-more"></span>
+							            </a>
+	                                     
+								        <!-- Actions Menu -->
+							          	<div class="dropdown-menu dropdown-menu-right" style="width: 150px;">
+								            <div class="card border-0 p-3">
+                                                <ul class="list-unstyled mb-0"> 
+											        <li class="mb-3">
+												        <a class="d-block link-dark" href="#editModal" data-myconcepto="{{$pre->concepto}}" data-mynombre="{{$pre->nombre}}" data-myfecha="{{$pre->created_at}}" data-mymontot="{{$pre->montoT}}" data-preid="{{$pre->id}}" data-toggle="modal">Editar</a>
+											        </li>
+
+											        <li>
+												        <a class="d-block link-dark" href="#deleteModal" data-preid="{{$pre->id}}" data-toggle="modal">Eliminar</a>
+											        </li>
+										        </ul>
+	                                              
+									        </div>
+								        </div>
+								        <!-- End Actions Menu -->
+
+							        </div>
+							        <!-- End Actions -->
+	                                  
+	                                  
+	                                 
+						            </td>
+					          	</tr>
+				            </tbody>
+
+                        	@endforeach
+			            </table>
+
                       {{ $presupuesto->render() }}
-		          </div>
-		          <!-- End Table -->
-	          </div>
+
+		            </div>
+		            <!-- End Table -->
+	            </div>
 		        <!-- Crad Body -->
 	        </div>
-					<!-- End Card -->
+			<!-- End Card -->
 
 					
-						<!-- Crad Body -->
-			  </div>
-					<!-- End Card -->
-</div>
-				<!-- End Content Body -->
+			<!-- Crad Body -->
+	    </div>
+		<!-- End Card -->
+	</div>
+	<!-- End Content Body -->
 
 
                          
@@ -278,7 +264,7 @@
 		<!-- End EDIT Modals -->    
         
         
-<!-- DELETE Modals -->
+		<!-- DELETE Modals -->
 		<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
 			<div class="modal-dialog" role="document">
             
@@ -333,62 +319,56 @@
 @include('scripts')
 
 
-<script>
+	<script>
 
-var file = document.getElementById("banner");
+		var file = document.getElementById("banner");
 
-$(document).on('change','.btn-file :file',function(){
-  var input = $(this);
-  var numFiles = input.get(0).files ? input.get(0).files.length : 1;
-  var label = input.val().replace(/\\/g,'/').replace(/.*\//,'');
-  input.trigger('fileselect',[numFiles,label]);
-});
-$(document).ready(function(){
-  $('.btn-file :file').on('fileselect',function(event,numFiles,label){
-    var input = $(this).parents('.input-group').find(':text');
-    var log = numFiles > 1 ? numFiles + ' files selected' : label;
-    if(input.length){ input.val(log); }else{ if (log) alert(log); }
-  });
-});
-
-
-
-  
-  $('#editModal').on('show.bs.modal', function (event) {
-      var button = $(event.relatedTarget) 
-	  
-	  var id = button.data('preid') 
-      var concepto = button.data('myconcepto') 
-      var nombre = button.data('mynombre') 
-	  var fecha = button.data('myfecha') 
-      var montoT = button.data('mymontot') 
-	  
-      var modal = $(this)
-	  
-      modal.find('.modal-body #preid').val(id);
-      modal.find('.modal-body #concepto').val(concepto);
-      modal.find('.modal-body #nombre').val(nombre);
-	  modal.find('.modal-body #fecha').val(fecha);
-      modal.find('.modal-body #montoT').val(montoT);
-})
+		$(document).on('change','.btn-file :file',function(){
+		  var input = $(this);
+		  var numFiles = input.get(0).files ? input.get(0).files.length : 1;
+		  var label = input.val().replace(/\\/g,'/').replace(/.*\//,'');
+		  input.trigger('fileselect',[numFiles,label]);
+		});
+		$(document).ready(function(){
+		  $('.btn-file :file').on('fileselect',function(event,numFiles,label){
+		    var input = $(this).parents('.input-group').find(':text');
+		    var log = numFiles > 1 ? numFiles + ' files selected' : label;
+		    if(input.length){ input.val(log); }else{ if (log) alert(log); }
+		  });
+		});
 
 
-  $('#deleteModal').on('show.bs.modal', function (event) {
-      var button = $(event.relatedTarget) 
-	  
-	  var id = button.data('preid') 
-     
-	  
-      var modal = $(this)
-	  
-      modal.find('.modal-body #preid').val(id);
- 
-})
+
+		  
+		$('#editModal').on('show.bs.modal', function (event) {
+		    var button = $(event.relatedTarget)
+		    var id = button.data('preid') 
+		    var concepto = button.data('myconcepto') 
+		    var nombre = button.data('mynombre') 
+			var fecha = button.data('myfecha') 
+		    var montoT = button.data('mymontot') 
+			  
+		    var modal = $(this)
+			  
+		    modal.find('.modal-body #preid').val(id);
+		    modal.find('.modal-body #concepto').val(concepto);
+		    modal.find('.modal-body #nombre').val(nombre);
+			modal.find('.modal-body #fecha').val(fecha);
+		    modal.find('.modal-body #montoT').val(montoT);
+		})
+
+
+		$('#deleteModal').on('show.bs.modal', function (event) {
+		    var button = $(event.relatedTarget)
+		    var id = button.data('preid') 
+		    var modal = $(this)
+		    modal.find('.modal-body #preid').val(id);
+		})
 
 
 
 
-</script>
+	</script>
 
 </body>
 	<!-- End Body -->

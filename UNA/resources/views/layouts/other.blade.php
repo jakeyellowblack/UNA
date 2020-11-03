@@ -264,7 +264,30 @@
                     </li>
                     <!-- End Tables -->                        
                     
-                    
+                    <!-- Tables -->
+                    <li class="u-sidebar-nav-menu__item">
+                        <a class="u-sidebar-nav-menu__link" href="#"
+                           data-target="#menuItemCuenta">
+                            <span class="ti-layers-alt u-sidebar-nav-menu__item-icon"></span>
+                            <span class="u-sidebar-nav-menu__item-title">Cuentas</span>
+                            <span class="ti-angle-down u-sidebar-nav-menu__item-arrow"></span>
+                        </a>
+                                
+                        <ul id="menuItemCuenta" class="u-sidebar-nav-menu u-sidebar-nav-menu--second-level" style="display: none;">
+                            <li class="u-sidebar-nav-menu__item">
+                                <a class="u-sidebar-nav-menu__link" href="{{ route('cuenta.create') }}">
+                                    <span class="u-sidebar-nav-menu__item-title">Nueva cuenta</span>
+                                </a>
+                            </li>
+                            
+                            <li class="u-sidebar-nav-menu__item">
+                                <a class="u-sidebar-nav-menu__link" href="{{ route('cuenta.index') }}">
+                                    <span class="u-sidebar-nav-menu__item-title">Lista de cuentas</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- End Tables -->
                     
                     
                     
