@@ -10,6 +10,8 @@ class ReformulacionController extends Controller
 {
     public function index()
     {
+
+        
     	return view('reformulacion.index');
     }
 
@@ -20,12 +22,10 @@ class ReformulacionController extends Controller
 
     public function store(Request $request)
     {
-        //return $request;
+
         $reformulacion= new Reformulacion();
 
-        $reformulacion->name=$request->input('banner_captura');
-
-        //return $reformulacion;
+        $reformulacion->namefile=$request->input('banner_captura');
 
         if($request->hasFile('banner')) 
             {
@@ -34,23 +34,21 @@ class ReformulacionController extends Controller
               $file->move(public_path().'/reformulaciones/', $filename);
             }
 
-      
-         $file = public_path('reformulaciones/'.$filename);
-         //dd($file);
-         $text = file_get_contents($file);
-         dd($text);
-         
-		          $text = nl2br($text);
-         //echo '<pre>'.$text.'</pre>'; 
-     
-	 
-		
+        $file = public_path('reformulaciones/'.$filename);
+        $text = file_get_contents($file);
 
-        //$file->move(public_path().'/reformulacion/', $name);
+        $content= preg_split('/\n|\r\n?/', $text);
 
-    	return $reformulacion;
+        $date = substr($content[0], 0, 10);
+        $date = str_replace("/", "-", $date);
+        $reformulacion->date=$date;
+        
+        $title=rtrim($content[1], "  ");
+        $reformulacion->title=$title;
+        
+        $reformulacion->save();
             
-    	//return view('reformulacion.index');
+    	return view('reformulacion.index');
     }
 
     public function show($id)

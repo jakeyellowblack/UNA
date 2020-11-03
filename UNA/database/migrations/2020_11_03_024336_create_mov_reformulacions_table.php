@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateReformulacionsTable extends Migration
+class CreateMovReformulacionsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,10 @@ class CreateReformulacionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('reformulacions', function (Blueprint $table) {
+        Schema::create('mov_reformulacions', function (Blueprint $table) {
             $table->increments('id');
-            $table->date('date');
-            $table->string('namefile');
-            $table->string('title');
+            $table->integer('code');
+            $table->integer('amount');
             $table->timestamps();
         });
     }
@@ -29,6 +28,6 @@ class CreateReformulacionsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('reformulacions');
+        Schema::dropIfExists('mov_reformulacions');
     }
 }
