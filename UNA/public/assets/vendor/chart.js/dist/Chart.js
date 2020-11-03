@@ -11454,7 +11454,7 @@ defaults._set('global', {
 		onHover: null,
 
 		labels: {
-			boxWidth: 40,
+			boxWidth: 0,
 			padding: 10,
 			// Generates labels shown in the legend
 			// Valid properties to return:

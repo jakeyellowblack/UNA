@@ -6,7 +6,7 @@
 
 		<!-- Plugins -->
 <script src="assets/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
-<script src="assets/vendor/chart.js/dist/Chart.min.js"></script>
+<script src="assets/vendor/chart.js/dist/Chart.js"></script>
 <script src="assets/vendor/chartjs-plugin-style/dist/chartjs-plugin-style.min.js"></script>
 
 		<!-- Initialization  -->
