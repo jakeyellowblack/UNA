@@ -98,9 +98,9 @@
 		                              <option disabled selected>Seleccione...</option>
 
 		                              	@foreach ($presupuesto as $pre)		
-		                                	<option value="{{ $pre->idcuenta }}">
+		                                	<option value="{{ $pre->cuenta->id }}">
 		                            
-		                                        {{ $pre->nombre }}
+		                                        {{ $pre->cuenta->nombre }}
 		                              
 		                                    </option>
 		                                @endforeach
