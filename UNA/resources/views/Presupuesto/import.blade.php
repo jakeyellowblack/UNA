@@ -14,22 +14,24 @@
 	<table class="table">
 		<thead>
 			<tr>
-				<th>ID</th>
+				<th>Tipo</th>
 				<th>Concepto</th>
-				<th>Nombre</th>
                 <th>Fecha</th>
-				<th>Monto Total</th>
+				<th>Monto</th>
+                <th>Cuenta ID</th>
+
 
 			</tr>
 		</thead>
 		<tbody>
 			@foreach($presupuesto as $pre)
 			<tr>
-				<td>{{ $pre->id }}</td>
+				<td>{{ $pre->tipo }}</td>
 				<td>{{ $pre->concepto }}</td>
-				<td>{{ $pre->nombre }}</td>
-                <td>{{ $pre->fecha }}</td>
+                <td>{{ $pre->created_at }}</td>
 				<td>{{ $pre->montoT }}</td>
+                <td>{{ $pre->cuenta_id }}</td>
+
 
 			</tr>
 			@endforeach

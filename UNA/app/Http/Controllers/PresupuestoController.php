@@ -47,10 +47,10 @@ class PresupuestoController extends Controller
 					
 					$total = $presupuesto->where('tipo','=','ingreso')->sum('montoT');
 					$total2 = $presupuesto->where('tipo','=','egreso')->sum('montoT');
+					$total3 = $total-$total2;
 
 
-
-					return view('home',["presupuesto"=>$presupuesto, "total"=>$total, "total2"=>$total2]);
+					return view('home',["presupuesto"=>$presupuesto, "total"=>$total, "total2"=>$total2, "total3"=>$total3]);
 				}		
 	
     }	

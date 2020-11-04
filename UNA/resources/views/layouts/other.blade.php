@@ -174,17 +174,17 @@
                         <!-- End Dashboard -->
                         
                                     
-                    <li class="u-sidebar-nav-menu__item">
+<!--                    <li class="u-sidebar-nav-menu__item">
                         <a class="u-sidebar-nav-menu__link" href="">
                             <span class="ti-money u-sidebar-nav-menu__item-icon"></span>
                             <span class="u-sidebar-nav-menu__item-title">Saldo</span>
                         </a>
                     </li>                       
-                        
+                        -->
               
 
                     <!-- Forms -->
-        			<li class="u-sidebar-nav-menu__item">
+<!--        			<li class="u-sidebar-nav-menu__item">
         							<a class="u-sidebar-nav-menu__link" href="#"
         							   data-target="#menuItemGestiones">
         								<span class="ti-bar-chart u-sidebar-nav-menu__item-icon"></span>
@@ -208,7 +208,7 @@
                             </li>
                                 
                         </ul>
-                    </li>
+                    </li>-->
                     <!-- End Forms -->
 
 
@@ -218,7 +218,7 @@
         				<a class="u-sidebar-nav-menu__link" href="#"
         				   data-target="#menuItemMovimientos">
         					<span class="ti-layout-media-right u-sidebar-nav-menu__item-icon"></span>
-        					<span class="u-sidebar-nav-menu__item-title">Movimientos</span>
+        					<span class="u-sidebar-nav-menu__item-title">Presupuesto</span>
         					<span class="ti-angle-down u-sidebar-nav-menu__item-arrow"></span>
         				</a>
                                 
@@ -268,7 +268,7 @@
                     <li class="u-sidebar-nav-menu__item">
                         <a class="u-sidebar-nav-menu__link" href="#"
                            data-target="#menuItemCuenta">
-                            <span class="ti-layers-alt u-sidebar-nav-menu__item-icon"></span>
+                            <span class="fas fa-university u-sidebar-nav-menu__item-icon"></span>
                             <span class="u-sidebar-nav-menu__item-title">Cuentas</span>
                             <span class="ti-angle-down u-sidebar-nav-menu__item-arrow"></span>
                         </a>

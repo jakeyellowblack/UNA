@@ -21,11 +21,12 @@ class PresupuetosImport implements ToModel
     public function model(array $row)
     {
         return new Presupuesto([
-		    'id'     => $row[0], //a
+		    'tipo'     => $row[0], //a
             'concepto'     => $row[1], //a
-            'nombre'    => $row[2], //b
-            'fecha' => ($row[3]), //c
-			'montoT' => ($row[4]), //d
+            'fecha' => ($row[2]), //c
+			'montoT' => ($row[3]), //d
+			'cuenta_id' => ($row[4]), //d
+
 
         ]);
     }

@@ -13,6 +13,6 @@ class PresupuestosExport implements FromCollection
     */
     public function collection()
     {
-        return Presupuesto::all();
+        return Presupuesto::select("tipo", "concepto", "created_at", "montoT", "cuenta_id")->get();
     }
 }

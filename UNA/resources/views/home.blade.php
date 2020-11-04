@@ -56,10 +56,10 @@
             <span class="info-box-icon bg-aqua"><i class="ti-credit-card"></i></span>
 
             <div class="info-box-content">
-              <span class="info-box-text">Ingresos</span>
+              <span class="info-box-text">Movimientos</span>
               </br>
 <!--              <a href="/summary/create?type=add">Añadir ingreso</a>--> 
-			 <a href="/tpresupuesto">Añadir ingreso</a>                      
+			 <a href="/tpresupuesto">Añadir nuevo</a>                      
 </div>
             <!-- /.info-box-content -->
           </div>
@@ -75,9 +75,11 @@
             <span class="info-box-icon bg-yellow "><i class="ti-tag"></i></span>
 
             <div class="info-box-content">
-              <span class="info-box-text">Egresos</span>
+              <span class="info-box-text">Saldo</span>
               </br>
-             <a href="/tpresupuesto">Añadir egresos</a>
+              
+             <span class="info-box-number">{{ $total3 }}</span>
+             
             </div>
             <!-- /.info-box-content -->
           </div>
@@ -180,7 +182,7 @@ var myChart = new Chart(ctx, {
         labels: ['Egresos', 'Ingresos'],
         datasets: [{
             label: 'Total ',
-            data: [{{ $total }}, {{ $total2 }}],
+            data: [{{ $total2 }}, {{ $total }}],
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',
