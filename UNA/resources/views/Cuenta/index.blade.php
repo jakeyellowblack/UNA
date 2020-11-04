@@ -85,10 +85,8 @@
 					          <td class="font-weight-semi-bold">{{ $cu->id }}</td>
                               <td class="font-weight-semi-bold">{{ $cu->nombre }}</td>
 					          <td class="font-weight-semi-bold">{{ $cu->numero }}</td>
-                              
-                              @if ($cu->id == $cu->idpre)
 					          <td class="font-weight-semi-bold">{{ $cu->montoT }}
-                              @endif</td>
+                              </td>
 
 					          <td class="text-center"> 
                               

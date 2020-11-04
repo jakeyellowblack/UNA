@@ -67,8 +67,7 @@ class CuentaController extends Controller
 					
 					$cuenta = $cuenta->get();
 					
-					$cuenta=Cuenta::from('cuentas as c')->join('presupuestos as p','c.id','=','p.id')
-					->select('c.id','c.nombre','c.numero', 'p.id as idpre','p.created_at','p.tipo','p.concepto','p.montoT')
+					$cuenta=Cuenta::from('cuentas as c')
 					->orderBy('c.id','asc')
 					->paginate(10);
 
