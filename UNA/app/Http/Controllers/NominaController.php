@@ -3,67 +3,42 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Maatwebsite\Excel\Facades\Excel;
-
-use App\Exports\NominasExport;
-use App\Imports\NominasImport;
-
 use App\Nomina;
 use DB;
 
 class NominaController extends Controller
 {
-	 public function index(Nomina $nomina)
+	public function index()
     {
+    	$nomina = Nomina::orderBy('id', 'ASC');
+		
+		$nomina = $nomina->get();
 
-		return view('listnomina');
+        return view('nomina.index', compact('nomina'));
     }
 
-    public function exportExcel()
+    public function create()
     {
-    	return Excel::download(new NominasExport, 'nomina-list.xlsx');
+        //
     }
 
-    public function importExcel(Request $request)
+    public function store(Request $request)
     {
-        $file = $request->file('banner');
-        Excel::import(new NominasImport, $file);
-
-        return back()->with('status', 'Importación de nómina completada');
+        //
     }
 	
-	 public function show(Nomina $nomina, Request $request)
+	public function show()
     {
-		$busqueda = $request->get('busqueda');
-		$tipo   = $request->get('tipo');
-		
-		$nomina = Nomina::orderBy('id', 'ASC')
-		->Buscarpor($tipo, $busqueda)
-		->paginate(10);	
-		
-		return view('tnomina', compact('nomina'));
 
     }
 	
-	    public function update(Request $request, $id)
+	public function update()
     {
-		
-		
-	$nomina = Nomina::findOrFail($request->noid);
-    $nomina->update($request->all());
-
-		
-		return redirect()->back()->with('status','DATOS ACTUALIZADOS');
 		
     }	
 
-	  public function destroy(Request $request)
+	public function destroy()
     {
-        
-        $nomina = Nomina::findOrFail($request->noid);
-        $nomina->delete();
-
-		return redirect()->back()->with('message','DATOS ELIMINADOS');
 
     }
 
