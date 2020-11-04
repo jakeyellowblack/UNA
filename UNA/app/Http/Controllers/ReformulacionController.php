@@ -58,24 +58,58 @@ class ReformulacionController extends Controller
         $last_id=Reformulacion::latest('id')->first();
 
 
-        for ($i=2; $i < ($total-1); $i++) { 
-            $mov= new MovReformulacion;
+        switch ($total) {
 
-            $mov->reformulacion_id=$last_id->id;
+        case "2":{
+                 return view('reformulacion.create');
+                 }    
 
-            $code=substr($content[$i],0,23);
+        case "3":{
+                $mov= new MovReformulacion;
 
-            $amount=substr($content[$i],23,17);
-            $amount=ltrim($amount,'0');
-            $amount=floatval($amount);
+                $mov->reformulacion_id=$last_id->id;
 
-            $mov->code=$code;
-            $mov->amount=$amount;
+                $code=substr($content[2],0,23);
 
-            $mov->save(); 
-        }
+                $amount=substr($content[2],23,17);
+                $amount=ltrim($amount,'0');
+                $amount=floatval($amount);
 
-        dd($mov,$reformulacion);
+                $mov->code=$code;
+                $mov->amount=$amount;
+
+                $mov->save(); 
+                break;
+                }
+
+        default:{
+                for ($i=2; $i < ($total-1); $i++) 
+                { 
+                $mov= new MovReformulacion;
+
+                $mov->reformulacion_id=$last_id->id;
+
+                $code=substr($content[$i],0,23);
+
+                $amount=substr($content[$i],23,17);
+                $amount=ltrim($amount,'0');
+                $amount=floatval($amount);
+
+                $mov->code=$code;
+                $mov->amount=$amount;
+
+                $mov->save(); 
+                }
+                break;
+             }
+
+    }
+
+
+
+        
+
+        //dd($mov,$reformulacion);
 
     	return view('reformulacion.create');
     }

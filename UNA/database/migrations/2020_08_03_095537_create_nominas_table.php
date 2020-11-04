@@ -15,15 +15,9 @@ class CreateNominasTable extends Migration
     {
         Schema::create('nominas', function (Blueprint $table) {
             $table->increments('id');
-			$table->float('salarioSemanal');
-			$table->float('salarioDiario');
-			$table->float('salarioHora');
-			$table->float('salarioHoraExtraDiurno');
-			$table->float('salarioIntegral');
-			$table->float('feriado');
-			$table->integer('diasLaborados');
-			$table->float('utilidades');
-			$table->float('montoTotal');
+            $table->date('date');
+            $table->string('namefile');
+            $table->string('title');
             $table->timestamps();
         });
     }
