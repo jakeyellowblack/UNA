@@ -70,6 +70,7 @@
 					          <th>Id</th>
 					          <th>Nombre</th>
 					          <th>Numero</th>
+                              <th>Monto</th>
 					          <th class="text-center">Acciones</th> 
 			          </tr>
 				          </thead>
@@ -77,13 +78,18 @@
 
 
 
+							@foreach($cuenta as $cu)
 
 			            <tbody>
 				          <tr>
-					          <td class="font-weight-semi-bold"></td>
-                              <td class="font-weight-semi-bold"></td>
-					          <td class="font-weight-semi-bold"></td>
-	
+					          <td class="font-weight-semi-bold">{{ $cu->id }}</td>
+                              <td class="font-weight-semi-bold">{{ $cu->nombre }}</td>
+					          <td class="font-weight-semi-bold">{{ $cu->numero }}</td>
+                              
+                              @if ($cu->id == $cu->idpre)
+					          <td class="font-weight-semi-bold">{{ $cu->montoT }}
+                              @endif</td>
+
 					          <td class="text-center"> 
                               
                               
@@ -118,8 +124,11 @@
 					          </td>
 				          </tr>
 				          </tbody>
+                          @endforeach
+
 			          </table>
-                      
+                      {{ $cuenta->render() }}
+
 		          </div>
 		          <!-- End Table -->
 	          </div>

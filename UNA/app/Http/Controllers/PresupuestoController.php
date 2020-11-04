@@ -31,6 +31,8 @@ class PresupuestoController extends Controller
 				}		
 	
     }
+	
+	
 	 public function chart(Presupuesto $presupuesto, Request $request)
     {
 		  if ($request)
@@ -75,6 +77,7 @@ class PresupuestoController extends Controller
     	
         $presupuesto = Presupuesto::create($request->all());
         $presupuesto->save();
+		
 		return redirect()->back()->with('status','Datos creados satisfactoriamente');
     }
 	

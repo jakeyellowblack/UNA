@@ -15,8 +15,19 @@ class CuentaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+				  if ($request)
+				{
+					$cuenta=Cuenta::from('cuentas')
+					->orderBy('id','asc');
+					
+					$cuenta = $cuenta->get();
+
+					return view('cuenta.index',["cuenta"=>$cuenta]);
+				}		
+	
+		
         return view('cuenta.index');
     }
 
@@ -50,9 +61,20 @@ class CuentaController extends Controller
      */
     public function show(Cuenta $cuenta, Request $request)
     {
-        $cuenta = Cuenta::findOrFail($request->id);
+ 				  if ($request)
+				{
+					
+					
+					$cuenta = $cuenta->get();
+					
+					$cuenta=Cuenta::from('cuentas as c')->join('presupuestos as p','c.id','=','p.id')
+					->select('c.id','c.nombre','c.numero', 'p.id as idpre','p.created_at','p.tipo','p.concepto','p.montoT')
+					->orderBy('c.id','asc')
+					->paginate(10);
 
-        return view('tpresupuesto', compact('cuenta'));
+					
+					return view('cuenta.index',["cuenta"=>$cuenta]);
+				}	
     }
 
     /**

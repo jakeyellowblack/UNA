@@ -23,6 +23,7 @@ class Presupuesto extends Model
 	}	
 	
 
+	
 
 
  public function scopeBuscarpor($query, $tipo, $busqueda)
