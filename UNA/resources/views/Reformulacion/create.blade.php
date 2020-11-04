@@ -25,15 +25,20 @@
 
 	<!-- Body -->
 <body>
-	
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
 
-            	<div class="card-header">{{ __('Nueva Reformulación') }}</div>
+<div class="u-content">
+		<div class="u-body">
+			<div class="col-md-13 mb-12">  
+				<div class="card h-100">
+	                    		        <header class="card-header">
 
-				<form class="form-group" method="POST" action="{{ route('reformulacion.store') }}" enctype="multipart/form-data">
+						<h2 class="h4 card-header-title">Nueva Reformulación</h2></header>
+                        	         		<hr class="my-5">
+
+		        <header class="card-header">
+	                        
+
+							<form class="form-group" method="POST" action="{{ route('reformulacion.store') }}" enctype="multipart/form-data">
 					@csrf
 				    <div class="input-group">
 
@@ -43,17 +48,23 @@
 						    </span>
 						</label>
 
-						<input class="form-control" id="banner_captura" readonly="readonly" name="banner_captura" type="text" value="">
+						<input class="form-control" id="banner_captura" readonly name="banner_captura" type="text" value="">
 				        <button class='btn btn-primary float-right' type="submit">Enviar Reformulación</button>
 
 				    </div>
 				</form>
+	     					        </header>
 
-
+	                    
+	                    
+					
+				</div>
 			</div>
 		</div>
 	</div>
-</div>
+
+	
+
 
 
 
