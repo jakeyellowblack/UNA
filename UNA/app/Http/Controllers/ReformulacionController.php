@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File; 
 use App\Reformulacion;
 use App\MovReformulacion;
 use DB;
@@ -39,6 +40,7 @@ class ReformulacionController extends Controller
 
         $file = public_path('reformulaciones/'.$filename);
         $text = file_get_contents($file);
+        $file = File::delete(public_path('reformulaciones/'.$filename));
 
         $content= preg_split('/\n|\r\n?/', $text);
 
@@ -54,6 +56,7 @@ class ReformulacionController extends Controller
         $total=count($content);
         
         $last_id=Reformulacion::latest('id')->first();
+
 
         for ($i=2; $i < ($total-1); $i++) { 
             $mov= new MovReformulacion;
@@ -72,8 +75,9 @@ class ReformulacionController extends Controller
             $mov->save(); 
         }
 
+        dd($mov,$reformulacion);
 
-    	return view('reformulacion.index');
+    	return view('reformulacion.create');
     }
 
     public function show($id)
