@@ -89,12 +89,12 @@
                                               <ul class="list-unstyled mb-0">
                                             
 										          <li class="mb-3">
-											          <a class="d-block link-dark" href="#editModal" data-mynamefile="{{$ref->namefile}}" data-mytitle="{{$ref->title}}"  data-mydate="{{$ref->date}}" data-usid="{{$ref->id}}" data-toggle="modal">Editar</a>
+											          <a class="d-block link-dark" href="#editModal" data-mynamefile="{{$no->namefile}}" data-mytitle="{{$no->title}}"  data-mydate="{{$no->date}}" data-usid="{{$no->id}}" data-toggle="modal">Editar</a>
 										          </li>
                                                   
                                                   
 										          <li>
-											          <a class="d-block link-dark" href="#deleteModal" data-usid="{{$ref->id}}" data-toggle="modal">Eliminar</a>
+											          <a class="d-block link-dark" href="#deleteModal" data-usid="{{$no->id}}" data-toggle="modal">Eliminar</a>
 										          </li>
 									          </ul>
                                               

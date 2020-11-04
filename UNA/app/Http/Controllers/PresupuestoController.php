@@ -27,7 +27,11 @@ class PresupuestoController extends Controller
 					
 					$presupuesto = $presupuesto->get();
 
-					return view('tpresupuesto',["presupuesto"=>$presupuesto]);
+					$cuenta = Cuenta::orderBy('id', 'ASC');
+
+					$cuenta = $cuenta->get();
+
+					return view('tpresupuesto',["presupuesto"=>$presupuesto, "cuenta"=>$cuenta]);
 				}		
 	
     }

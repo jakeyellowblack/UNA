@@ -97,10 +97,10 @@
 		                            <select name="cuenta_id" class="form-control form-pill">
 		                              <option disabled selected>Seleccione...</option>
 
-		                              	@foreach ($presupuesto as $pre)		
-		                                	<option value="{{ $pre->cuenta->id }}">
-		                            
-		                                        {{ $pre->cuenta->nombre }}
+		                              	@foreach ($cuenta as $cu)		
+		                                	<option value="{{ $cu->id }}">
+		                            			{{ $cu->id }}-
+		                                        {{ $cu->nombre }}
 		                              
 		                                    </option>
 		                                @endforeach
