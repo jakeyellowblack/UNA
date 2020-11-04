@@ -15,8 +15,8 @@ class CreateMovReformulacionsTable extends Migration
     {
         Schema::create('mov_reformulacions', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('code');
-            $table->integer('amount');
+            $table->string('code');
+            $table->float('amount');
             $table->timestamps();
         });
     }
