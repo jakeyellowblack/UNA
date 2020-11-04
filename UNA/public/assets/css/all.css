@@ -40,8 +40,29 @@ audio,
 canvas,
 progress,
 video {
-  display: inline-block;
-  vertical-align: baseline;
+        padding-left: 0;
+        padding-right: 0;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+        width: 320px;
+        height: 480px;
+}
+
+canvas {
+  padding: 0;
+  margin: auto;
+  display: block;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.image-detail-canvas {
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  max-width: 50% !important;
+  max-height: 50% !important;
 }
 
 audio:not([controls]) {

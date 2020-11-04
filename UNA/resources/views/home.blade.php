@@ -139,20 +139,12 @@
 		        <!-- Card Body -->
 	          <div class="card-body pt-0">
 		          <!-- Base Colors -->
-							<div class="row col-15" >
+
+				<div class="image-detail" >
 
 
 
-
-
-                        <canvas id="myChart" width="200" height="200"></canvas>
-
-
-
-
-
-
-
+                     <canvas class="image-detail-canvas" id="myChart" width=100" height="100" align="center"></canvas>
 
 
 
