@@ -304,13 +304,13 @@
                         <ul id="menuItemNomina" class="u-sidebar-nav-menu u-sidebar-nav-menu--second-level" style="display: none;">
                             
                             <li class="u-sidebar-nav-menu__item">
-                                <a class="u-sidebar-nav-menu__link" href="tnomina">
-                                    <span class="u-sidebar-nav-menu__item-title">Crear nueva nómina</span>
+                                <a class="u-sidebar-nav-menu__link" href="{{ route('nomina.create') }}">
+                                    <span class="u-sidebar-nav-menu__item-title">Nueva nómina</span>
                                 </a>
                             </li>
                             
                             <li class="u-sidebar-nav-menu__item">
-                                <a class="u-sidebar-nav-menu__link" href="listnomina">
+                                <a class="u-sidebar-nav-menu__link" href="{{ route('nomina.index') }}">
                                     <span class="u-sidebar-nav-menu__item-title">Lista de nómina</span>
                                 </a>
                             </li>
@@ -331,7 +331,7 @@
                                     
                             <li class="u-sidebar-nav-menu__item">
                                 <a class="u-sidebar-nav-menu__link" href="/user_create">
-                                    <span class="u-sidebar-nav-menu__item-title">Crear usuario</span>
+                                    <span class="u-sidebar-nav-menu__item-title">Nuevo usuario</span>
                                 </a>
                             </li>
                             
