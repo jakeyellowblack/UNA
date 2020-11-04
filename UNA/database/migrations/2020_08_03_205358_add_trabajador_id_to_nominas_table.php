@@ -29,6 +29,7 @@ class AddTrabajadorIdToNominasTable extends Migration
     public function down()
     {
         Schema::table('nominas', function (Blueprint $table) {
+           $table->dropForeign(['trabajador_id']);
             $table->dropColumn('trabajador_id');
         });
     }

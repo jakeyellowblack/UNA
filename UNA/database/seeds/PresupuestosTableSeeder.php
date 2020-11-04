@@ -12,6 +12,6 @@ class PresupuestosTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\Presupuesto::class, 100)->create();
+        factory(App\Presupuesto::class, 52)->create();
     }
 }

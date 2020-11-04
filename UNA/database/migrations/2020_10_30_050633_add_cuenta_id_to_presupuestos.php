@@ -27,9 +27,9 @@ class AddCuentaIdToPresupuestos extends Migration
     public function down()
     {
         Schema::table('presupuestos', function (Blueprint $table) {
+			$table->dropForeign(['cuenta_id']);
             $table->dropColumn('cuenta_id');
 			
-
         });
     }
 }

@@ -27,7 +27,8 @@ class AddDepartamentoIdToTrabajadorsTable extends Migration
     public function down()
     {
         Schema::table('trabajadors', function (Blueprint $table) {
-            //
+           $table->dropForeign(['departamento_id']);
+            $table->dropColumn('departamento_id');
         });
     }
 }

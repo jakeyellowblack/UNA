@@ -93,8 +93,6 @@ class PresupuestoController extends Controller
 
 					
 					$presupuesto=Presupuesto::from('presupuestos as p')
-					->join('cuentas as c','p.id','=','c.id')
-					->select('p.id','p.created_at','p.tipo','p.concepto','p.montoT','c.id as idcuenta','c.nombre','c.numero')
 					->orderBy('p.id','asc')
 					->Buscarpor($tipo, $busqueda)
 					->paginate(10);

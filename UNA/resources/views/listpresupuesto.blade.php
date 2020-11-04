@@ -129,7 +129,8 @@
 						          	<th>Concepto</th>
 						          	<th>Fecha</th>
 						          	<th>Monto</th>
-	                              	<th>Cuenta</th>
+                                    <th>Cuenta</th>
+
 						          	<th class="text-center">Acciones</th> 
 				         		</tr>
 				          	</thead>
@@ -153,7 +154,8 @@
 						            <td class="font-weight-semi-bold">{{ $pre->concepto }}</td>
 						            <td class="font-weight-semi-bold">{{ $pre->created_at }}</td>
 						            <td class="font-weight-semi-bold">{{ $pre->montoT }}</td>
-	                                <td class="font-weight-semi-bold">{{ $pre->nombre }}</td>
+                                    <td class="font-weight-semi-bold">{{ $pre->cuenta->nombre  }}</td>
+
 
 						            <td class="text-center"> 
 	                              
