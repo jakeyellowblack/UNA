@@ -98,9 +98,9 @@
 		                              <option disabled selected>Seleccione...</option>
 
 		                              	@foreach ($presupuesto as $pre)		
-		                                	<option value="{{ $pre->idcuenta }}">
+		                                	<option value="{{ $pre->cuenta->id }}">
 		                            
-		                                        {{ $pre->nombre }}
+		                                        {{ $pre->cuenta->nombre }}
 		                              
 		                                    </option>
 		                                @endforeach
@@ -110,7 +110,7 @@
 		                            
 								<div class="form-group">
 									<label for="created_at">Fecha</label>
-									<input id="created_at" name="created_at" maxlength="200" class="form-control form-pill" type="text" placeholder="Fecha"> 
+									<input id="created_at" name="created_at" maxlength="200" class="form-control datetimepicker form-pill" type="date" placeholder="Fecha"> 
 								</div>                                           
 								
 								<button class="btn btn-primary my-20 my-sm-0" type="submit">Guardar</button>

@@ -51,7 +51,8 @@ class UserController extends Controller
         $user->save();
         //dd($user);
 
-        return view('user.index');
+		return redirect()->back()->with('status','Datos creados satisfactoriamente');
+
     }
 
     /**

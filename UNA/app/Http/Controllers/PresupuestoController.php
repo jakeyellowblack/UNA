@@ -22,9 +22,8 @@ class PresupuestoController extends Controller
     {
 		  if ($request)
 				{
-					$presupuesto=DB::table('presupuestos as p')->join('cuentas as c','p.id','=','c.id')
-					->select('p.id','p.created_at','p.tipo','p.concepto','p.montoT','c.id as idcuenta','c.nombre','c.numero')
-					->orderBy('p.id','asc');
+					$presupuesto=Presupuesto::from('presupuestos')
+					->orderBy('id','asc');
 					
 					$presupuesto = $presupuesto->get();
 
