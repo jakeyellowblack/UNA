@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File; 
 use App\Reformulacion;
 use App\MovReformulacion;
 use DB;
@@ -39,6 +40,7 @@ class ReformulacionController extends Controller
 
         $file = public_path('reformulaciones/'.$filename);
         $text = file_get_contents($file);
+        $file = File::delete(public_path('reformulaciones/'.$filename));
 
         $content= preg_split('/\n|\r\n?/', $text);
 
@@ -55,25 +57,61 @@ class ReformulacionController extends Controller
         
         $last_id=Reformulacion::latest('id')->first();
 
-        for ($i=2; $i < ($total-1); $i++) { 
-            $mov= new MovReformulacion;
 
-            $mov->reformulacion_id=$last_id->id;
+        switch ($total) {
 
-            $code=substr($content[$i],0,23);
+        case "2":{
+                 return view('reformulacion.create');
+                 }    
 
-            $amount=substr($content[$i],23,17);
-            $amount=ltrim($amount,'0');
-            $amount=floatval($amount);
+        case "3":{
+                $mov= new MovReformulacion;
 
-            $mov->code=$code;
-            $mov->amount=$amount;
+                $mov->reformulacion_id=$last_id->id;
 
-            $mov->save(); 
-        }
+                $code=substr($content[2],0,23);
+
+                $amount=substr($content[2],23,17);
+                $amount=ltrim($amount,'0');
+                $amount=floatval($amount);
+
+                $mov->code=$code;
+                $mov->amount=$amount;
+
+                $mov->save(); 
+                break;
+                }
+
+        default:{
+                for ($i=2; $i < ($total-1); $i++) 
+                { 
+                $mov= new MovReformulacion;
+
+                $mov->reformulacion_id=$last_id->id;
+
+                $code=substr($content[$i],0,23);
+
+                $amount=substr($content[$i],23,17);
+                $amount=ltrim($amount,'0');
+                $amount=floatval($amount);
+
+                $mov->code=$code;
+                $mov->amount=$amount;
+
+                $mov->save(); 
+                }
+                break;
+             }
+
+    }
 
 
-    	return view('reformulacion.index');
+
+        
+
+        //dd($mov,$reformulacion);
+
+    	return view('reformulacion.create');
     }
 
     public function show($id)

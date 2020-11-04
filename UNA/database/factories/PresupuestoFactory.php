@@ -19,3 +19,9 @@ $factory->define(App\Presupuesto::class, function (Faker $faker) use ($autoIncre
     ];
 });
 
+function autoIncrement()
+{
+    for ($i = 0; $i < 1000; $i++) {
+        yield $i;
+    }
+}
