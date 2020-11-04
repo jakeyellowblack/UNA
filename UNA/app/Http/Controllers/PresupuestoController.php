@@ -77,6 +77,16 @@ class PresupuestoController extends Controller
     	
         $presupuesto = Presupuesto::create($request->all());
         $presupuesto->save();
+        //dd($presupuesto);
+        $cuenta=Cuenta::findOrFail($request->cuenta_id);      
+
+        if($request->tipo=="ingreso"){
+        	$cuenta->montoT=$cuenta->montoT+$request->montoT;
+        }
+        else{
+        	$cuenta->montoT=$cuenta->montoT-$request->montoT;
+        }
+        $cuenta->update();
 		
 		return redirect()->back()->with('status','Datos creados satisfactoriamente');
     }
@@ -125,6 +135,18 @@ class PresupuestoController extends Controller
     {
         
         $presupuesto = Presupuesto::findOrFail($request->preid);
+
+        $cuenta=Cuenta::findOrFail($presupuesto->cuenta_id);      
+
+        if($request->tipo=="ingreso"){
+        	$cuenta->montoT=$cuenta->montoT+$presupuesto->montoT;
+        }
+        else{
+        	$cuenta->montoT=$cuenta->montoT-$presupuesto->montoT;
+        }
+        $cuenta->update();
+
+
         $presupuesto->delete();
 
 		return redirect()->back()->with('message','Datos eliminados satisfactoriamente');

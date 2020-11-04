@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 use App\Nomina;
-
+use App\MovNomina;
 use DB;
 
 class NominaController extends Controller
@@ -55,7 +55,57 @@ class NominaController extends Controller
         
         $nomina->save();
 
-        return view('nomina.create');
+        $total=count($content);
+        
+        $last_id=Nomina::latest('id')->first();
+
+        switch ($total) {
+
+        case "2":{
+                 return view('nomina.create');
+                 }    
+
+        case "3":{ 
+                $mov= new MovNomina;
+
+                $mov->nomina_id=$last_id->id;
+
+                $code=substr($content[2],0,31);
+
+                $amount=substr($content[2],31,19);
+                $amount=ltrim($amount,' ');
+                $amount=intval($amount);
+
+                $mov->code=$code;
+                $mov->amount=$amount;
+
+                $mov->save(); 
+                };
+
+        default:{
+                for ($i=2; $i < ($total-1); $i++) 
+                { 
+                $mov= new MovNomina;
+
+                $mov->nomina_id=$last_id->id;
+
+                $code=substr($content[$i],0,31);
+
+                $amount=substr($content[$i],31,19);
+                $amount=ltrim($amount,' ');
+                $amount=intval($amount);
+
+                $mov->code=$code;
+                $mov->amount=$amount;
+
+                $mov->save(); 
+                };
+                break;
+             }
+
+    }
+
+        return view ('nomina.create');
     }
 	
 	public function show()

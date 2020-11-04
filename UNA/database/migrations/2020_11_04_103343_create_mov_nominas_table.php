@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCuentasTable extends Migration
+class CreateMovNominasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,12 @@ class CreateCuentasTable extends Migration
      */
     public function up()
     {
-        Schema::create('cuentas', function (Blueprint $table) {
+        Schema::create('mov_nominas', function (Blueprint $table) {
             $table->increments('id');
-			$table->string('nombre');
-			$table->integer('numero');
-            $table->float('montoT')->default(0);
+            $table->string('code');
+            $table->float('amount');
+            $table->unsignedInteger('nomina_id')->nullable()->after('id');
+            $table->foreign('nomina_id')->references('id')->on('nominas')->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -29,6 +30,6 @@ class CreateCuentasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('cuentas');
+        Schema::dropIfExists('mov_nominas');
     }
 }
