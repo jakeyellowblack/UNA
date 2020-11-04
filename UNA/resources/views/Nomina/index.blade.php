@@ -67,9 +67,9 @@
 
 			            <tbody>
 				            <tr>
-					          <td class="font-weight-semi-bold"></td>
-					          <td class="font-weight-semi-bold"></td>
-				              <td class="font-weight-semi-bold"></td>
+					          <td class="font-weight-semi-bold">{{ $no->namefile }}</td>
+					          <td class="font-weight-semi-bold">{{ $no->title }}</td>
+				              <td class="font-weight-semi-bold">{{ $no->date }}</td>
 
 					          <td class="text-center">
 
