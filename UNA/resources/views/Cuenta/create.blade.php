@@ -48,8 +48,15 @@
 		                            
 
 								<div class="form-group">
-									<label for="nombre">Nombre</label>
-									<input required id="nombre" name="nombre" maxlength="200" class="form-control form-pill @error('nombre') is-invalid @enderror" value="{{ old('nombre') }}" type="text" placeholder="Nombre del usuario">
+									<label for="nombre">Nombre</label> <a href="#aboutModal" data-tooltip="•Campo obligatorio
+        •Max: 50 caracteres" data-toggle="modal" data-target="#myModal" class="btn btn-circle-micro btn-info"><span class="glyphicon glyphicon-thumbs-up"><i class="fa fa-exclamation"></i></span></a>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+									<input required id="nombre" name="nombre" maxlength="50" class="form-control form-pill @error('nombre') is-invalid @enderror" value="{{ old('nombre') }}" type="text" placeholder="Nombre de la cuenta">
                                     
                                 @error('nombre')
                                     <span class="invalid-feedback" role="alert">
@@ -59,8 +66,13 @@
                                                                     
 								</div>		                                                                                       
 								<div class="form-group">
-									<label for="Numero">Numero</label>
-									<input required id="jobtitle" name="jobtitle" maxlength="200" class="form-control form-pill @error('jobtitle') is-invalid @enderror" value="{{ old('jobtitle') }}" type="text" placeholder="Cargo del usuario">                             
+									<label for="Numero">Código</label> <a href="#aboutModal" data-tooltip="•Campo obligatorio
+        •Solo números
+        •Max: 12 caracteres" data-toggle="modal" data-target="#myModal" class="btn btn-circle-micro btn-info"><span class="glyphicon glyphicon-thumbs-up"><i class="fa fa-exclamation"></i></span></a>
+                                    
+                                    
+                                    
+									<input required id="numero" name="numero" maxlength="12" class="form-control form-pill @error('numero') is-invalid @enderror" value="{{ old('numero') }}" type="number" placeholder="Código de la cuenta">                             
 								</div> 
 
 								                                   

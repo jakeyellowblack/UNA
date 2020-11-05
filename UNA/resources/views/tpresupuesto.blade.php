@@ -26,11 +26,12 @@
 		<link rel="stylesheet" href="assets/vendor/themify-icons/themify-icons.css">
 		<link rel="stylesheet" href="assets/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css">
         
-        
+
     <script src="{{ asset('js/jquerydata.js.js') }}"></script>
     <script src="{{ asset('js/moment.min.js') }}"></script>
     <script src="{{ asset('js/bootstrap-datepicker.js') }}"></script>
-
+    
+ 
   
   
 		<!-- Theme Styles -->
@@ -63,7 +64,10 @@
 							<div class="card-body pt-0">
 	                        
 								<div class="form-group">
-									<label for="tipo">Tipo</label>                                        
+									<label for="tipo">Tipo</label><a href="#aboutModal" data-tooltip="•Campo obligatorio" data-toggle="modal" data-target="#myModal" class="btn btn-circle-micro btn-info"><span class="glyphicon glyphicon-thumbs-up"><i class="fa fa-exclamation"></i></span></a>   
+                                    
+                                    
+                                                                         
 		                            <select name="tipo" class="form-control form-pill">
 		                              	<option disabled selected>Seleccione...</option>
 
@@ -80,20 +84,31 @@
 		                            
 
 								<div class="form-group">
-									<label for="concepto">Concepto</label>
-									<input required id="concepto" name="concepto" maxlength="200" class="form-control form-pill" type="text" placeholder="Motivo del movimiento">
+									<label for="concepto">Concepto</label><a href="#aboutModal" data-tooltip="•Campo obligatorio
+        •Max: 20 caracteres" data-toggle="modal" data-target="#myModal" class="btn btn-circle-micro btn-info"><span class="glyphicon glyphicon-thumbs-up"><i class="fa fa-exclamation"></i></span></a>
+                                    
+                                    
+                                    
+									<input required id="concepto" name="concepto" maxlength="50" class="form-control form-pill" type="text" placeholder="Motivo del movimiento">
 								</div>
 		                            
 								<div class="form-group">
-									<label for="montoT">Monto</label>
-									<input id="montoT" name="montoT" maxlength="200" class="form-control form-pill" type="number" placeholder="Monto">
+									<label for="montoT">Monto</label><a href="#aboutModal" data-tooltip="•Campo obligatorio
+        •Solo números
+        •Puede incluir decimales" data-toggle="modal" data-target="#myModal" class="btn btn-circle-micro btn-info"><span class="glyphicon glyphicon-thumbs-up"><i class="fa fa-exclamation"></i></span></a>
+                                    
+                                    
+                                    
+									<input id="montoT" name="montoT" maxlength="200" class="form-control form-pill" type="number" step="any" placeholder="Monto">
 								</div>   
 
 
 		                            
 		                            
 								<div class="form-group">
-									<label for="numero">Cuentas</label>                                        
+									<label for="numero">Cuentas</label><a href="#aboutModal" data-tooltip="•Campo obligatorio" data-toggle="modal" data-target="#myModal" class="btn btn-circle-micro btn-info"><span class="glyphicon glyphicon-thumbs-up"><i class="fa fa-exclamation"></i></span></a>
+                                    
+                                    
 		                            <select name="cuenta_id" class="form-control form-pill">
 		                              <option disabled selected>Seleccione...</option>
 
@@ -109,7 +124,10 @@
 								</div>  
 		                            
 								<div class="form-group">
-									<label for="created_at">Fecha</label>
+									<label for="created_at">Fecha</label><a href="#aboutModal" data-tooltip="•Campo obligatorio" data-toggle="modal" data-target="#myModal" class="btn btn-circle-micro btn-info"><span class="glyphicon glyphicon-thumbs-up"><i class="fa fa-exclamation"></i></span></a>
+                                    
+                                    
+                                    
 									<input id="created_at" name="created_at" maxlength="200" class="form-control datetimepicker form-pill" type="date" placeholder="Fecha"> 
 								</div>                                           
 								
@@ -138,6 +156,16 @@
 <script type="text/javascript">
  $(function () {
     $('.datetimepicker').datetimepicker();
+});
+
+
+// Tooltips
+$('.tip').each(function () {
+	$(this).tooltip(
+	{
+		html: true,
+		title: $('#' + $(this).data('tip')).html()
+	});
 });
 </script> 
 

@@ -36,7 +36,11 @@
                         	         		<hr class="my-5">
 
 		        <header class="card-header">
-	                        
+                
+								<div class="form-group">
+									<label for="nomina">Nómina</label> <a href="#aboutModal" data-tooltip="•Tipo de archivo permitido: .txt" data-toggle="modal" data-target="#myModal" class="btn btn-circle-micro btn-info"><span class="glyphicon glyphicon-thumbs-up"><i class="fa fa-exclamation"></i></span></a></div>	            
+                
+                            
 
 							<form class="form-group" method="POST" action="{{ route('nomina.store') }}" enctype="multipart/form-data">
 					@csrf

@@ -66,8 +66,13 @@
 		                            
 
 								<div class="form-group">
-									<label for="name">Nombre</label>
-									<input required id="name" name="name" maxlength="200" class="form-control form-pill @error('name') is-invalid @enderror" value="{{ old('name') }}" type="text" placeholder="Nombre del usuario">
+									<label for="name">Nombre</label> <a href="#aboutModal" data-tooltip="•Campo obligatorio
+        •Max: 50 caracteres" data-toggle="modal" data-target="#myModal" class="btn btn-circle-micro btn-info"><span class="glyphicon glyphicon-thumbs-up"><i class="fa fa-exclamation"></i></span></a>
+                                    
+                                    
+                                    
+                                    
+									<input required id="name" name="name" maxlength="50" class="form-control form-pill @error('name') is-invalid @enderror" value="{{ old('name') }}" type="text" placeholder="Nombre del usuario">
                                     
                                 @error('name')
                                     <span class="invalid-feedback" role="alert">
@@ -78,7 +83,9 @@
 								</div>
 		                            
 								<div class="form-group">
-									<label for="status">Estado</label>                                        
+									<label for="status">Estado</label> <a href="#aboutModal" data-tooltip="•Campo obligatorio" data-toggle="modal" data-target="#myModal" class="btn btn-circle-micro btn-info"><span class="glyphicon glyphicon-thumbs-up"><i class="fa fa-exclamation"></i></span></a>
+                                    
+                                                                           
                                <select name="status" class="form-control form-pill">
                                   <option disabled selected>Seleccione...</option>
                                   <option value="1">Activo</option>
@@ -89,8 +96,12 @@
                                     
                                     
 								<div class="form-group">
-									<label for="jobtitle">Cargo</label>
-									<input required id="jobtitle" name="jobtitle" maxlength="200" class="form-control form-pill @error('jobtitle') is-invalid @enderror" value="{{ old('jobtitle') }}" type="text" placeholder="Cargo del usuario">
+									<label for="jobtitle">Cargo</label> <a href="#aboutModal" data-tooltip="•Campo obligatorio
+        •Max: 100 caracteres" data-toggle="modal" data-target="#myModal" class="btn btn-circle-micro btn-info"><span class="glyphicon glyphicon-thumbs-up"><i class="fa fa-exclamation"></i></span></a>
+                                    
+                                    
+                                    
+									<input required id="jobtitle" name="jobtitle" maxlength="100" class="form-control form-pill @error('jobtitle') is-invalid @enderror" value="{{ old('jobtitle') }}" type="text" placeholder="Cargo del usuario">
                                     
                                 @error('jobtitle')
                                     <span class="invalid-feedback" role="alert">
@@ -101,8 +112,12 @@
 								</div> 
 
 								<div class="form-group">
-									<label for="code">Código UNA</label>
-									<input required id="code" name="code" maxlength="10" class="form-control form-pill @error('code') is-invalid @enderror" value="{{ old('code') }}" type="number" placeholder="Código UNA del usuario">
+									<label for="code">Código UNA</label> <a href="#aboutModal" data-tooltip="•Campo obligatorio
+        •Solo números
+        •Obligatorio: 8 caracteres" data-toggle="modal" data-target="#myModal" class="btn btn-circle-micro btn-info"><span class="glyphicon glyphicon-thumbs-up"><i class="fa fa-exclamation"></i></span></a>
+                                    
+                                    
+									<input required id="code" name="code" maxlength="8" class="form-control form-pill @error('code') is-invalid @enderror" value="{{ old('code') }}" type="number" placeholder="Código UNA del usuario">
                                     
                                 @error('code')
                                     <span class="invalid-feedback" role="alert">
@@ -114,8 +129,11 @@
 
 		                            
 								<div class="form-group">
-									<label for="password">Contraseña</label>
-									<input required id="password" name="password" maxlength="50" class="form-control form-pill @error('password') is-invalid @enderror" type="password" placeholder="Contraseña del usuario">
+									<label for="password">Contraseña</label> <a href="#aboutModal" data-tooltip="•Campo obligatorio
+        •Max: 15 caracteres" data-toggle="modal" data-target="#myModal" class="btn btn-circle-micro btn-info"><span class="glyphicon glyphicon-thumbs-up"><i class="fa fa-exclamation"></i></span></a>
+                                    
+                                    
+									<input required id="password" name="password" maxlength="15" class="form-control form-pill @error('password') is-invalid @enderror" type="password" placeholder="Contraseña del usuario">
                                     
                                 @error('password')
                                     <span class="invalid-feedback" role="alert">
@@ -126,8 +144,11 @@
 								</div> 		                     
 		                            
 								<div class="form-group">
-									<label for="password-confirm">Confirmar Contraseña</label>
-									<input required id="password-confirm" name="password_confirmation" maxlength="50" class="form-control form-pill" type="password" placeholder="Confirmar contraseña" autocomplete="new-password">
+									<label for="password-confirm">Confirmar Contraseña</label> <a href="#aboutModal" data-tooltip="•Campo obligatorio
+        •Max: 15 caracteres" data-toggle="modal" data-target="#myModal" class="btn btn-circle-micro btn-info"><span class="glyphicon glyphicon-thumbs-up"><i class="fa fa-exclamation"></i></span></a>
+                                    
+                                    
+									<input required id="password-confirm" name="password_confirmation" maxlength="15" class="form-control form-pill" type="password" placeholder="Confirmar contraseña" autocomplete="new-password">
                          
 								</div> 	                                       
 								

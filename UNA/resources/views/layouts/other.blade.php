@@ -33,6 +33,8 @@
     <!-- Styles -->
     <link rel="stylesheet" href="{{ asset('css/btns.css') }}" />
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+          <link rel="stylesheet" type="text/css" href="css/tooltip.css">
+    <link rel="stylesheet" type="text/css" href="css/circle.css">
 
 </head>
 

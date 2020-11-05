@@ -37,6 +37,9 @@
 
 		        <header class="card-header">
 	                        
+								<div class="form-group">
+									<label for="reformulacion">Reformulación</label> <a href="#aboutModal" data-tooltip="•Tipo de archivo permitido: .txt" data-toggle="modal" data-target="#myModal" class="btn btn-circle-micro btn-info"><span class="glyphicon glyphicon-thumbs-up"><i class="fa fa-exclamation"></i></span></a></div>
+
 
 							<form class="form-group" method="POST" action="{{ route('reformulacion.store') }}" enctype="multipart/form-data">
 					@csrf
