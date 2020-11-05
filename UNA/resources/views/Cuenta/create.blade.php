@@ -2,6 +2,20 @@
   
 @section('content')
 
+@if(session('status'))
+ <div class="alert alert-success">
+{{ session('status') }}
+</div>
+@endif
+
+@if(session('message'))
+ <div class="alert alert-danger">
+{{ session('message') }}
+</div>
+@endif
+
+@include('common.errors')
+
 <!DOCTYPE html>
 <html lang="en" class="no-js">
     <!-- Head -->
@@ -60,7 +74,9 @@
                                     
                                 @error('nombre')
                                     <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
+                                    @foreach($errors->get('nombre') as $error)
+                                        <strong> <li>{{ $error }} </li></strong>
+                                        @endforeach
                                     </span>
                                 @enderror
                                                                     
@@ -72,7 +88,16 @@
                                     
                                     
                                     
-									<input required id="numero" name="numero" maxlength="12" class="form-control form-pill @error('numero') is-invalid @enderror" value="{{ old('numero') }}" type="number" placeholder="Código de la cuenta">                             
+									<input required id="numero" name="numero" maxlength="12" class="form-control form-pill @error('numero') is-invalid @enderror" value="{{ old('numero') }}" type="number" placeholder="Código de la cuenta">
+                                    
+                                 @error('numero')
+                                    <span class="invalid-feedback" role="alert">
+                                    @foreach($errors->get('numero') as $error)
+                                        <strong> <li>{{ $error }} </li></strong>
+                                        @endforeach
+                                    </span>
+                                @enderror                                   
+                                                                 
 								</div> 
 
 								                                   

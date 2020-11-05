@@ -7,6 +7,9 @@ use Maatwebsite\Excel\Facades\Excel;
 
 use App\Exports\CuentasExport;
 
+use App\Http\Requests\StoreCuentaRequest;
+use App\Http\Requests\UpdateCuentaRequest;
+
 use App\Cuenta;
 use App\Presupuesto;
 use DB;
@@ -58,9 +61,13 @@ class CuentaController extends Controller
 	 
 	 
 	 
-    public function store(Request $request)
+    public function store(StoreCuentaRequest $request)
     {
-        //
+    	
+        $cuenta = Cuenta::create($request->all());
+        $cuenta->save();
+		
+		return redirect()->back()->with('status','Datos creados satisfactoriamente');
     }
 
     /**
@@ -93,7 +100,7 @@ class CuentaController extends Controller
     }
 
 
-    public function update(Request $request, $id)
+    public function update(UpdateCuentaRequest $request, $id)
     {
 		$cuenta = Cuenta::findOrFail($request->cuid);
 		$cuenta->update($request->all());

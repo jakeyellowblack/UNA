@@ -14,6 +14,8 @@
 </div>
 @endif
 
+
+
 <!DOCTYPE html>
 	<!-- Head -->
 <head>
@@ -101,7 +103,7 @@
                                     
                                     
                                                                          
-		                            <select name="tipo" class="form-control form-pill">
+		                            <select name="tipo" class="form-control form-pill @error('tipo') is-invalid @enderror" value="{{ old('tipo') }}">
 		                              	<option disabled selected>Seleccione...</option>
 
 	                                	<option  value="ingreso" >
@@ -112,7 +114,17 @@
 	                                  	Egreso
 	                                	</option>
 
-		                            </select>                                       
+		                            </select>    
+                                    
+                                @error('tipo')
+                                    <span class="invalid-feedback" role="alert">
+                                    @foreach($errors->get('tipo') as $error)
+                                        <strong> <li>{{ $error }} </li></strong>
+                                        @endforeach
+                                    </span>
+                                @enderror                                 
+                                    
+                                                                       
 								</div>  
 		                            
 
@@ -122,9 +134,19 @@
                                     
                                     
                                     
-									<input required id="concepto" name="concepto" maxlength="50" class="form-control form-pill" type="text" placeholder="Motivo del movimiento">
+									<input required id="concepto" name="concepto" maxlength="50" class="form-control form-pill @error('concepto') is-invalid @enderror" value="{{ old('concepto') }}" type="text" placeholder="Motivo del movimiento">
+                                    
+                                @error('concepto')
+                                    <span class="invalid-feedback" role="alert">
+                                    @foreach($errors->get('concepto') as $error)
+                                        <strong> <li>{{ $error }} </li></strong>
+                                        @endforeach
+                                    </span>
+                                @enderror
 								</div>
 		                            
+                                    
+                                    
 								<div class="form-group">
 									<label for="montoT">Monto</label><a href="#aboutModal" data-tooltip="•Campo obligatorio
         •Solo números
@@ -132,17 +154,25 @@
                                     
                                     
                                     
-									<input id="montoT" name="montoT" maxlength="200" class="form-control form-pill" type="number" step="any" placeholder="Monto">
+									<input id="montoT" name="montoT" maxlength="200" class="form-control form-pill @error('montoT') is-invalid @enderror" value="{{ old('montoT') }}"  type="number" step="any" placeholder="Monto">
+                                    
+                                @error('montoT')
+                                    <span class="invalid-feedback" role="alert">
+                                    @foreach($errors->get('montoT') as $error)
+                                        <strong> <li>{{ $error }} </li></strong>
+                                        @endforeach
+                                    </span>
+                                @enderror                                   
+                                    
 								</div>   
 
-
-		                            
+ 
 		                            
 								<div class="form-group">
 									<label for="numero">Cuentas</label><a href="#aboutModal" data-tooltip="•Campo obligatorio" data-toggle="modal" data-target="#myModal" class="btn btn-circle-micro btn-info"><span class="glyphicon glyphicon-thumbs-up"><i class="fa fa-exclamation"></i></span></a>
                                     
                                     
-		                            <select name="cuenta_id" class="form-control form-pill">
+		                            <select name="cuenta_id" class="form-control form-pill @error('cuenta_id') is-invalid @enderror" value="{{ old('cuenta_id') }}">
 		                              <option disabled selected>Seleccione...</option>
 
 		                              	@foreach ($cuenta as $cu)		
@@ -152,8 +182,16 @@
 		                              
 		                                    </option>
 		                                @endforeach
-
 		                            </select>
+                                    
+                                @error('cuenta_id')
+                                    <span class="invalid-feedback" role="alert">
+                                    @foreach($errors->get('cuenta_id') as $error)
+                                        <strong> <li>{{ $error }} </li></strong>
+                                        @endforeach
+                                    </span>
+                                @enderror                                 
+                                    
 								</div>  
 		                            
 								<div class="form-group">
@@ -161,7 +199,16 @@
                                     
                                     
                                     
-									<input id="created_at" name="created_at" maxlength="200" class="form-control datetimepicker form-pill" type="date" placeholder="Fecha"> 
+									<input id="created_at" name="created_at" maxlength="200" class="form-control datetimepicker form-pill @error('created_at') is-invalid @enderror" value="{{ old('created_at') }}" type="date" placeholder="Fecha"> 
+                                    
+                                @error('created_at')
+                                    <span class="invalid-feedback" role="alert">
+                                    @foreach($errors->get('created_at') as $error)
+                                        <strong> <li>{{ $error }} </li></strong>
+                                        @endforeach
+                                    </span>
+                                @enderror                                   
+                                    
 								</div>                                           
 								
 								<button class="btn btn-primary my-20 my-sm-0" type="submit">Guardar</button>

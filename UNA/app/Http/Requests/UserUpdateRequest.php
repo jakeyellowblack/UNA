@@ -13,7 +13,7 @@ class UserUpdateRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,26 @@ class UserUpdateRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name' => ['string', 'max:50'],
+            'code' => ['integer', 'unique:users', 'digits:8', 'numeric'],
+            'jobtitle' => ['string', 'max:100'],
+            'password' => ['string', 'min:5', 'max:15', 'confirmed'],
+			'password_confirmation' => ['string', 'min:5', 'max:15'],
         ];
     }
+
+		public function messages()
+{
+    return [
+		'name.max' => 'Máximo 50 caracteres por nombre',
+		'code.unique' => 'El Código UNA que ingresaste ya existe',
+		'code.digits' => 'El Código UNA debe contener 8 caracteres',
+        'password.min' => 'La contraseña debe contener mínimo 5 caracteres',
+        'password.max' => 'La contraseña debe contener máximo 15 caracteres',
+        'password_confirmation.min' => 'La confirmación de contraseña debe contener mínimo 5 caracteres',
+        'password_confirmation.max' => 'La confirmación de contraseña debe contener máximo 15 caracteres',
+
+    ];
+}	
+	
 }

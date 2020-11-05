@@ -13,7 +13,7 @@ class StorePresupuestoRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,11 +24,23 @@ class StorePresupuestoRequest extends FormRequest
     public function rules()
     {
         return [
-		    'concepto' => ['required'],
-            'nombre' => ['required'],
-            'fecha' => ['required'],
-            'montoT' => ['required'],
-            'file' => ['required'],
+		    'concepto' => ['required', 'max:20'],
+            'tipo' => ['required'],
+            'created_at' => ['required'],
+            'montoT' => ['required', 'digits:10'],
+			'cuenta_id' => ['required'],
         ];
     }
+	
+	public function messages()
+{
+    return [
+        'concepto.required' => 'El :attribute es obligatorio.',
+		'concepto.max' => 'Máximo 20 caracteres por concepto',
+        'tipo.required' => 'Seleccina un :attribute de movimiento',
+        'montoT.required' => 'Añade un Monto',
+        'cuenta_id.required' => 'Selecciona una de las cuentas',
+        'created_at.required' => 'La fecha es requerida'	
+    ];
+}
 }

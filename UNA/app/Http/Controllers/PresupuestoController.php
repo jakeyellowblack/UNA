@@ -8,6 +8,8 @@ use Maatwebsite\Excel\Facades\Excel;
 use App\Exports\PresupuestosExport;
 use App\Imports\PresupuetosImport;
 
+use App\Http\Requests\StorePresupuestoRequest;
+use App\Http\Requests\UpdatePresupuestoRequest;
 
 use App\Presupuesto;
 use App\Cuenta;
@@ -79,7 +81,7 @@ class PresupuestoController extends Controller
 	
 	
 	
-	    public function store(Request $request)
+	    public function store(StorePresupuestoRequest $request)
     {
     	
         $presupuesto = Presupuesto::create($request->all());
@@ -130,7 +132,7 @@ class PresupuestoController extends Controller
     }	
 	
 	
-    public function update(Request $request, $id)
+    public function update(UpdatePresupuestoRequest $request, $id)
     {
 	$presupuesto = Presupuesto::findOrFail($request->preid);
     $presupuesto->update($request->all());
