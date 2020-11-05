@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel;
+
+use App\Exports\CuentasExport;
 
 use App\Cuenta;
 use App\Presupuesto;
@@ -48,6 +51,13 @@ class CuentaController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+	     public function exportExcel()
+    {
+    	return Excel::download(new CuentasExport, 'reporte-cuentas.xlsx');
+    }
+	 
+	 
+	 
     public function store(Request $request)
     {
         //

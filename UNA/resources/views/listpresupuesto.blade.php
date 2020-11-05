@@ -98,7 +98,7 @@
 			    	<h2 class="h4 card-header-title">Tabla de Presupuestos</h2>
                     
                     
-            		<form action="{{ route('presupuesto.import') }}" method="post" enctype="multipart/form-data">
+<!--            		<form action="{{ route('presupuesto.import') }}" method="post" enctype="multipart/form-data">
             			@csrf
             
 		               <div class="input-group">
@@ -113,7 +113,7 @@
 
 		           			<button class='btn btn-primary float-right'>Importar Presupuesto</button>
 		                </div>
-        			</form>
+        			</form>-->
                     
 	          </header>
                 
@@ -177,9 +177,24 @@
 							          	<div class="dropdown-menu dropdown-menu-right" style="width: 150px;">
 								            <div class="card border-0 p-3">
                                                 <ul class="list-unstyled mb-0"> 
+                                                
+                                                
 											        <li class="mb-3">
-												        <a class="d-block link-dark" href="#editModal" data-myconcepto="{{$pre->concepto}}" data-mynombre="{{$pre->nombre}}" data-myfecha="{{$pre->created_at}}" data-mymontot="{{$pre->montoT}}" data-preid="{{$pre->id}}" data-toggle="modal">Editar</a>
+												        <a class="d-block link-dark" href="#editModal" 
+                                                        data-mytipo="{{$pre->tipo}}" 
+                                                        data-myconcepto="{{$pre->concepto}}" 
+                                                        data-myfecha="{{$pre->created_at}}" 
+                                                        data-mymontot="{{$pre->montoT}}" 
+                                                        @foreach ($cuenta as $cu)
+                                                        data-mynombre="{{$cu->nombre}}" 
+                                                         @endforeach
+                                                        data-preid="{{$pre->id}}" 
+                                                        data-toggle="modal">Editar</a>
 											        </li>
+
+		                
+
+
 
 											        <li>
 												        <a class="d-block link-dark" href="#deleteModal" data-preid="{{$pre->id}}" data-toggle="modal">Eliminar</a>
@@ -241,25 +256,55 @@
 
                     	      		<input type="hidden" name="preid" id="preid" value="">
 
+                                        <div class="form-group">
+											<label for="tipo">Tipo</label>
+                                               <select id="tipo" name="tipo" class="form-control form-pill">
+                                                  <option disabled selected>Selecciona...</option>
+                                                  <option value="ingreso">Ingreso</option>
+                                                  <option value="egreso">Egreso</option>
+                                                </select>
+										</div>
+
+
+
 										<div class="form-group">
 											<label for="concepto">Concepto</label>
 											<textarea id="concepto" name="concepto" class="form-control form-pill" type="text" placeholder="Placeholder"></textarea>
 										</div>
                                         
-                                        <div class="form-group">
-											<label for="nombre">Nombre</label>
-											<input id="nombre" name="nombre" class="form-control form-pill" type="text" placeholder="Placeholder">
-										</div>
                                         
-                                        <div class="form-group">
-											<label for="fecha">Fecha</label>
-											<input id="fecha" name="fecha" class="form-control form-pill" type="text" placeholder="Placeholder">
-										</div>
+								<div class="form-group">
+									<label for="created_at">Fecha</label>
+									<input id="created_at" name="created_at" maxlength="200" class="form-control datetimepicker form-pill" type="date" placeholder="Fecha"> 
+								</div>  
+                                
+								<div class="form-group">
+									<label for="montoT">Monto</label>
+									<input id="montoT" name="montoT" maxlength="200" class="form-control form-pill" type="number" step="any" placeholder="Monto">
+								</div>                                                                          
                                         
-                                        <div class="form-group">
-											<label for="montoT">Monto total</label>
-											<input id="montoT" name="montoT" class="form-control form-pill" type="text" placeholder="Placeholder">
-										</div>
+                                        
+								<div class="form-group">
+									<label for="numero">Cuentas</label>
+		                            <select name="cuenta_id" class="form-control form-pill">
+		                              <option disabled selected>Seleccione...</option>
+
+		                              	@foreach ($cuenta as $cu)		
+		                                	<option value="{{ $cu->id }}">
+		                            			{{ $cu->id }}-
+		                                        {{ $cu->nombre }}
+		                              
+		                                    </option>
+		                                @endforeach
+
+		                            </select>
+								</div>                                       
+                                        
+                                        
+                                        
+ 
+                                        
+
            					</div>
                     
 					<div class="modal-footer">
@@ -352,18 +397,22 @@
 		$('#editModal').on('show.bs.modal', function (event) {
 		    var button = $(event.relatedTarget)
 		    var id = button.data('preid') 
+			var tipo = button.data('mytipo') 
 		    var concepto = button.data('myconcepto') 
-		    var nombre = button.data('mynombre') 
-			var fecha = button.data('myfecha') 
+		    var created_at = button.data('myfecha') 
 		    var montoT = button.data('mymontot') 
+			var nombre = button.data('mynombre') 
+
 			  
 		    var modal = $(this)
 			  
 		    modal.find('.modal-body #preid').val(id);
+		    modal.find('.modal-body #tipo').val(tipo);
 		    modal.find('.modal-body #concepto').val(concepto);
-		    modal.find('.modal-body #nombre').val(nombre);
-			modal.find('.modal-body #fecha').val(fecha);
+		    modal.find('.modal-body #created_at').val(created_at);
 		    modal.find('.modal-body #montoT').val(montoT);
+			modal.find('.modal-body #nombre').val(nombre);
+
 		})
 
 

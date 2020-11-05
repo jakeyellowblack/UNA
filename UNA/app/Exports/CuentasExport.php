@@ -2,32 +2,29 @@
 
 namespace App\Exports;
 
-use App\Presupuesto;
+use App\Cuenta;
 use Maatwebsite\Excel\Concerns\FromCollection;
 use Maatwebsite\Excel\Concerns\WithHeadings;
 use Maatwebsite\Excel\Concerns\ShouldAutoSize;
 use Maatwebsite\Excel\Concerns\WithEvents;
 use Maatwebsite\Excel\Events\AfterSheet;
 
-
-class PresupuestosExport implements FromCollection, WithHeadings, ShouldAutoSize, WithEvents
+class CuentasExport implements FromCollection, WithHeadings, ShouldAutoSize, WithEvents
 {
     /**
     * @return \Illuminate\Support\Collection
     */
     public function collection()
     {
-        return Presupuesto::select("tipo", "created_at","concepto", "montoT", "cuenta_id")->get();
+        return Cuenta::select("nombre","numero","montoT")->get();
     }
 	
-	    public function headings(): array
+		    public function headings(): array
     {
         return [
-            'Tipo',
-            'Fecha',
-			'Concepto',
+            'Nombre',
+            'Número',
             'Monto',
-            'ID de Cuenta'
         ];
     }
 	
@@ -44,5 +41,4 @@ class PresupuestosExport implements FromCollection, WithHeadings, ShouldAutoSize
             },
         ];
     }
-	
 }

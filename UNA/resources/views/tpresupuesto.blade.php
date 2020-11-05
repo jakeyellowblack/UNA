@@ -40,6 +40,8 @@
 		.no-js body .u-header .u-header-left .u-header-logo {
 	font-size: 25px;
 }
+
+
         </style>
 </head>
 	<!-- End Head -->
@@ -59,10 +61,41 @@
 	         		<hr class="my-4">
 
 							
+ 								<div class="card-body pt-0">
+									<label for="file">Cargar desde archivo</label> <a href="#aboutModal" data-tooltip="•Opcional
+     •Tipo de archivo permitido: .xlsx" data-toggle="modal" data-target="#myModal" class="btn btn-circle-micro btn-danger"><span class="glyphicon glyphicon-thumbs-up"><i class="fa fa-exclamation"></i></span></a>                               
+                            
+                           <form action="{{ route('presupuesto.import') }}" method="post" enctype="multipart/form-data">
+            			@csrf
+            
+		               <div class="input-group">
+		               
+		        			<label class="input-group-btn">
+								<span class="btn btn-primary btn-file">
+		                Seleccione un archivo... <input type="file" id="banner" name="banner" style="visibility: hidden; position: absolute;" class="hidden">
+		            			</span>
+		        			</label>
+		        
+		        			<input class="form-control" id="banner_captura" readonly name="banner_captura" type="text" value="">
+
+		           			<button class='btn btn-primary float-right'>Importar Presupuesto</button>
+		                </div>
+        			</form> 
+                   								</div>                             
+                            
+	         		<hr class="my-4">
+                     
+                     
+                     
+ <div class="card-body pt-0">
+									<label for="formu">Crear desde formulario</label>  </div>                
+
+                            
 	     			<form class="h-100" action="{{ route('tpresupuesto.store') }}" method="post">
 	     				@csrf
 							<div class="card-body pt-0">
-	                        
+                            
+                            
 								<div class="form-group">
 									<label for="tipo">Tipo</label><a href="#aboutModal" data-tooltip="•Campo obligatorio" data-toggle="modal" data-target="#myModal" class="btn btn-circle-micro btn-info"><span class="glyphicon glyphicon-thumbs-up"><i class="fa fa-exclamation"></i></span></a>   
                                     
@@ -131,13 +164,11 @@
 									<input id="created_at" name="created_at" maxlength="200" class="form-control datetimepicker form-pill" type="date" placeholder="Fecha"> 
 								</div>                                           
 								
-								<button class="btn btn-primary my-20 my-sm-0" type="button">Guardar</button>
+								<button class="btn btn-primary my-20 my-sm-0" type="submit">Guardar</button>
 
 							</div>
 					</form>
 	                    
-	                    
-					
 				</div>
 			</div>
 		</div>
@@ -154,6 +185,25 @@
 @include('scripts')
 
 <script type="text/javascript">
+
+		var file = document.getElementById("banner");
+
+		$(document).on('change','.btn-file :file',function(){
+		  var input = $(this);
+		  var numFiles = input.get(0).files ? input.get(0).files.length : 1;
+		  var label = input.val().replace(/\\/g,'/').replace(/.*\//,'');
+		  input.trigger('fileselect',[numFiles,label]);
+		});
+		$(document).ready(function(){
+		  $('.btn-file :file').on('fileselect',function(event,numFiles,label){
+		    var input = $(this).parents('.input-group').find(':text');
+		    var log = numFiles > 1 ? numFiles + ' files selected' : label;
+		    if(input.length){ input.val(log); }else{ if (log) alert(log); }
+		  });
+		});
+
+
+
  $(function () {
     $('.datetimepicker').datetimepicker();
 });

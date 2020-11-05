@@ -8,7 +8,11 @@ use Illuminate\Validation\Rule;
 use Maatwebsite\Excel\Concerns\ToModel;
 use Maatwebsite\Excel\Concerns\Importable;
 
-class PresupuetosImport implements ToModel
+use Maatwebsite\Excel\Concerns\WithHeadingRow;
+use Maatwebsite\Excel\Concerns\WithStartRow;
+
+class PresupuetosImport implements ToModel, WithStartRow
+
 {
 	
 	    use Importable;
@@ -22,8 +26,8 @@ class PresupuetosImport implements ToModel
     {
         return new Presupuesto([
 		    'tipo'     => $row[0], //a
-            'concepto'     => $row[1], //a
-            'fecha' => ($row[2]), //c
+            'created_at'     => $row[1], //a
+            'concepto' => ($row[2]), //c
 			'montoT' => ($row[3]), //d
 			'cuenta_id' => ($row[4]), //d
 
@@ -33,5 +37,9 @@ class PresupuetosImport implements ToModel
 	
 
 	
+	public function startRow(): int
+{
+    return 2;
+}
 	
 }

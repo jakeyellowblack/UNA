@@ -76,6 +76,9 @@ class PresupuestoController extends Controller
       return back()->with('status', 'Importanción de presupuesto completada');
     }
 	
+	
+	
+	
 	    public function store(Request $request)
     {
     	
@@ -98,6 +101,12 @@ class PresupuestoController extends Controller
 	
 	 public function show(Presupuesto $presupuesto, Request $request)
     {
+
+
+					
+
+		
+		
 		
 				  if ($request)
 				{
@@ -106,7 +115,9 @@ class PresupuestoController extends Controller
 					
 					$presupuesto = $presupuesto->get();
 					
+					$cuenta = Cuenta::orderBy('id', 'ASC');
 
+					$cuenta = $cuenta->get();
 					
 					$presupuesto=Presupuesto::from('presupuestos as p')
 					->orderBy('p.id','asc')
@@ -114,7 +125,7 @@ class PresupuestoController extends Controller
 					->paginate(10);
 
 					
-					return view('listpresupuesto',["presupuesto"=>$presupuesto]);
+					return view('listpresupuesto',["presupuesto"=>$presupuesto, "cuenta"=>$cuenta]);
 				}	
 		
 

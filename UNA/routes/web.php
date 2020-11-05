@@ -55,6 +55,7 @@ Route::get('cuenta','CuentaController@index')->name('cuenta.index');
 Route::get('cuenta','CuentaController@show')->name('cuenta.index');
 Route::get('cuenta_create','CuentaController@create')->name('cuenta.create');
 Route::post('cuenta_store', 'CuentaController@store')->name('cuenta.store');
+Route::get('cuenta-list-excel','CuentaController@exportExcel')->name('cuenta.cuenta');
 ///USER
 Route::get('user', 'UserController@index')->name('user');
 Route::get('user_create', 'UserController@create')->name('user.create');
