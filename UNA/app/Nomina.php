@@ -6,7 +6,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Nomina extends Model
 {
-
+      protected $fillable = [
+	  	'id',
+		'namefile',
+		'title',
+		'date',
+	];
 	
 	 public function scopeBuscarpor($query, $tipo, $busqueda)
     {

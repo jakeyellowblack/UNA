@@ -193,12 +193,17 @@
 											        </li>
 
 		                
-
-
-
-											        <li>
-												        <a class="d-block link-dark" href="#deleteModal" data-preid="{{$pre->id}}" data-toggle="modal">Eliminar</a>
+											        <li class="mb-3">
+												        <a class="d-block link-dark" 
+                                                        href="#deleteModal" 
+                                                        data-preid="{{$pre->id}}" data-toggle="modal">Eliminar</a>
 											        </li>
+                                                    
+											        <li class="mb-3">
+												        <a class="d-block link-dark" 
+                                                        href="#">Movimiento</a>
+											        </li>                                                    
+                                                    
 										        </ul>
 	                                              
 									        </div>
@@ -284,21 +289,23 @@
 								</div>                                                                          
                                         
                                         
-								<div class="form-group">
+<!--								<div class="form-group">
 									<label for="numero">Cuentas</label>
-		                            <select name="cuenta_id" class="form-control form-pill">
+		                            <select name="cuenta_id" id="cuenta_id" class="form-control form-pill">
 		                              <option disabled selected>Seleccione...</option>
 
 		                              	@foreach ($cuenta as $cu)		
-		                                	<option value="{{ $cu->id }}">
-		                            			{{ $cu->id }}-
-		                                        {{ $cu->nombre }}
-		                              
-		                                    </option>
+                                        
+                                                <option value="{{ $cu->id }}">
+                                                    {{ $cu->id }}-
+                                                    {{ $cu->nombre }}
+                                                </option>
+                                            
+                                            
 		                                @endforeach
 
 		                            </select>
-								</div>                                       
+								</div>        -->                               
                                         
                                         
                                         
@@ -411,7 +418,7 @@
 		    modal.find('.modal-body #concepto').val(concepto);
 		    modal.find('.modal-body #created_at').val(created_at);
 		    modal.find('.modal-body #montoT').val(montoT);
-			modal.find('.modal-body #nombre').val(nombre);
+			modal.find('.modal-body #cuenta_id').val(id);
 
 		})
 

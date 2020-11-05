@@ -12,6 +12,7 @@ class Cuenta extends Model
 	  	'id',
 		'nombre',
 		'numero',
+		'montoT',
 	];
 	
 	public function presupuesto()

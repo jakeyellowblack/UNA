@@ -2,6 +2,24 @@
   
 @section('content')
 
+@if(session('status'))
+ <div class="alert alert-success">
+{{ session('status') }}
+</div>
+@endif
+
+@if(session('message'))
+ <div class="alert alert-danger">
+{{ session('message') }}
+</div>
+@endif
+
+@if (session('errors') )
+ <div class="alert alert-danger">
+{{ session('errors') }}
+</div>
+@endif
+
 <!DOCTYPE html>
 	<!-- Head -->
 <head>

@@ -50,12 +50,17 @@ Route::resource('ingreso','IngresoController')->names('ingreso');
 Route::resource('egreso','EgresoController')->names('egreso');
 //Cierre
 Route::resource('cierre','CierreController')->names('cierre');
+
 //Cuentas
 Route::get('cuenta','CuentaController@index')->name('cuenta.index');
 Route::get('cuenta','CuentaController@show')->name('cuenta.index');
 Route::get('cuenta_create','CuentaController@create')->name('cuenta.create');
 Route::post('cuenta_store', 'CuentaController@store')->name('cuenta.store');
 Route::get('cuenta-list-excel','CuentaController@exportExcel')->name('cuenta.cuenta');
+Route::put('cuenta', 'CuentaController@update')->name('cuenta.update');
+Route::delete('cuenta', 'CuentaController@destroy')->name('cuenta.destroy');
+
+
 ///USER
 Route::get('user', 'UserController@index')->name('user');
 Route::get('user_create', 'UserController@create')->name('user.create');
@@ -65,9 +70,14 @@ Route::resource('user', 'UserController')->names('user');
 Route::get('reformulacion', 'ReformulacionController@index')->name('reformulacion.index');
 Route::post('reformulacion_store', 'ReformulacionController@store')->name('reformulacion.store');
 Route::get('reformulacion_create', 'ReformulacionController@create')->name('reformulacion.create');
+Route::put('reformulacion', 'ReformulacionController@update')->name('reformulacion.update');
+Route::delete('reformulacion', 'ReformulacionController@destroy')->name('reformulacion.destroy');
+
 
 ///PRESUPUESTO
 Route::resource('presupuesto', 'PresupuestoController')->names('presupuesto');
+Route::resource('nomina', 'NominaController')->names('nomina');
+
 
 ///NOMINA
 Route::get('nomina', 'NominaController@index')->name('nomina.index');

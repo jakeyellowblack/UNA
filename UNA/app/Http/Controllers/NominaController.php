@@ -113,13 +113,28 @@ class NominaController extends Controller
 
     }
 	
-	public function update()
+	    public function edit($id)
     {
+        //
+    }
+	
+    public function update(Request $request, $id)
+    {
+		$nomina = Nomina::findOrFail($request->noid);
+		$nomina->update($request->all());
+
+		
+		return redirect()->back()->with('status','Datos actualizados satisfactoriamente');
 		
     }	
 
-	public function destroy()
+	  public function destroy(Request $request)
     {
+        
+        $nomina = Nomina::findOrFail($request->noid);
+        $nomina->delete();
+
+		return redirect()->back()->with('message','Datos eliminados satisfactoriamente');
 
     }
 

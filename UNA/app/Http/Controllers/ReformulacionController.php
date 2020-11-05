@@ -104,11 +104,6 @@ class ReformulacionController extends Controller
              }
 
     }
-
-
-
-        
-
         //dd($mov,$reformulacion);
 
     	return view('reformulacion.create');
@@ -126,12 +121,19 @@ class ReformulacionController extends Controller
 
     public function update(Request $request, $id)
     {
+		$reformulacion = Reformulacion::findOrFail($request->refid);
+		$reformulacion->update($request->all());
 
+		
+		return redirect()->back()->with('status','Datos actualizados satisfactoriamente');
     }
 
-    public function destroy($id)
+    public function destroy(Request $request)
     {
+        $presupuesto = Reformulacion::findOrFail($request->refid);
+        $presupuesto->delete();
 
+		return redirect()->back()->with('message','Datos eliminados satisfactoriamente');
     }
 
 

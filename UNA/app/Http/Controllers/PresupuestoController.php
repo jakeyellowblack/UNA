@@ -102,12 +102,6 @@ class PresupuestoController extends Controller
 	 public function show(Presupuesto $presupuesto, Request $request)
     {
 
-
-					
-
-		
-		
-		
 				  if ($request)
 				{
 					$busqueda = $request->get('busqueda');

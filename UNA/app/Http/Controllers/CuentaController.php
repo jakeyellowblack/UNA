@@ -86,37 +86,27 @@ class CuentaController extends Controller
 				}	
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function edit($id)
     {
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function update(Request $request, $id)
     {
-        //
+		$cuenta = Cuenta::findOrFail($request->cuid);
+		$cuenta->update($request->all());
+
+		
+		return redirect()->back()->with('status','Datos actualizados satisfactoriamente');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
+    public function destroy(Request $request)
     {
-        //
+        $cuenta = Cuenta::findOrFail($request->cuid);
+        $cuenta->delete();
+
+		return redirect()->back()->with('message','Datos eliminados satisfactoriamente');
     }
 }
