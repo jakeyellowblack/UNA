@@ -64,7 +64,7 @@ class PresupuestoController extends Controller
 
     public function exportExcel()
     {
-    	return Excel::download(new PresupuestosExport, 'presupuesto-list.xlsx');
+    	return Excel::download(new PresupuestosExport, 'reporte-presupuestario.xlsx');
     }
 
     public function importExcel(Request $request)

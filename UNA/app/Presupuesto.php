@@ -11,6 +11,7 @@ class Presupuesto extends Model
 	
     protected $table = 'presupuestos';
 		 const UPDATED_AT = null;
+    public $timestamps = FALSE;
 
 	
     protected $fillable = [

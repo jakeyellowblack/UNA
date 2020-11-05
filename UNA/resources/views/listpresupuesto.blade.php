@@ -114,11 +114,18 @@
 		           			<button class='btn btn-primary float-right'>Importar Presupuesto</button>
 		                </div>
         			</form>
-		        </header>
-		        <!-- End Card Header -->
+                    
+	          </header>
+                
+
+	          <!-- End Card Header -->
 
 		        <!-- Crad Body -->
 	          	<div class="card-body pt-0">
+                
+                <div align="right">
+                <a href="{{ route('presupuesto.presupuesto') }}" class="btn btn-primary my-20 my-sm-0" role="button">Generar reporte</a>
+                          </div>
 		          	<!-- Table -->
 		          	<div class="table-responsive">
 			          	<table class="table table-hover mb-0">
