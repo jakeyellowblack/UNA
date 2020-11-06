@@ -124,7 +124,7 @@
                                                     
 											        <li class="mb-3" >
 												        <a class="d-block link-dark" 
-                                                        href="" 
+                                                        href="{{ route('nomina.show', $no->id) }}" 
                                                         data="{{$no->id}}"
                                                         role="button">Movimiento</a>
 											        </li> 

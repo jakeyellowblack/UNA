@@ -19,6 +19,19 @@ class NominaController extends Controller
         return view('nomina.index', compact('nomina'));
     }
 
+    public function movimiento()
+    {
+        $nomina = Nomina::orderBy('id', 'ASC');
+        
+        $nomina = $nomina->get();
+
+        $movnomina = MovNomina::orderBy('id', 'ASC');
+        
+        $movnomina = $movnomina->get();
+
+        return view('nomina.movimiento', compact('nomina','movnomina'));
+    }
+
     public function create()
     {
         return view('nomina.create');
@@ -108,9 +121,11 @@ class NominaController extends Controller
         return view ('nomina.create');
     }
 	
-	public function show()
+	public function show($title)
     {
+        
 
+        dd($title);
     }
 	
 	    public function edit($id)

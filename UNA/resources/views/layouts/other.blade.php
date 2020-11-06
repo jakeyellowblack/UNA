@@ -262,6 +262,12 @@
                                     <span class="u-sidebar-nav-menu__item-title">Lista de reformulaciones</span>
                                 </a>
                             </li>
+
+                            <li class="u-sidebar-nav-menu__item">
+                                <a class="u-sidebar-nav-menu__link" href="{{ route('reformulacion.movimiento') }}">
+                                    <span class="u-sidebar-nav-menu__item-title">Movimientos de reformulación</span>
+                                </a>
+                            </li>
                         </ul>
                     </li>
                     <!-- End Tables -->                        
@@ -314,6 +320,12 @@
                             <li class="u-sidebar-nav-menu__item">
                                 <a class="u-sidebar-nav-menu__link" href="{{ route('nomina.index') }}">
                                     <span class="u-sidebar-nav-menu__item-title">Lista de nómina</span>
+                                </a>
+                            </li>
+
+                            <li class="u-sidebar-nav-menu__item">
+                                <a class="u-sidebar-nav-menu__link" href="{{ route('nomina.movimiento') }}">
+                                    <span class="u-sidebar-nav-menu__item-title">Movimientos de nómina</span>
                                 </a>
                             </li>
                         </ul>

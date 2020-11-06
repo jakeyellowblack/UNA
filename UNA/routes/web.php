@@ -48,7 +48,7 @@ Route::get('home','PresupuestoController@chart')->name('home');
 Route::resource('ingreso','IngresoController')->names('ingreso');
 //Egreso
 Route::resource('egreso','EgresoController')->names('egreso');
-//Cierre
+//Egreso
 Route::resource('cierre','CierreController')->names('cierre');
 
 //Cuentas
@@ -69,6 +69,7 @@ Route::resource('user', 'UserController')->names('user');
 ///REFORMULACIÓN
 Route::get('reformulacion', 'ReformulacionController@index')->name('reformulacion.index');
 Route::post('reformulacion_store', 'ReformulacionController@store')->name('reformulacion.store');
+Route::get('reformulacion_movimiento', 'ReformulacionController@movimiento')->name('reformulacion.movimiento');
 Route::get('reformulacion_create', 'ReformulacionController@create')->name('reformulacion.create');
 Route::put('reformulacion', 'ReformulacionController@update')->name('reformulacion.update');
 Route::delete('reformulacion', 'ReformulacionController@destroy')->name('reformulacion.destroy');
@@ -83,3 +84,4 @@ Route::resource('nomina', 'NominaController')->names('nomina');
 Route::get('nomina', 'NominaController@index')->name('nomina.index');
 Route::post('nomina_store', 'NominaController@store')->name('nomina.store');
 Route::get('nomina_create', 'NominaController@create')->name('nomina.create');
+Route::get('nomina_movimiento', 'NominaController@movimiento')->name('nomina.movimiento');

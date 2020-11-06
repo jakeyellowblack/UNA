@@ -24,6 +24,20 @@ class ReformulacionController extends Controller
     	return view('reformulacion.create');
     }
 
+    public function movimiento()
+    {
+        $reformulacion = Reformulacion::orderBy('id', 'ASC');
+        
+        $reformulacion = $reformulacion->get();
+
+        $movreformulacion = MovReformulacion::orderBy('id', 'ASC');
+        
+        $movreformulacion = $movreformulacion->get();
+
+        return view('reformulacion.movimiento', compact('reformulacion','movreformulacion'));
+    }
+
+
     public function store(Request $request)
     {
 
