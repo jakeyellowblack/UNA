@@ -124,7 +124,8 @@
                                                     
 											        <li class="mb-3" >
 												        <a class="d-block link-dark" 
-                                                        href="#">Movimiento</a>
+                                                        href="#" 
+                                                        data="{{$no->id}}">Movimiento</a>
 											        </li> 
                                                     
 									          </ul>
