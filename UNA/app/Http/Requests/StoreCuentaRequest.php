@@ -25,7 +25,7 @@ class StoreCuentaRequest extends FormRequest
     {
         return [
             'nombre' => ['required', 'string', 'max:50'],
-            'numero' => ['required', 'integer', 'max:12', 'numeric'],
+            'numero' => ['required', 'string', 'max:12'],
         ];
     }
 	

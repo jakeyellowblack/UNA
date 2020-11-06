@@ -14,7 +14,6 @@
 </div>
 @endif
 
-@include('common.errors')
 
 <!DOCTYPE html>
 <html lang="en" class="no-js">

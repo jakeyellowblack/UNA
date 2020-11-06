@@ -140,7 +140,8 @@
 		                            
 								<div class="form-group">
 									<label for="password">Contraseña</label> <a href="#aboutModal" data-tooltip="•Campo obligatorio
-        •Max: 15 caracteres" data-toggle="modal" data-target="#myModal" class="btn btn-circle-micro btn-info"><span class="glyphicon glyphicon-thumbs-up"><i class="fa fa-exclamation"></i></span></a>
+        •Max: 15 caracteres
+        •Max: 5 caracteres" data-toggle="modal" data-target="#myModal" class="btn btn-circle-micro btn-info"><span class="glyphicon glyphicon-thumbs-up"><i class="fa fa-exclamation"></i></span></a>
                                     
                                     
 									<input required id="password" name="password" maxlength="15" class="form-control form-pill @error('password') is-invalid @enderror" type="password" placeholder="Contraseña del usuario">
@@ -157,7 +158,8 @@
 		                            
 								<div class="form-group">
 									<label for="password-confirm">Confirmar Contraseña</label> <a href="#aboutModal" data-tooltip="•Campo obligatorio
-        •Max: 15 caracteres" data-toggle="modal" data-target="#myModal" class="btn btn-circle-micro btn-info"><span class="glyphicon glyphicon-thumbs-up"><i class="fa fa-exclamation"></i></span></a>
+        •Max: 15 caracteres
+        •Max: 5 caracteres" data-toggle="modal" data-target="#myModal" class="btn btn-circle-micro btn-info"><span class="glyphicon glyphicon-thumbs-up"><i class="fa fa-exclamation"></i></span></a>
                                     
                                     
 									<input required id="password-confirm" name="password_confirmation" maxlength="15" class="form-control form-pill @error('password_confirmation') is-invalid @enderror" value="{{ old('password_confirmation') }}" type="password" placeholder="Confirmar contraseña" autocomplete="new-password">

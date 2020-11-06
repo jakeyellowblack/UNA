@@ -27,7 +27,7 @@ class StorePresupuestoRequest extends FormRequest
 		    'concepto' => ['required', 'max:20'],
             'tipo' => ['required'],
             'created_at' => ['required'],
-            'montoT' => ['required', 'digits:10'],
+            'montoT' => ['required'],
 			'cuenta_id' => ['required'],
         ];
     }
