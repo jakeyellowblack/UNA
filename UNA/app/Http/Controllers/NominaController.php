@@ -19,16 +19,15 @@ class NominaController extends Controller
         return view('nomina.index', compact('nomina'));
     }
 
-    public function movimiento()
+    public function movimiento(Nomina $nomina, MovNomina $movnomina, Request $request)
     {
         $nomina = Nomina::orderBy('id', 'ASC');
-        
         $nomina = $nomina->get();
 
-        $movnomina = MovNomina::orderBy('id', 'ASC');
+		$movnomina = $movnomina->get();
+        $movnomina = MovNomina::orderBy('id', 'ASC')->paginate(10);
         
-        $movnomina = $movnomina->get();
-
+        
         return view('nomina.movimiento', compact('nomina','movnomina'));
     }
 
@@ -153,5 +152,21 @@ class NominaController extends Controller
 
     }
 
+    public function update_movimiento(Request $request)
+    {
+		$movnomina = MovNomina::findOrFail($request->movid);
+		$movnomina->update($request->all());
+
+		
+		return redirect()->back()->with('status','Datos actualizados satisfactoriamente');
+    }
+
+    public function destroy_movimiento(Request $request)
+    {
+        $movnomina = MovNomina::findOrFail($request->movid);
+        $movnomina->delete();
+
+		return redirect()->back()->with('message','Datos eliminados satisfactoriamente');
+    }
 	
 }

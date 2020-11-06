@@ -21,5 +21,8 @@ class Nomina extends Model
 		}
     }	
 	
-	
+    public function mov_nomina()
+    {
+    	return $this->hasMany(MovNomina::class);
+    }	
 }

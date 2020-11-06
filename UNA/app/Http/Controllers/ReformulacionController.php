@@ -24,15 +24,15 @@ class ReformulacionController extends Controller
     	return view('reformulacion.create');
     }
 
-    public function movimiento()
+    public function movimiento(Reformulacion $reformulacion, MovReformulacion $movreformulacion, Request $request)
     {
+
         $reformulacion = Reformulacion::orderBy('id', 'ASC');
-        
         $reformulacion = $reformulacion->get();
 
-        $movreformulacion = MovReformulacion::orderBy('id', 'ASC');
-        
         $movreformulacion = $movreformulacion->get();
+        $movreformulacion = MovReformulacion::orderBy('id', 'ASC')->paginate(10);
+        
 
         return view('reformulacion.movimiento', compact('reformulacion','movreformulacion'));
     }
@@ -149,6 +149,25 @@ class ReformulacionController extends Controller
 
 		return redirect()->back()->with('message','Datos eliminados satisfactoriamente');
     }
+
+    public function update_movimiento(Request $request)
+    {
+		$movreformulacion = MovReformulacion::findOrFail($request->movid);
+		$movreformulacion->update($request->all());
+
+		
+		return redirect()->back()->with('status','Datos actualizados satisfactoriamente');
+    }
+
+    public function destroy_movimiento(Request $request)
+    {
+        $movreformulacion = MovReformulacion::findOrFail($request->movid);
+        $movreformulacion->delete();
+
+		return redirect()->back()->with('message','Datos eliminados satisfactoriamente');
+    }
+
+
 
 
 }

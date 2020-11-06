@@ -73,7 +73,8 @@ Route::get('reformulacion_movimiento', 'ReformulacionController@movimiento')->na
 Route::get('reformulacion_create', 'ReformulacionController@create')->name('reformulacion.create');
 Route::put('reformulacion', 'ReformulacionController@update')->name('reformulacion.update');
 Route::delete('reformulacion', 'ReformulacionController@destroy')->name('reformulacion.destroy');
-
+Route::put('reformulacion_movimiento', 'ReformulacionController@update_movimiento')->name('refmovimiento.update');
+Route::delete('reformulacion_movimiento', 'ReformulacionController@destroy_movimiento')->name('refmovimiento.destroy');
 
 ///PRESUPUESTO
 Route::resource('presupuesto', 'PresupuestoController')->names('presupuesto');
@@ -85,3 +86,5 @@ Route::get('nomina', 'NominaController@index')->name('nomina.index');
 Route::post('nomina_store', 'NominaController@store')->name('nomina.store');
 Route::get('nomina_create', 'NominaController@create')->name('nomina.create');
 Route::get('nomina_movimiento', 'NominaController@movimiento')->name('nomina.movimiento');
+Route::put('nomina_movimiento', 'NominaController@update_movimiento')->name('nomovimiento.update');
+Route::delete('nomina_movimiento', 'NominaController@destroy_movimiento')->name('nomovimiento.destroy');
