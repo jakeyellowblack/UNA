@@ -42,18 +42,18 @@
 
 <!-- Header (Topbar) -->
     <header class="u-header">
+
         <!-- Header Left Section -->
         <div class="u-header-left">
+
             <!-- Header Logo -->
             <a class="u-header-logo" href="home">
                 <img class="u-header-logo__icon" src="logomini.png" alt="Awesome Icon">
                 <img class="u-header-logo__text" src="logo-light-text.png" alt="Awesome">
             </a>
             <!-- End Header Logo -->
+
         </div>
-        
-        
-        
         <!-- End Header Left Section -->
 
         <!-- Header Middle Section -->
@@ -74,13 +74,13 @@
                 <div class="u-header-search"
                      data-search-mobile-invoker="#headerSearchMobileInvoker"
                      data-search-target="#headerSearch">
+
                     <!-- Header Search Invoker (Mobile Mode) -->
                     <a id="headerSearchMobileInvoker" class="u-header-search__mobile-invoker align-items-center" href="#">
                         <span class="ti-search"></span>
                     </a>
-                    
-                    
                     <!-- End Header Search Invoker (Mobile Mode) -->
+
                     <!-- Header Search Form -->
                     <!--<div id="headerSearch" class="u-header-search-form">
                         <form action="/" class="w-100">
@@ -92,9 +92,8 @@
                             </div>
                         </form>
                     </div>-->
-                    <!-- End Header Search Form -->
-                    
-                    
+                    <!-- End Header Search Form -->  
+
                 </div>
             </div>
             <!-- End Header Search -->
@@ -114,33 +113,28 @@
                     <div class="u-header-dropdown__menu dropdown-menu dropdown-menu-right" aria-labelledby="userProfileInvoker" style="width: 260px;">
                         <div class="card p-3">
                             <div class="card-body p-0">
-
-                                    <li>
-                              <a class="dropdown-item" href="{{ route('logout') }}"
-                                   onclick="event.preventDefault();
-                                                 document.getElementById('logout-form').submit();">
-                        {{ __('Cerrar Sesión') }}<a>
-                        
-                                                          <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                    @csrf
-                                  </form>
+                                <li>
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                    {{ __('Cerrar Sesión') }}</a>
                             
-                                  
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    @csrf
+                                    </form>
+                                    
+                                </li>
                             </div>
-                </li>
-                            </ul>
                         </div>
                     </div>
+
                 </div>
             </div>
-        </div>
             <!-- End User Profile -->
-            
-      
-            
-      
+
         </div>
         <!-- End Header Middle Section -->
+
     </header>
 <!-- End Header (Topbar) -->
 
@@ -148,9 +142,11 @@
 
 <!-- Main -->
     <main class="u-main">
+
         <!-- Sidebar -->
         <aside id="sidebar" class="u-sidebar">
             <div class="u-sidebar-inner">
+
                 <!-- Sidebar Header -->
                 <header class="u-sidebar-header">
                     <!-- Sidebar Logo -->
@@ -173,47 +169,7 @@
                                 <span class="u-sidebar-nav-menu__item-title">Inicio</span>
                             </a>
                         </li>
-                        <!-- End Dashboard -->
-                        
-                                    
-<!--                    <li class="u-sidebar-nav-menu__item">
-                        <a class="u-sidebar-nav-menu__link" href="">
-                            <span class="ti-money u-sidebar-nav-menu__item-icon"></span>
-                            <span class="u-sidebar-nav-menu__item-title">Saldo</span>
-                        </a>
-                    </li>                       
-                        -->
-              
-
-                    <!-- Forms -->
-<!--        			<li class="u-sidebar-nav-menu__item">
-        							<a class="u-sidebar-nav-menu__link" href="#"
-        							   data-target="#menuItemGestiones">
-        								<span class="ti-bar-chart u-sidebar-nav-menu__item-icon"></span>
-        								<span class="u-sidebar-nav-menu__item-title">Balance</span>
-        								<span class="ti-angle-down u-sidebar-nav-menu__item-arrow"></span>
-        							</a>
-                                    
-                        <ul id="menuItemGestiones" class="u-sidebar-nav-menu u-sidebar-nav-menu--second-level" style="display: none;">
-                                   
-                            
-                            <li class="u-sidebar-nav-menu__item">
-                                <a class="u-sidebar-nav-menu__link" href="{{ route('ingreso.index') }}">
-                                    <span class="u-sidebar-nav-menu__item-title">Ingresos</span>
-                                </a>
-                            </li>
-                            
-                            <li class="u-sidebar-nav-menu__item">
-                                <a class="u-sidebar-nav-menu__link" href="{{ route('egreso.index') }}">
-                                    <span class="u-sidebar-nav-menu__item-title">Egresos</span>
-                                </a>
-                            </li>
-                                
-                        </ul>
-                    </li>-->
-                    <!-- End Forms -->
-
-
+                        <!-- End Dashboard -->               
 
                     <!-- Tables -->
                     <li class="u-sidebar-nav-menu__item">
@@ -359,16 +315,6 @@
                         </ul>
                     </li>
                     <!-- End Forms -->                    
-                    
-                    
-                              
-                                    
-                    <!--<li class="u-sidebar-nav-menu__item">
-                        <a class="u-sidebar-nav-menu__link" href="{{ route('cierre.index') }}">
-                            <span class="ti-lock u-sidebar-nav-menu__item-icon"></span>
-                            <span class="u-sidebar-nav-menu__item-title">Cierres</span>
-                        </a>
-                    </li>  --> 
 
                 </nav>
                 <!-- End Sidebar Nav -->
@@ -377,12 +323,13 @@
         </aside>
         <!-- End Sidebar -->
         
+        <!-- Content -->
         <main class="container">
             @yield('content')
         </main>
+        <!-- End Content -->
 
-    </div>
-    
+    </main>    
 
     
 </body>

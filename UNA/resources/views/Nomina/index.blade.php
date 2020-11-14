@@ -122,12 +122,7 @@
                                                         data-noid="{{$no->id}}" data-toggle="modal">Eliminar</a>
 											        </li>
                                                     
-											        <li class="mb-3" >
-												        <a class="d-block link-dark" 
-                                                        href="{{ route('nomina.show', $no->id) }}" 
-                                                        data="{{$no->id}}"
-                                                        role="button">Movimiento</a>
-											        </li> 
+
                                                     
 									          </ul>
                                               

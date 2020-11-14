@@ -15,5 +15,4 @@ return [
 
     'failed' => 'Las credenciales no concuerdan con nuestros registros.',
     'throttle' => 'Demasiados intentos de logueo. Por favor intenta en: seconds seconds.',
-
 ];
