@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use App\User;
+use Caffeinated\Shinobi\Models\Role;
 
 class UserTableSeeder extends Seeder
 {
@@ -27,5 +28,23 @@ class UserTableSeeder extends Seeder
 		$user->jobtitle = "Programador";
 		$user->password = bcrypt('12345');
 		$user->save();
+
+		Role::create([
+			'name' => 'Supervisor',
+			'slug' => 'supervisor',
+			'special' => 'all-access'
+		]);
+
+		Role::create([
+			'name' => 'Analista',
+			'slug' => 'analista',
+			'special' => 'no-access'
+		]);
+
+		Role::create([
+			'name' => 'Analista Externo',
+			'slug' => 'analista_externo',
+			'special' => 'no-access'
+		]);
     }
 }

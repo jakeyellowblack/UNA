@@ -20,7 +20,7 @@ use DB;
 class PresupuestoController extends Controller
 {
 	
-	 public function index(Presupuesto $presupuesto, Request $request)
+	public function index(Presupuesto $presupuesto, Request $request)
     {
 		  if ($request)
 				{
@@ -35,18 +35,13 @@ class PresupuestoController extends Controller
 
 					return view('tpresupuesto',["presupuesto"=>$presupuesto, "cuenta"=>$cuenta]);
 				}		
-	
     }
 	
 	
-	 public function chart(Presupuesto $presupuesto, Request $request)
+	public function chart(Presupuesto $presupuesto, Request $request)
     {
 		  if ($request)
 				{
-					
-
-
-					
 					$presupuesto=DB::table('presupuestos as p')->join('cuentas as c','p.id','=','c.id')
 					->select('p.id','p.created_at','p.tipo','p.concepto','p.montoT','c.id as idcuenta','c.nombre','c.numero')
 					->orderBy('p.id','asc');
@@ -57,10 +52,8 @@ class PresupuestoController extends Controller
 					$total2 = $presupuesto->where('tipo','=','egreso')->sum('montoT');
 					$total3 = $total-$total2;
 
-
 					return view('home',["presupuesto"=>$presupuesto, "total"=>$total, "total2"=>$total2, "total3"=>$total3]);
 				}		
-	
     }	
 	
 
@@ -73,15 +66,11 @@ class PresupuestoController extends Controller
     {
         $file = $request->file('banner');
         Excel::import(new PresupuetosImport, $file);
-		
-
-      return back()->with('status', 'Importanción de presupuesto completada');
+      	return back()->with('status', 'Importanción de presupuesto completada');
     }
 	
-	
-	
-	
-	    public function store(StorePresupuestoRequest $request)
+
+	public function store(StorePresupuestoRequest $request)
     {
     	
         $presupuesto = Presupuesto::create($request->all());
@@ -101,7 +90,7 @@ class PresupuestoController extends Controller
     }
 	
 	
-	 public function show(Presupuesto $presupuesto, Request $request)
+	public function show(Presupuesto $presupuesto, Request $request)
     {
 
 				  if ($request)

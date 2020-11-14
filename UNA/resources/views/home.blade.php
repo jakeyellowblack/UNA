@@ -4,7 +4,8 @@
 
 <!DOCTYPE html>
 <html lang="en" class="no-js">
-	<!-- Head --><head>
+	<!-- Head -->
+  <head>
     <title>Sistema UNA</title>
 
 		<!-- Meta -->
@@ -16,28 +17,25 @@
 		<link href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
 
 		<!-- Components Vendor Styles -->
-         <link rel="stylesheet" href="assets/css/all-icons.css">
-         <link rel="stylesheet" href="assets/css/fontawesome.css">
-
-		 <link rel="stylesheet" href="assets/vendor/themify-icons/themify-icons.css">
-		 <link rel="stylesheet" href="assets/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css">
+    <link rel="stylesheet" href="assets/css/all-icons.css">
+    <link rel="stylesheet" href="assets/css/fontawesome.css">
+		<link rel="stylesheet" href="assets/vendor/themify-icons/themify-icons.css">
+		<link rel="stylesheet" href="assets/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css">
 
 		<!-- Theme Styles -->
-		 <link href="assets/css/all.css" rel="stylesheet" type="text/css" />
-         <link href="assets/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
-         <link href="assets/css/jquery-ui.min.css"  rel="stylesheet" type="text/css" />
-         <link href="assets/css/custom.css" rel="stylesheet" type="text/css" />
+		<link href="assets/css/all.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/jquery-ui.min.css"  rel="stylesheet" type="text/css" />
+    <link href="assets/css/custom.css" rel="stylesheet" type="text/css" />
 
 
 		<link rel="stylesheet" href="assets/css/theme.css">
 
-<style type="text/css">
-		.no-js body .u-header .u-header-left .u-header-logo {
-	font-size: 25px;
-}
+    <style type="text/css">
+		.no-js body .u-header .u-header-left .u-header-logo {font-size: 25px;}
+    </style>
 
-        </style>
-</head>
+  </head>
 	<!-- End Head -->
 
 
@@ -50,7 +48,7 @@
 	<div class="container-fluid spark-screen">
 		<div class="row">
 		
-		
+		  @can('presupuesto.create')
         <div class="col-md-3 col-sm-6 col-xs-12">
           <div class="info-box">
             <span class="info-box-icon bg-aqua"><i class="ti-credit-card"></i></span>
@@ -59,14 +57,14 @@
               <span class="info-box-text">Movimientos</span>
               </br>
 <!--              <a href="/summary/create?type=add">Añadir ingreso</a>--> 
-			 <a href="/tpresupuesto">Añadir nuevo</a>                      
-</div>
+			         <a href="/tpresupuesto">Añadir nuevo</a>                      
+            </div>
             <!-- /.info-box-content -->
           </div>
           <!-- /.info-box -->
         </div>
         <!-- /.col -->
-        
+       @endcan 
         
         
         
