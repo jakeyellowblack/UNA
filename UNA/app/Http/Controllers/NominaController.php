@@ -3,7 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+
+use Maatwebsite\Excel\Facades\Excel;
+
+use App\Exports\NominasExport;
+
 use Illuminate\Support\Facades\File;
+
 use App\Nomina;
 use App\MovNomina;
 use DB;
@@ -18,7 +24,13 @@ class NominaController extends Controller
 
         return view('nomina.index', compact('nomina'));
     }
-
+	
+    public function exportExcel()
+    {
+    	return Excel::download(new NominasExport, 'reporte-nomina.xlsx');
+    }
+	
+	
     public function movimiento(Nomina $nomina, MovNomina $movnomina, Request $request)
     {
         $nomina = Nomina::orderBy('id', 'ASC');

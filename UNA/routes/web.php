@@ -78,6 +78,9 @@ Route::middleware(['auth'])->group(function(){
 	//edit
 	Route::put('reformulacion', 'ReformulacionController@update')->name('reformulacion.update')->middleware('can:reformulacion.update');
 	Route::delete('reformulacion', 'ReformulacionController@destroy')->name('reformulacion.destroy')->middleware('can:reformulacion.destroy');
+	
+		//Reformulación Export 
+	Route::get('refor-list-excel',    'ReformulacionController@exportExcel')->name('reformulacion.reformulacion')->middleware('can:reformulacion.reformulacion');
 
 	//Movimiento Reformulación
 	Route::get('reformulacion_movimiento', 'ReformulacionController@movimiento')->name('reformulacion.movimiento')->middleware('can:reformulacion.movimiento');

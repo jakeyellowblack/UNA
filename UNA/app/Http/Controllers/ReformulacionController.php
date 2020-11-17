@@ -3,7 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\File; 
+
+use Maatwebsite\Excel\Facades\Excel;
+
+use App\Exports\ReformulacionsExport;
+
+use Illuminate\Support\Facades\File;
+
 use App\Reformulacion;
 use App\MovReformulacion;
 use DB;
@@ -18,6 +24,12 @@ class ReformulacionController extends Controller
 
         return view('reformulacion.index', compact('reformulacion'));
     }
+	
+    public function exportExcel()
+    {
+    	return Excel::download(new ReformulacionsExport, 'reporte-reformulacion.xlsx');
+    }	
+	
 
     public function create()
     {

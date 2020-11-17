@@ -2,8 +2,8 @@
 
 namespace App\Exports;
 
-use App\Nomina;
-use App\MovNomina;
+use App\Reformulacion;
+use App\MovReformulacion;
 use Maatwebsite\Excel\Concerns\FromCollection;
 use Maatwebsite\Excel\Concerns\WithMapping;
 use Maatwebsite\Excel\Concerns\WithHeadings;
@@ -11,13 +11,12 @@ use Maatwebsite\Excel\Concerns\ShouldAutoSize;
 use Maatwebsite\Excel\Concerns\WithEvents;
 use Maatwebsite\Excel\Events\AfterSheet;
 
-class NominasExport implements FromCollection, WithMapping, WithHeadings, ShouldAutoSize, WithEvents
+class ReformulacionsExport implements FromCollection, WithMapping, WithHeadings, ShouldAutoSize, WithEvents
 {
-   
-    public function collection()
+      public function collection()
     {
 		
-		return MovNomina::with('nomina')->get();
+		return MovReformulacion::with('reformulacion')->get();
     }
 	
 	    public function headings(): array
@@ -29,12 +28,12 @@ class NominasExport implements FromCollection, WithMapping, WithHeadings, Should
         ];
     }	
 	
-    public function map($nomina): array
+    public function map($reformulacion): array
     {
         return [
-            $nomina->nomina->title,
-			$nomina->code,
-            $nomina->amount,
+            $reformulacion->reformulacion->title,
+			$reformulacion->code,
+            $reformulacion->amount,
         ];
     }	
 	

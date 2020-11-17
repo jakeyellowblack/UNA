@@ -61,6 +61,11 @@
                 
 		        <!-- Crad Body -->
 	          <div class="card-body pt-0">
+              
+                              <div align="right">
+                <a href="{{ route('nomina.nomina') }}" class="btn btn-primary my-20 my-sm-0" role="button">Generar reporte</a>
+                          </div>
+              
 		          <!-- Table -->
 		          <div class="table-responsive">
 			          <table class="table table-hover mb-0">
