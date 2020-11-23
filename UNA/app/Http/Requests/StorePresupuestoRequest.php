@@ -24,7 +24,7 @@ class StorePresupuestoRequest extends FormRequest
     public function rules()
     {
         return [
-		    'concepto' => ['required', 'max:20'],
+		    'concepto' => ['required', 'max:250'],
             'tipo' => ['required'],
             'created_at' => ['required'],
             'montoT' => ['required'],

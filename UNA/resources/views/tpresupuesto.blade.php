@@ -134,7 +134,7 @@
                                     
                                     
                                     
-									<input required id="concepto" name="concepto" maxlength="50" class="form-control form-pill @error('concepto') is-invalid @enderror" value="{{ old('concepto') }}" type="text" placeholder="Motivo del movimiento">
+									<input required id="concepto" name="concepto" maxlength="10" class="form-control form-pill @error('concepto') is-invalid @enderror" value="{{ old('concepto') }}" type="text" placeholder="Motivo del movimiento">
                                     
                                 @error('concepto')
                                     <span class="invalid-feedback" role="alert">
