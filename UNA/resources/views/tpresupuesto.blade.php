@@ -130,7 +130,7 @@
 
 								<div class="form-group">
 									<label for="concepto">Concepto</label><a href="#aboutModal" data-tooltip="•Campo obligatorio
-        •Max: 20 caracteres" data-toggle="modal" data-target="#myModal" class="btn btn-circle-micro btn-info"><span class="glyphicon glyphicon-thumbs-up"><i class="fa fa-exclamation"></i></span></a>
+        •Max: 250 caracteres" data-toggle="modal" data-target="#myModal" class="btn btn-circle-micro btn-info"><span class="glyphicon glyphicon-thumbs-up"><i class="fa fa-exclamation"></i></span></a>
                                     
                                     
                                     
