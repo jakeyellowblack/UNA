@@ -156,6 +156,7 @@
                           @endforeach
 
 			          </table>
+                      {{ $cuenta->render() }}
 
 		          </div>
 		          <!-- End Table -->
