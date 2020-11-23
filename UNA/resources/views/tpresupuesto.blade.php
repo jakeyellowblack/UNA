@@ -134,7 +134,7 @@
                                     
                                     
                                     
-									<input required id="concepto" name="concepto" maxlength="10" class="form-control form-pill @error('concepto') is-invalid @enderror" value="{{ old('concepto') }}" type="text" placeholder="Motivo del movimiento">
+									<input required id="concepto" name="concepto" maxlength="250" class="form-control form-pill @error('concepto') is-invalid @enderror" value="{{ old('concepto') }}" type="text" placeholder="Motivo del movimiento">
                                     
                                 @error('concepto')
                                     <span class="invalid-feedback" role="alert">
@@ -154,7 +154,7 @@
                                     
                                     
                                     
-									<input id="montoT" name="montoT" maxlength="200" class="form-control form-pill @error('montoT') is-invalid @enderror" value="{{ old('montoT') }}"  type="number" step="any" placeholder="Monto">
+									<input id="montoT" name="montoT" maxlength="10" class="form-control form-pill @error('montoT') is-invalid @enderror" value="{{ old('montoT') }}"  type="number" step="any" placeholder="Monto">
                                     
                                 @error('montoT')
                                     <span class="invalid-feedback" role="alert">
